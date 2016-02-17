@@ -1,15 +1,15 @@
 ---
 layout: page
-title: About
+title: 关于
 permalink: /about/
 ---
 
-Some information about you!
+别管我是谁，咱来看一张卷小白美美的照片：![xiaobai](http://7xqyb5.com1.z0.glb.clouddn.com/IMG_5913.JPG)
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+Drop out or study English. It’s your best bet.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[heyuwei0305@126.com](mailto:heyuwei0305@126.com)
