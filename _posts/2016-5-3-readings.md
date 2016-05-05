@@ -23,7 +23,7 @@ title: 下定决心必须全部看完的技术书籍
 
 <img src="http://7xqyb5.com1.z0.glb.clouddn.com/Head%20First.jpg" alt="Drawing" style="width: 160px;"/>    Head First设计模式
 
-##Python && Django
+##Python & Django
 
 <img src="http://7xqyb5.com1.z0.glb.clouddn.com/Python%20Web%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91.jpg" alt="Drawing" style="width: 160px;"/>    Python Web开发:测试驱动方法
 
@@ -40,6 +40,10 @@ title: 下定决心必须全部看完的技术书籍
 <img src="http://7xqyb5.com1.z0.glb.clouddn.com/ML_TomMitchell.jpg" alt="Drawing" style="width: 160px;"/>    计算机科学丛书:机器学习
 
 <img src="http://7xqyb5.com1.z0.glb.clouddn.com/ML_%E5%91%A8%E5%BF%97%E5%8D%8E.jpg" alt="Drawing" style="width: 160px;"/>    机器学习 周志华
+
+##信息安全
+
+<img src="http://7xqyb5.com1.z0.glb.clouddn.com/Python%E9%BB%91%E5%B8%BD%E5%AD%90.jpg" alt="Drawing" style="width: 160px;"/>    Python 黑帽子：黑客与渗透测试编程之道
 
 ##矩阵和数理统计
 
