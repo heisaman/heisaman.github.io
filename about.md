@@ -4,7 +4,7 @@ title: 关于
 permalink: /about/
 ---
 
-别管我是谁，咱来看一张卷小白美美的照片：<img src="http://7xqyb5.com1.z0.glb.clouddn.com/IMG_5913.JPG" width="200">
+去法国留过两年学的普通工程师一枚…
 
 ### More Information
 
