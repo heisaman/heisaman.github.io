@@ -8,6 +8,11 @@ title: 下定决心必须全部看完的技术书籍
 <img src="http://7xqyb5.com1.z0.glb.clouddn.com/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA.jpg" alt="Drawing" style="width: 160px;"/>    Introduction to Algorithms(第3版)
 
 <img src="http://7xqyb5.com1.z0.glb.clouddn.com/%E7%AE%97%E6%B3%95.jpg" alt="Drawing" style="width: 160px;"/>    图灵程序设计丛书:算法(第4版)
+<div class="progress">
+	<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+	50% Complete (info)
+	</div>
+</div>
 
 <img src="http://7xqyb5.com1.z0.glb.clouddn.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90.jpg" alt="Drawing" style="width: 160px;"/>  数据结构与算法分析:Java语言描述(英文版)(第3版)
 
