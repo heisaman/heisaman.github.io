@@ -35,13 +35,13 @@ footer-links:
 
 # Staticman configurations
 staticman:
-  allowedFields: ['name', 'email', 'comment']
+  allowedFields: ['fields[name]', 'fields[email]', 'fields[message]']
   branch: 'master'
   filename: entry{@timestamp}
   format: 'json'
   moderation: false
   path: _data/posts/{fields.name}
-  requiredFields: ['name', 'comment']
+  requiredFields: ['fields[name]', 'fields[message]']
   transforms:
     email: 'md5'
 
