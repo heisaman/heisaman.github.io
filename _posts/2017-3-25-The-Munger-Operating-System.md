@@ -6,15 +6,15 @@ title: 查理·芒格的运作系统：How do we live a life that really works?
 
 ![The Munger Operating System](http://7xqyb5.com1.z0.glb.clouddn.com/Munger-Operating-System.jpg)
 
-## To get what you want, deserve what you want. Trust, success, and admiration are earned. 
+## 1. To get what you want, deserve what you want. Trust, success, and admiration are earned. 
 
-## Learn to love and admire the right people, live or dead.
+## 2. Learn to love and admire the right people, live or dead.
 
-## Acquiring wisdom is a moral duty as well as a practical one.
+## 3. Acquiring wisdom is a moral duty as well as a practical one.
 
-## Learn to fluency [the big multidisciplinary ideas](https://www.farnamstreetblog.com/mental-models/) of the world and use them regularly.
+## 4. Learn to fluency [the big multidisciplinary ideas](https://www.farnamstreetblog.com/mental-models/) of the world and use them regularly.
 ------
-###The Farnam Street Latticework of Mental Models
+#### *The Farnam Street Latticework of Mental Models*
 **Human Psychology**
 
 Biases emanating from the Availability Heuristic:
@@ -162,30 +162,30 @@ Others
 – Gresham's Law 
 – The Red Queen Effect 
 
-## Learn to think through problems backwards as well as forward.
+## 5. Learn to think through problems backwards as well as forward.
 
-## Be reliable. Unreliability can cancel out the other virtues.
+## 6. Be reliable. Unreliability can cancel out the other virtues.
 
-## Avoid intense ideologies. Always consider the other side as carefully as your own.
+## 7. Avoid intense ideologies. Always consider the other side as carefully as your own.
 
-## Get rid of self-serving bias, envy, resentment, and self-pity. 
+## 8. Get rid of self-serving bias, envy, resentment, and self-pity. 
 
-## At the same time, allow for the self-serving bias in others who haven't removed it.
+## 9. At the same time, allow for the self-serving bias in others who haven't removed it.
 
-## Avoid being part of a system with perverse incentives.
+## 10. Avoid being part of a system with perverse incentives.
 
-## Work with and under people you admire, and avoid the inverse when at all possible.
+## 11. Work with and under people you admire, and avoid the inverse when at all possible.
 
-## Learn to maintain your objectivity, especially when it's hardest.
+## 12. Learn to maintain your objectivity, especially when it's hardest.
 
-## Concentrate experience and power into the hands of the right people – the wise learning machines. 
+## 13. Concentrate experience and power into the hands of the right people – the wise learning machines. 
 
-## You'll be most successful where you're most intensely interested.
+## 14. You'll be most successful where you're most intensely interested.
 
-## Learn the all-important concept of assiduity: Sit down and do it until it's done.
+## 15. Learn the all-important concept of assiduity: Sit down and do it until it's done.
 
-## Use setbacks in life as an opportunity to become a bigger and better person. Don't wallow.
+## 16. Use setbacks in life as an opportunity to become a bigger and better person. Don't wallow.
 
-## The highest reach of civilization is a seamless system of trust among all parties concerned. 
+## 17. The highest reach of civilization is a seamless system of trust among all parties concerned. 
 
 <br><br><br><br>
