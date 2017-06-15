@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dagoba: 一款内存图数据库（500行开源代码解析之二）
+title: "Dagoba: 一款内存图数据库（500行开源代码解析之二）"
 ---
 <br><br>
 ### 前言
@@ -93,3 +93,4 @@ Dagoba.error = function(msg) {
   return false
 }
 ```
+这就是我们现在需要的图数据库的结构。
