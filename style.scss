@@ -18,7 +18,7 @@ html {
 }
 
 body {
-	background: $white;
+  background: url("http://7xqyb5.com1.z0.glb.clouddn.com/PudongSkyline-pjt.jpg") $white no-repeat bottom;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
 }
@@ -28,8 +28,6 @@ body {
   max-width: 740px;
   padding: 0 10px;
   width: 100%;
-  background: url("http://7xqyb5.com1.z0.glb.clouddn.com/PudongSkyline-pjt.jpg") no-repeat bottom;
-
 }
 
 h1, h2, h3, h4, h5, h6 {
