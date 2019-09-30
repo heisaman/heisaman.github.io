@@ -1,91 +1,65 @@
-#
-# This file contains configuration flags to customize your site
-#
+# Site
+name: '熊猫和鱼🐟'
+description: 'Mundana is a free Jekyll theme for awesome people like you, Medium like.'
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/favicon.ico'
+baseurl: '/mundana-theme-jekyll'
+disqus: 'demowebsite'
+email: 'heyuwei.efrei@gmail.com'
+mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 
-# Name of your site (displayed in the header)
-name: Yuwei HE
-
-# Short bio or description (displayed in the header)
-description: Software Engineer/Web Developer
-
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: http://7xqyb5.com1.z0.glb.clouddn.com/tiger.svg
-
-#
-# Flags below are optional
-#
-
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email:
-  facebook:
-  flickr:
-  github: heisaman
-  instagram:
-  linkedin:
-  pinterest:
-  rss: # just type anything here for a working RSS icon
-  twitter: Heisaman_1
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
-  weibo: heisaman
-  wechat: heisaman
-
-# Staticman configurations
-staticman:
-  allowedFields: ['fields[name]', 'fields[email]', 'fields[message]']
-  branch: 'master'
-  filename: entry{@timestamp}
-  format: 'json'
-  moderation: false
-  path: _data/posts/{fields.name}
-  requiredFields: ['fields[name]', 'fields[message]']
-  transforms:
-    email: 'md5'
-
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
-disqus: yuweisblog
-
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
-
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
-# Used for Sitemap.xml and your RSS feed
-url: http://www.heisaman.xyz
-
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-baseurl: ""
-
-#
-# !! You don't need to change any of the configuration flags below !!
-#
-
-# markdown: redcarpet
-highlighter: pygments
+include: ["_pages"]
 permalink: /:title/
 
-# The release of Jekyll Now that you're using
-version: v1.1.0
+# Plugins
+plugins: 
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
+  
+authors:
+    sal:
+      name:           波斯王子
+      site:           https://www.plus1s.cn
+      avatar:         /assets/images/avatar1.jpg
+      bio:            "去法国留过两年学的普通工程师一枚…Drop out or study English. It’s your best bet."
+      email:          heyuwei.efrei@gmail.com
+      twitter:        https://www.twitter.com/Heisaman_1
 
-# Set the Sass partials directory, as we're using @imports
-sass:
-  style: :expanded # You might prefer to minify using :compressed
+    jane:
+      name:           沙俄女孩
+      site:           https://www.plus1s.cn
+      avatar:         /assets/images/avatar2.jpg
+      bio:            "Blogger, fashionista, love to explore new ideas and write on my morning coffee!"
+      email:          varchu1004@126.com
+      twitter:        https://twitter.com/heisaman0305
+ 
+# Defaults
+defaults:
 
-# Use the following plug-ins
-gems:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  # all posts
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
+      author: sal
+      avatar: /assets/images/avatar1.jpg
+      
+  # all pages
+  - scope:
+      path: "_pages"
+    values:
+      layout: page
+      
+# Syntax
+markdown: kramdown
+highlighter: rouge
 
-# Exclude these files from your production _site
-exclude:
-    - Gemfile
-    - Gemfile.lock
-    - LICENSE
-    - README.md
-    - CNAME
+# Paginate
+paginate: 10
+
+
+
+# Exclude metadata and development time dependencies (like Grunt plugins)
+exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
