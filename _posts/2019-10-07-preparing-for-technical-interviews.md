@@ -13,9 +13,9 @@ image: assets/images/4.jpg
 
 2. 到六月份，发现上面要学的内容几乎都无所进展，于是想当然地认为自己可以胜任“全栈工程师”的角色，当时是这么想的：
 ```
-`前端`各框架类库（js，typescript，Angular2，React，Bootstrap4）的熟练运用，rxjs响应式编程
-`后端`各种编程语言技术框架（Python，Django，Tornado，Java，SpringBoot，Golang等）的熟悉和快速上手
-`数据库`原理的熟悉，常用的分布式、高可用架构
+前端各框架类库（js，typescript，Angular2，React，Bootstrap4）的熟练运用，rxjs响应式编程
+后端各种编程语言技术框架（Python，Django，Tornado，Java，SpringBoot，Golang等）的熟悉和快速上手
+数据库原理的熟悉，常用的分布式、高可用架构
 ```
 
 3. 七月初在匆忙改好CV，还啥都没准备的情况下就出去面试，由于基础不扎实+没有针对性地准备面试题，碰了一鼻子灰，连续三四周不断地碰壁，比如下列简单的问题都答得不好：
@@ -108,7 +108,6 @@ RabbitMQ，Kafka等消息队列比较深入的问题
 与应用开发团队成员合作，整体联调系统
 给应用开发团队传授原生云技术
 此职位要求的技能包括但不限于，
-
 良好的英语阅读及沟通能力
 扎实的计算机基础，比如数据结构和算法
 熟悉Kubernetes及其周边功能，并能对其二次开发
