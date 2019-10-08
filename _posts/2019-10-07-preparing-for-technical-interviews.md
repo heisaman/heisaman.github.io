@@ -4,7 +4,7 @@ title:  "2019暑假跳槽总结-如何准备IT技术面试"
 categories: [ Interviews ]
 image: assets/images/4.jpg
 ---
-总体来讲，这次跳槽不算成功，未及我的预期目标（年薪`400k+`￥），仍需继续努力，发奋图强!
+总体来讲，这次跳槽不算成功，未及我的预期目标（年薪`XX万+`￥），仍需继续努力，发奋图强!
 
 ## 最最最重要的还是经典算法、算法复杂度和Leetcode算法题。
 
@@ -18,7 +18,7 @@ image: assets/images/4.jpg
 数据库原理的熟悉，常用的分布式、高可用架构
 ```
 
-3. 七月初在匆忙改好CV，还啥都没准备的情况下就出去面试，由于基础不扎实+没有针对性地准备面试题，碰了一鼻子灰，连续三四周不断地碰壁，比如下列简单的问题都答得不好：
+3. 七月初在匆忙改好CV，还啥都没准备的情况下就出去面试，由于基础不扎实+没有针对性地准备面试题，碰了一鼻子灰，然后连续三四周不断地碰壁，比如下列简单的问题都答得不好：
 ```
 Python里的字典是怎么实现的，hash碰撞怎么处理的
 如何获取一个对象的所有属性和方法
@@ -122,10 +122,3 @@ RabbitMQ，Kafka等消息队列比较深入的问题
 ## 提高能力，控制欲望。利用欲望让自己努力，控制欲望让自己快乐。  --TK
 
 ## 不惧辛苦，沉心静气，远离安逸！  --HYW
-
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
