@@ -18,7 +18,7 @@ tags: [featured]
     - k8s服务代理(kube-proxy)
     - 容器运行时(Docker, rkt, ...)
 
-![Architecture](assets/images/kubernetes-architecture.png)
+![Architecture](/assets/images/kubernetes-architecture.png)
 
 除此之外，还有一些附加组件：
 - k8s DNS server(以前用的是kube-dns, 现在默认用CoreDNS)
@@ -57,7 +57,7 @@ kube-flannel-ds-8qz89                            izbp1axxxxxxxxxxxxxxxxx
 ...
 ```
 #### K8S是如何用etcd的
-etcd是一个高速分布式一致性KV存储，和它交互的只有API Server(这可以引入一些好处，比如一个健壮的乐观锁系统)，它是k8s存储集群状态和元数据的唯一地方。
+etcd是一个高速分布式一致性KV存储，和它交互的只有API Server(这可以引入一些好处，比如一个健壮的乐观锁系统)，它是k8s存储集群状态和元数据的唯一地方。  
 k8s资源都会带有一个版本号 metadata.resourceVersion，客户端更新资源的时候都必须把版本号传回给API Server，如果版本号与当前存储在etcd中的不匹配，API Server就会拒绝这次更新。  
 API Server其实就是把资源完整的JSON表示存储在etcd里。  
 ###### 集群化的etcd是如何保证一致性的？
