@@ -71,7 +71,17 @@ etcd使用`Raft共识算法`来达成共识，保证一致性。Raft共识算法
 
 #### API Server做了什么事
 API Server通过RESTful API提供了一套CRUD的接口来查询和更新集群状态，除了提供这种一致统一的方式把资源对象存进etcd的功能外，它还对存储的对象做合法性验证，以及在并发更新时提供乐观锁的控制。  
-当API Server收到一条kubectl的请求时，依次发生的事情如下图所示：  
-![API Server](/assets/images/kubernetes-api-server.png)
-
-
+当API Server收到一条kubectl的请求时，依次经过的步骤如下所示：  
+![API Server](/assets/images/kubernetes-api-server.png)  
+1. 调用若干认证(authentication)插件，直到确认客户端的身份；
+2. 调用若干授权(authorization)插件，直到确认客户端有权限执行操作；
+3. 如果请求是增删改操作，调用每一个许可控制(Admission Control)插件，会初始化资源定义的一些默认字段，修改相关联的资源等等，例如：AlwaysPullImages、ServiceAccount、NamespaceLifecycle、ResourceQuota等插件；
+4. 验证资源对象的合法性，然后将其存入etcd；  
+#### API Server是如何把资源变化通知到客户端的
+`watch`机制让其它控制平面组件或kubectl能够监听资源的变化情况，当资源被增删改时，它们都能被通知到。  
+RESTful API的方式是`GET /.../pods?watch=true`，kubectl的方式是：
+```shell
+$ kubectl get pods --watch
+# 甚至打印出整个YAML文件
+$ kubectl get pods -o yaml --watch
+```
