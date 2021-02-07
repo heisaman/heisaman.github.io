@@ -7,7 +7,7 @@ tags: [featured]
 ---
 
 Kubernetes的架构原理包含的内容较多，本篇先介绍总体架构，以及etcd和API Server方面的内容。  
-## K8S架构  
+## K8S架构
 首先，一个K8S集群分为两个部分：
 1. k8s控制平面组件(master nodes)
     - etcd分布式持久化存储
@@ -76,7 +76,8 @@ API Server通过RESTful API提供了一套CRUD的接口来查询和更新集群�
 1. 调用若干认证(authentication)插件，直到确认客户端的身份；
 2. 调用若干授权(authorization)插件，直到确认客户端有权限执行操作；
 3. 如果请求是增删改操作，调用每一个许可控制(Admission Control)插件，会初始化资源定义的一些默认字段，修改相关联的资源等等，例如：AlwaysPullImages、ServiceAccount、NamespaceLifecycle、ResourceQuota等插件；
-4. 验证资源对象的合法性，然后将其存入etcd；  
+4. 验证资源对象的合法性，然后将其存入etcd；
+
 #### API Server是如何把资源变化通知到客户端的
 `watch`机制让其它控制平面组件或kubectl能够监听资源的变化情况，当资源被增删改时，它们都能被通知到。  
 RESTful API的方式是`GET /.../pods?watch=true`，kubectl的方式是：
