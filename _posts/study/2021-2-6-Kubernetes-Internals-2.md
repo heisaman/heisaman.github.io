@@ -62,7 +62,7 @@ Namespace 帮助容器来实现各种计算资源的隔离，Cgroups 主要限�
 
 ## Pod之间的网络
 
-Pod之间的扁平、无网络地址转换(NAT-less)的网络并不是由Kubernetes建立的，而是由系统管理员或者容器网络接口(CNI)插件建立的。  
+Pod之间的扁平、无网络地址转换(NAT-less)的网络并不是由Kubernetes建立的，而是由系统管理员或者`容器网络接口(CNI)`插件建立的。  
 Pod的IP地址和网络namespace是由pod的基础容器建立并持有的，pod中的所有容器就使用它的网络namespace，在基础容器启动前要先创建一个虚拟以太网接口对(a veth pair)，其中一个留在主机Host的网络namespace中，另一个移动到基础容器的网络namespace中并重命名为eth0，这两个虚拟以太网接口就像一个管道的两端，可以进出网络包。在主机网络namespace中的接口再连接到容器运行时配置使用的网络桥(bridge)，从中可以给容器分配一个IP地址。不同节点上pod间通信就要求每个节点的网络桥使用不重叠的地址段。  
 容器网络接口(CNI)项目就是为了让容器连接到网络变得更简单而出现的，Kubernetes可以配置使用任何已有的CNI插件，例如：Calico、Flannel等。
 
@@ -83,4 +83,4 @@ Pod的IP地址和网络namespace是由pod的基础容器建立并持有的，pod
 
 ![Highly-available-cluster](/assets/images/highly-available-cluster-with-3-master-nodes.png)
 常见的三master节点的高可用Kubernetes集群  
-Controller Manager 或 the Scheduler 组件必须通过Leader选举机制确保同时只有一个副本活跃，其选举机制的实现方式就是通过在API Server中创建一个Endpoints对象资源，因为API Server中资源对象的乐观并发控制机制，只会有一个副本创建成功，然后它就成为Leader副本，其余副本就处于备用状态，leader副本还必须阶段性每2s更新一次这个Endpoints对象资源，让其它副本知道leader副本还存活着。
+Controller Manager 或 the Scheduler 组件必须通过Leader选举机制确保同时只有一个副本活跃，其选举机制的实现方式就是通过在API Server中创建一个`Endpoints`对象资源，因为API Server中资源对象的乐观并发控制机制，只会有一个副本创建成功，然后它就成为Leader副本，其余副本就处于备用状态，leader副本还必须阶段性每2s更新一次这个Endpoints对象资源，让其它副本知道leader副本还存活着。
