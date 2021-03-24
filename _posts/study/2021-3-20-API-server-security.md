@@ -17,7 +17,7 @@ API server可以配置使用一个或多个认证Authentication插件（同样�
 3. Basic HTTP认证；
 4. 其它方式；
 
-Kubernetes中用`ServiceAccount`资源表示应用Pod的帐号。
+Kubernetes中用`ServiceAccount(sa)`资源表示应用Pod的帐号。
 
 ### ServiceAccount
 
@@ -37,4 +37,10 @@ $ kubectl create serviceaccount foo
 
 ## 基于角色的访问控制（RBAC）
 
+Kubernetes默认给你创建ServiceAccount是无权查看和更改集群状态的，如果想写一个能和API server交互的应用的话，就必须理解如果通过RBAC相关的资源来管理授权。
+
+API server暴露出来的是一个REST接口，所以用户发送到特定URL路径（代表特定的REST资源）上的`GET`，`POST`，`PUT`，`PATCH`，`DELETE`等HTTP请求，也就对应着对Kubernetes资源的`get`, `create`, `update`, `patch`, `delete`等操作。RBAC规则除了可以把安全许可应用到整个某种资源类型外，还可以应用到资源的具体实例，甚至一些非资源的URL路径上。
+
+通过RBAC插件管理授权很简单，就是通过创建四种RBAC相关的Kubernetes资源来完成的：`Roles`和`ClusterRoles`负责定义能对哪些资源执行哪些操作, 而`RoleBindings`和`ClusterRoleBindings`负责把roles关联到不同的用户、组或者ServiceAccounts。  
+**Roles**和**ClusterRoles**，或者**RoleBindings**和**ClusterRoleBindings**两两之间的区别也很好理解，Roles和RoleBindings都是命名空间下的资源，而ClusterRoles和ClusterRoleBindings都是集群层面的资源，其中命名空间下的RoleBindings资源也可以关联集群层面的ClusterRoles资源。
 
