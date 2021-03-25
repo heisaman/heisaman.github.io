@@ -100,3 +100,10 @@ $ kubectl create clusterrolebinding pv-test --clusterrole=pv-reader --serviceacc
 **给集群层面的资源授权，必须一直使用ClusterRoleBinding来绑定ClusterRole和用户**。
 
 系统预定义自动创建的`system:discovery`这个同名ClusterRole和ClusterRoleBinding，提供了对非资源的URL的访问控制，比如/apis, /healthz, /openapi, /livez, /readyz这些URL，所有人都可以访问这些URL，因为`system:discovery`这个ClusterRoleBinding绑定了所有的用户。
+
+对于绑定命名空间资源的ClusterRole而言，如果它关联的是一个ClusterRoleBinding，那么相应绑定的用户就可以操作所有命名空间下的指定资源；而如果它关联的是一个RoleBinding，那相应绑定的用户就只能操作这个RoleBinding所在命名空间下的指定资源。
+
+这四种RBAC相关的资源，什么时候该用什么组合，可以简单概括如下：  
+![Combinations of Role and Binding Types](/assets/images/rbac-resources-combinations.png)
+
+Kubernetes集群默认自带了很多ClusterRoles和ClusterRoleBindings，最重要的几个roles有：`view`, `edit`, `admin`, `cluster-admin`这些ClusterRoles，它们是绑定到用户定义的pods所使用的ServiceAccounts之上的，其它默认的ClusterRoles是给不同的Kubernetes组件使用的。
