@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "如何保障Kubernetes API server的安全？"
-categories: [ Paas, Kubernetes, Architecture ]
+categories: [ Paas, Kubernetes, Security ]
 image: assets/images/21.jpg
 tags: [featured]
 ---
