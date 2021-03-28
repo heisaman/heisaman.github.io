@@ -91,9 +91,9 @@ $ kubectl create rolebinding test --role=service-reader --serviceaccount=foo:def
 ClusterRole是一种集群层面的资源，提供了对**非命名空间资源**或者**非资源的URL**的访问控制，也可以作为一种不同命名空间的通用的Role资源来使用。
 
 ```shell
-# 创建ClusterRole资源
+# 创建ClusterRole资源，用--resource-name=来指定具体的资源实例
 $ kubectl create clusterrole pv-reader --verb=get,list --resource=persistentvolumes
-# 创建ClusterRoleBinding资源
+# 创建ClusterRoleBinding资源，用--user/--group分别可以绑定到用户和组
 $ kubectl create clusterrolebinding pv-test --clusterrole=pv-reader --serviceaccount=foo:default
 ```
 
