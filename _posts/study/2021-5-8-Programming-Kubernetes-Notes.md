@@ -179,8 +179,105 @@ informer-gen 和 lister-gen 代码生成器也会处理client-gen的`// +genclie
 
 ### 6.1 sample-controller
 
-
 ### 6.2 Kubebuilder
 
 Kubebuilder是Kubernetes SIG API Machinery维护的一套工具库，让你能简单高效地构建operators，深入探索Kubebuilder的最佳资源是在线的[Kubebuilder电子书](https://book.kubebuilder.io/introduction.html)。
+
+
+### 6.3 Operator SDK
+
+`Operator SDK`是`Operator Framework`的一部分，它提供了一系列的工具来构建、测试和打包operators，让开发者不需要深入了解Kubernetes APIs就可以搭建operators。
+
+The main stakeholder is the SIG API Machinery, which owns CRs and controllers and is responsible for the Kubebuilder project. The Operator SDK has increased its efforts to align with the Kubebuilder API, so there’s a lot of overlap.
+
+
+## 7. 交付Controllers和Operators
+
+### 7.1 生命周期管理和打包
+
+下面我们会讨论如何打包和交付你的controller或operator，以及如何处理版本升级。
+
+#### 7.1.1 打包的挑战
+
+为了克服构建时候的Kubernetes中静态YAML文件的限制，我们可以选择模板化YAML文件的方式（例如Helm），或者使用输入变量的方式（Kustomize）。
+
+#### 7.1.2 <ins>Helm</ins>
+
+Helm通过定义和应用所谓的charts（实际就是参数化的YAML文件），帮助你安装和升级Kubernetes中的应用。
+
+#### 7.1.3 <ins>Kustomize</ins>
+
+Kustomize遵循大家所熟悉的Kubernetes API，提供了一种声明式的方法，来对Kubernetes的YAML manifest文件做自定义配置。新版本的kubectl中也自带了Kustomize，可以通过 -k 命令行标志来激活使用。Kustomize能让你在不变动原本manifest文件的情况下，自定义配置YAML manifest文件，只需要定义一个`kustomize.yaml`文件，然后执行`kustomize build`就可以生成一个自定义的manifest文件，于是就可以用于`kubectl apply`命令。
+
+Note that while it solves some problems (customization), there are other areas of the lifecycle management, such as validations and upgrades, that may require you to use Kustomize together with languages such as Google’s CUE.
+
+### 7.2 为生产部署做好准备
+
+关于如何使你的自定义controllers和operators为生产部署做好准备，可以参考如下的一些高层次检查列表:
+
+* Use Kubernetes deployments or DaemonSets to supervise your custom controller so that they are restarted automatically when they fail—and fail they will.
+
+* Implement health checks through dedicated endpoints for liveness and readiness probes. This, together with the previous step, makes your operations more resilient.
+
+* Consider a leader-follower/standby model to make sure that even when your controller pod crashes, someone else can take over. Note, however, that synchronizing state is a nontrivial task.
+
+* Provide access control resources, such as service account and roles, applying the least-privileges principle; see “Getting the Permissions Right” for details.
+
+* Consider automated builds, including testing. Some more tips are available in “Automated Builds and Testing”.
+
+* Proactively tackle monitoring and logging; see “Custom Controllers and Observability” for the what and how.
+
+
+## 8. 自定义API Servers
+
+除了CRDs，自定义API Servers也是扩展Kubernetes的一种备选方式，它能像常规Kubernetes API server一样服务资源组，但是与CRDs不同的是，你对自定义API Servers所能做的事几乎没有任务限制。
+
+### 8.1 使用场景
+
+一个自定义API Server可以当作CRDs的替换来使用，CRDs能做的事情它都能做，而且提供了无限的灵活性，不过这也带来了开发和维护的复杂性。
+
+使用CRDs所带来的限制：
+* 
+
+相反，一个自定义API Server就不会有如上限制，它能做下面这些事情：
+*
+
+### 8.2 架构设计：聚合(Aggregation)
+
+自定义API servers是提供API资源组服务的进程，通常是用API server库`k8s.io/apiserver`来构建的，这些进程可以跑在集群内或集群外，前者就是跑在pods容器中, 前面有一个service。
+
+Kubernetes主API server叫做`kube-apiserver`，总是kubectl和别的API客户端的第一个接触点。由自定义API server提供服务的API资源组，被kube-apiserver进程代理到自定义API server进程。 
+
+在kube-apiserver进程中执行代理的组件叫做`kube-aggregator`, 这种把API请求代理到API server的过程叫做`API aggregation`。
+
+![kube-apiserver](/assets/images/kubernetes-main-api-server.png)
+
+kube-aggregator组件会代理某个API资源组版本的HTTP路径下的所有请求(即在/apis/group-name/version下的所有请求)，而它不需要知道在此API资源组版本中实际提供了哪些资源。相反，kube-aggregator组件会自己提供所有聚合自定义API servers的/apis和/apis/group-name端点发现（discovery endpoints）服务，靠的是`APIService`资源中的信息，而不必和自定义API servers交互。
+
+#### 8.2.1 <ins>API Services</ins>
+
+For the Kubernetes API server to know about the API groups a custom API server serves, one APIService object must be created in the apiregistration.k8s.io/v1 API group. These objects list only the API groups and versions, not resources or any further details。
+
+So using 2000 for PaaS-like APIs means that they are placed at the end of this list。
+
+The order of the API groups plays a role during the REST mapping process in kubectl (see “REST Mapping”). This means it has actual influence on the user experience. If there are conflicting resource names or short names, the one with the highest GroupPriorityMinimum value wins.
+
+#### 8.2.2 <ins>自定义API Server的内部结构</ins>
+
+A custom API server resembles most of the parts that make up the Kubernetes API server, though of course with different API group implementations, and without an embedded kube-aggregator or an embedded apiextension-apiserver (which serves CRDs).
+
+![custom-api-server](/assets/images/structure-of-an-aggregated-custom-api-server.png)
+
+#### 8.2.3 <ins>委派的认证和授信</ins>
+
+The aggregated custom API server has to know when to trust these headers; otherwise, any other caller could claim to have done authentication and could set these headers. This is handled by a special request header client CA. It is stored in the config map kube-system/extension-apiserver-authentication (filename requestheader-client-ca-file).
+
+有一种叫做`TokenAccessReview`的机制，它把bearer tokens回传给Kubernetes API server来确认token的合法性。
+
+#### 8.2.4 <ins>委派的授权</ins>
+
+聚合自定义API server通过`SubjectAccessReviews`委派授权评估到Kubernetes API server的RBAC规则来授权请求，也可以使用自身定义的另一套授权方式。
+
+### 8.3 编写自定义API Servers
+
 
