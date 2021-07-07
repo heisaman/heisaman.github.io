@@ -96,7 +96,7 @@ The /status subresource solves this by providing two endpoints that are resource
 
 ### 5.2 调用生成器
 
-通常，在每个控制器项目中，代码生成器几乎都是以同一种方式被调用，只有包名、资源组名和API版本会有所不同。调用脚本`k8s.io/code-generator/generate-groups.sh`或者诸如`hack/update-codegen.sh`一样的bash脚本，是在编译系统里的Go类型自定义资源中添加代码生成的最简单方式。
+通常，在每个控制器项目中，代码生成器几乎都是以同一种方式被调用，只有包名、资源组名和API版本会有所不同。调用`k8s.io/code-generator/generate-groups.sh`脚本，或诸如`hack/update-codegen.sh`之类的bash脚本，是在编译系统中为Go自定义类型资源添加代码生成的最简单方式。
 
 ``` shell
 $ vendor/k8s.io/code-generator/generate-groups.sh all \
@@ -110,11 +110,13 @@ $ vendor/k8s.io/code-generator/generate-groups.sh all \
 这里的`all`意味着会调用为自定义资源准备的四种标准的代码生成器:
 
 * **deepcopy-gen**: 生成 `func (t *T) DeepCopy() *T` 和 `func (t *T) DeepCopyInto(*T)` 方法。
-* **client-gen**: 生成有类型的客户端 client sets.
+* **client-gen**: 生成类型化的客户端 clientsets.
 * **informer-gen**: 为自定义资源生成 informers，提供一种基于事件的接口来响应服务器上自定义资源的变化。
 * **lister-gen**: 为自定义资源生成 listers，为GET和LIST请求提供一个只读的缓存层。
 
-这四种代码生成器为构建全特性、生产可用的控制器提供了强大的基础，构建出的控制器使用的就是和Kubernetes上游控制器一样的机制和包。
+这四种代码生成器为构建全特性、生产可用的控制器提供了强大的支撑，它使用了和Kubernetes上游控制器一样的机制和依赖包。
+
+为应对别的场景，`k8s.io/code-generator`中还提供了多种其它的代码生成器，例如，如果你要构建自己的聚合API server，除了版本化的类型你还会用到内部类型，这时候 **Conversion-gen** 会生成这些内部类型和外部类型之间的转换函数， **Defaulter-gen** 会为特定字段生成默认值。
 
 ### 5.3 用标签（Tags）控制代码生成器的行为
 
@@ -281,3 +283,6 @@ The aggregated custom API server has to know when to trust these headers; otherw
 ### 8.3 编写自定义API Servers
 
 
+Options are coupled with flags; that is, they are conventionally on the same abstraction level as flags. As a rule of thumb, options do not hold “running” data structures. They are used during startup and then converted to configuration or server objects, which are then run.
+
+Options are converted to a server configuration (“config”) by the Config() (*apiserver.Config, error) method. This is done by starting with a recommended default configuration and then applying the options to it。
