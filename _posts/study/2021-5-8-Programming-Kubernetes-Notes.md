@@ -34,13 +34,13 @@ type Interface interface {
 
 子资源有特殊的HTTP端点路径, 即在常规的HTTP路径后面添加后缀. 例如，Pod有以下几种子资源：
 
-* /api/v1/namespace/namespace/pods/name/logs
+- /api/v1/namespace/namespace/pods/name/logs
 
-* /api/v1/namespace/namespace/pods/name/portforward
+- /api/v1/namespace/namespace/pods/name/portforward
 
-* /api/v1/namespace/namespace/pods/name/exec
+- /api/v1/namespace/namespace/pods/name/exec
 
-* /api/v1/namespace/namespace/pods/name/status
+- /api/v1/namespace/namespace/pods/name/status
 
 子资源端点往往使用与主资源端点不同的协议来访问。
 
@@ -61,11 +61,11 @@ The /status subresource solves this by providing two endpoints that are resource
 
 动态客户端的输入和输出就是一个*unstructured.Unstructured—即一个对象，它有着和`json.Unmarshal`在反序列化时所输出的一样的数据结构:
 
-* 对象用map[string]interface{}表示
+- 对象用map[string]interface{}表示
 
-* 数组用[]interface{}表示
+- 数组用[]interface{}表示
 
-* 基础类型是string, bool, float64, or int64
+- 基础类型是string, bool, float64, or int64
 
 动态客户端也被Kubernetes自身用在一些通用的控制器上，例如垃圾回收控制器，因为其会处理系统中的任意资源，所以广泛使用了动态客户端。
 
@@ -109,10 +109,10 @@ $ vendor/k8s.io/code-generator/generate-groups.sh all \
 
 这里的`all`意味着会调用为自定义资源准备的四种标准的代码生成器:
 
-* **deepcopy-gen**: 生成 `func (t *T) DeepCopy() *T` 和 `func (t *T) DeepCopyInto(*T)` 方法。
-* **client-gen**: 生成类型化的客户端 clientsets.
-* **informer-gen**: 为自定义资源生成 informers，提供一种基于事件的接口来响应服务器上自定义资源的变化。
-* **lister-gen**: 为自定义资源生成 listers，为GET和LIST请求提供一个只读的缓存层。
+- **deepcopy-gen**: 生成 `func (t *T) DeepCopy() *T` 和 `func (t *T) DeepCopyInto(*T)` 方法。
+- **client-gen**: 生成类型化的客户端 clientsets.
+- **informer-gen**: 为自定义资源生成 informers，提供一种基于事件的接口来响应服务器上自定义资源的变化。
+- **lister-gen**: 为自定义资源生成 listers，为GET和LIST请求提供一个只读的缓存层。
 
 这四种代码生成器为构建全特性、生产可用的控制器提供了强大的支撑，它使用了和Kubernetes上游控制器一样的机制和依赖包。
 
@@ -124,8 +124,8 @@ $ vendor/k8s.io/code-generator/generate-groups.sh all \
 
 有两种类型的tags：
 
-* 在doc.go文件中package行上面的全局tags
-* 在类型声明（比如结构体定义）上面的局部tags
+- 在doc.go文件中package行上面的全局tags
+- 在类型声明（比如结构体定义）上面的局部tags
 
 #### 5.3.1 <ins>deepcopy-gen Tags</ins>
 
@@ -217,17 +217,17 @@ Note that while it solves some problems (customization), there are other areas o
 
 关于如何使你的自定义controllers和operators为生产部署做好准备，可以参考如下的一些高层次检查列表:
 
-* Use Kubernetes deployments or DaemonSets to supervise your custom controller so that they are restarted automatically when they fail—and fail they will.
+- Use Kubernetes deployments or DaemonSets to supervise your custom controller so that they are restarted automatically when they fail—and fail they will.
 
-* Implement health checks through dedicated endpoints for liveness and readiness probes. This, together with the previous step, makes your operations more resilient.
+- Implement health checks through dedicated endpoints for liveness and readiness probes. This, together with the previous step, makes your operations more resilient.
 
-* Consider a leader-follower/standby model to make sure that even when your controller pod crashes, someone else can take over. Note, however, that synchronizing state is a nontrivial task.
+- Consider a leader-follower/standby model to make sure that even when your controller pod crashes, someone else can take over. Note, however, that synchronizing state is a nontrivial task.
 
-* Provide access control resources, such as service account and roles, applying the least-privileges principle; see “Getting the Permissions Right” for details.
+- Provide access control resources, such as service account and roles, applying the least-privileges principle; see “Getting the Permissions Right” for details.
 
-* Consider automated builds, including testing. Some more tips are available in “Automated Builds and Testing”.
+- Consider automated builds, including testing. Some more tips are available in “Automated Builds and Testing”.
 
-* Proactively tackle monitoring and logging; see “Custom Controllers and Observability” for the what and how.
+- Proactively tackle monitoring and logging; see “Custom Controllers and Observability” for the what and how.
 
 
 ## 8. 自定义API Servers
