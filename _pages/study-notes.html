@@ -6,7 +6,149 @@ permalink: "/study-notes.html"
 
 <div class="container">
 <h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
-    <div class="row gap-y listrecent listrecent listauthor">
-        TODO:
+    <div class="ai-learning-table-wrap">
+        <div class="table-responsive">
+            <table class="table ai-learning-table">
+                <thead>
+                    <tr>
+                        <th scope="col">资源</th>
+                        <th scope="col">作者</th>
+                        <th scope="col">进度及总结</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="resource-type resource-type-book"><i class="fas fa-book"></i> 图书</span>
+                            <a class="resource-link" href="https://book.douban.com/subject/37119405/" target="_blank" rel="noopener noreferrer">《大模型动力引擎》</a>
+                        </td>
+                        <td>张爱玲 杨占略</td>
+                        <td>
+                            <div class="progress-summary">
+                                <div class="progress-summary-meta">
+                                    <span>进度</span>
+                                    <strong>100%</strong>
+                                </div>
+                                <div class="progress ai-progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="summary-placeholder">总结待填写</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="resource-type resource-type-course"><i class="fas fa-play-circle"></i> 在线课程</span>
+                            <a class="resource-link" href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener noreferrer">《Neural Networks: Zero to Hero》</a>
+                        </td>
+                        <td>Andrej Karpathy</td>
+                        <td>
+                            <div class="progress-summary">
+                                <div class="progress-summary-meta">
+                                    <span>进度</span>
+                                    <strong>100%</strong>
+                                </div>
+                                <div class="progress ai-progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="summary-placeholder">总结待填写</div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+
+<style>
+.ai-learning-table-wrap {
+    background:#fff;
+    border:1px solid #e8edf1;
+    border-radius:18px;
+    box-shadow:0 14px 38px rgba(15,52,96,0.08);
+    overflow:hidden;
+}
+.ai-learning-table {
+    margin-bottom:0;
+}
+.ai-learning-table thead th {
+    background:#f5f8fb;
+    border-bottom:1px solid #e1e7ee;
+    color:#16213e;
+    font-size:0.95rem;
+    letter-spacing:0.08em;
+    white-space:nowrap;
+}
+.ai-learning-table td,
+.ai-learning-table th {
+    border-top:1px solid #edf1f5;
+    padding:1.15rem;
+    vertical-align:middle;
+}
+.resource-type {
+    align-items:center;
+    border-radius:999px;
+    display:inline-flex;
+    font-size:0.78rem;
+    font-weight:700;
+    gap:0.35rem;
+    letter-spacing:0.04em;
+    margin-right:0.65rem;
+    padding:0.25rem 0.65rem;
+    white-space:nowrap;
+}
+.resource-type-book {
+    background:#e8f6f1;
+    color:#027b5d;
+}
+.resource-type-course {
+    background:#eef4ff;
+    color:#1f5da8;
+}
+.resource-link {
+    color:#16213e;
+    font-weight:700;
+}
+.resource-link:hover {
+    color:#03a87c;
+}
+.progress-summary {
+    min-width:220px;
+}
+.progress-summary-meta {
+    align-items:center;
+    color:#617083;
+    display:flex;
+    font-size:0.85rem;
+    justify-content:space-between;
+    margin-bottom:0.4rem;
+}
+.progress-summary-meta strong {
+    color:#03a87c;
+}
+.ai-progress {
+    background:#e8edf1;
+    border-radius:999px;
+    height:0.65rem;
+    overflow:hidden;
+}
+.ai-progress .progress-bar {
+    background:linear-gradient(90deg, #03a87c 0%, #35bdff 100%);
+    border-radius:999px;
+}
+.summary-placeholder {
+    color:#6c757d;
+    font-size:0.92rem;
+    margin-top:0.65rem;
+}
+@media (max-width:767.98px) {
+    .ai-learning-table td,
+    .ai-learning-table th {
+        padding:0.9rem;
+    }
+    .resource-type {
+        margin-bottom:0.45rem;
+    }
+}
+</style>
