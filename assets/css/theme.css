@@ -206,6 +206,7 @@ a.text-dark:hover {
 	margin-right:2rem;
 	font-size:1.55rem;
     font-family:"Georgia","Times New Roman",serif;
+	color:#fff !important;
 }
 .dropdown-item {
 	font-weight:400;
@@ -233,30 +234,27 @@ a.text-dark:hover {
 .navbar-light .navbar-brand:hover,.navbar-light .navbar-brand:focus {
 	color:rgba(0,0,0,0.9);
 }
-.navbar-light .navbar-nav .nav-link {
-	color:rgba(0,0,0,0.5);
-	font-size: .93rem;
+.navbar-dark .navbar-nav .nav-link {
+	color:rgba(255,255,255,0.7);
+	font-size: 1.05rem;
 }
-.navbar-light .navbar-nav .nav-link.nav-pill {
-	color:#333;
+.navbar-dark .navbar-nav .nav-link.nav-pill {
+	color:rgba(255,255,255,0.85);
 	font-weight:500;
-	font-size:.93rem;
-	padding:0.4rem 1rem;
-	margin:0 0.25rem;
-	border-radius:20px;
+	font-size:1.05rem;
+	padding:0.5rem 1.4rem;
+	margin:0 0.4rem;
+	border-radius:25px;
 	transition:all .25s ease;
+	letter-spacing:0.3px;
 }
-.navbar-light .navbar-nav .nav-link.nav-pill:hover,
-.navbar-light .navbar-nav .nav-link.nav-pill:focus {
+.navbar-dark .navbar-nav .nav-link.nav-pill:hover,
+.navbar-dark .navbar-nav .nav-link.nav-pill:focus {
 	color:#fff;
-	background-color:#03a87c;
+	background-color:rgba(255,255,255,0.15);
 }
-.navbar-light .navbar-nav .nav-link.nav-pill:hover i,
-.navbar-light .navbar-nav .nav-link.nav-pill:focus i {
-	color:#fff;
-}
-.navbar-light .navbar-nav .nav-link.nav-pill i {
-	color:#03a87c;
+.navbar-dark .navbar-nav .nav-link.nav-pill i {
+	color:#5ce1b6;
 	transition:color .25s ease;
 }
 .navbar-light .navbar-nav .nav-link:hover,.navbar-light .navbar-nav .nav-link:focus {
