@@ -191,6 +191,15 @@ a.text-dark:hover {
 	transition:top 0.2s ease-in-out;
 	font-weight:400;
 }
+.topnav {
+	background:#f7f0df;
+	border-bottom:1px solid rgba(66,55,43,0.18);
+	box-shadow:0 8px 24px rgba(66,55,43,0.08);
+}
+.topnav .nav-shell {
+	padding-left:1rem;
+	padding-right:1rem;
+}
 .navbar .highlight .nav-link {
 	color:#03a87c !important;
 	border:1px solid #03a87c;
@@ -203,10 +212,12 @@ a.text-dark:hover {
 	color:#fff !important;
 }
 .navbar-brand {
-	margin-right:2rem;
-	font-size:1.55rem;
+	margin-right:2.8rem;
+	font-size:1.35rem;
     font-family:"Georgia","Times New Roman",serif;
-	color:#fff !important;
+	letter-spacing:0.08em;
+	color:#2f261d !important;
+	white-space:nowrap;
 }
 .dropdown-item {
 	font-weight:400;
@@ -235,27 +246,43 @@ a.text-dark:hover {
 	color:rgba(0,0,0,0.9);
 }
 .navbar-dark .navbar-nav .nav-link {
-	color:rgba(255,255,255,0.7);
-	font-size: 1.05rem;
+	color:#3f352b;
+	font-size:1rem;
 }
 .navbar-dark .navbar-nav .nav-link.nav-pill {
-	color:rgba(255,255,255,0.85);
+	align-items:center;
+	color:#3f352b;
+	display:flex;
 	font-weight:500;
-	font-size:1.05rem;
-	padding:0.5rem 1.4rem;
-	margin:0 0.4rem;
-	border-radius:25px;
+	font-size:0.98rem;
+	padding:0.45rem 0.85rem;
+	margin:0 0.2rem;
+	border-radius:6px;
 	transition:all .25s ease;
-	letter-spacing:0.3px;
+	letter-spacing:0.06em;
 }
 .navbar-dark .navbar-nav .nav-link.nav-pill:hover,
 .navbar-dark .navbar-nav .nav-link.nav-pill:focus {
-	color:#fff;
-	background-color:rgba(255,255,255,0.15);
+	color:#2a221a;
+	background-color:rgba(77,57,38,0.09);
 }
-.navbar-dark .navbar-nav .nav-link.nav-pill i {
-	color:#5ce1b6;
-	transition:color .25s ease;
+.navbar-dark .navbar-nav .nav-link.nav-pill .nav-mark {
+	align-items:center;
+	border:1px solid rgba(63,53,43,0.35);
+	border-radius:50%;
+	color:#7a5130;
+	display:inline-flex;
+	font-family:"Georgia","Times New Roman",serif;
+	font-size:0.8rem;
+	height:1.45rem;
+	justify-content:center;
+	line-height:1;
+	margin-right:0.45rem;
+	width:1.45rem;
+}
+.navbar-dark .navbar-toggler {
+	background:#3f352b;
+	border-color:#3f352b;
 }
 .navbar-light .navbar-nav .nav-link:hover,.navbar-light .navbar-nav .nav-link:focus {
 	color:rgba(0,0,0,0.7);

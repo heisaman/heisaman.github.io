@@ -10,23 +10,25 @@ permalink: "/study-notes.html"
             <table class="table ai-learning-table">
                 <colgroup>
                     <col class="resource-col">
-                    <col class="author-col">
-                    <col class="summary-col">
+                    <col class="name-col">
+                    <col class="progress-col">
                 </colgroup>
                 <thead>
                     <tr>
                         <th scope="col">资源</th>
-                        <th scope="col">作者</th>
-                        <th scope="col">进度及总结</th>
+                        <th scope="col">名称</th>
+                        <th scope="col">学习进度</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
-                            <span class="resource-type resource-type-book"><i class="fas fa-book"></i> 图书</span>
-                            <a class="resource-link" href="https://book.douban.com/subject/37119405/" target="_blank" rel="noopener noreferrer">《大模型动力引擎》</a>
+                            <div class="resource-image-placeholder">图片</div>
                         </td>
-                        <td>张爱玲 杨占略</td>
+                        <td>
+                            <a class="resource-link" href="https://book.douban.com/subject/37119405/" target="_blank" rel="noopener noreferrer">《大模型动力引擎》</a>
+                            <span class="resource-author">张爱玲 杨占略</span>
+                        </td>
                         <td>
                             <div class="progress-summary">
                                 <div class="progress-summary-meta">
@@ -42,10 +44,12 @@ permalink: "/study-notes.html"
                     </tr>
                     <tr>
                         <td>
-                            <span class="resource-type resource-type-course"><i class="fas fa-play-circle"></i> 在线课程</span>
-                            <a class="resource-link" href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener noreferrer">《Neural Networks: Zero to Hero》</a>
+                            <div class="resource-image-placeholder">图片</div>
                         </td>
-                        <td>Andrej Karpathy</td>
+                        <td>
+                            <a class="resource-link" href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener noreferrer">《Neural Networks: Zero to Hero》</a>
+                            <span class="resource-author">Andrej Karpathy</span>
+                        </td>
                         <td>
                             <div class="progress-summary">
                                 <div class="progress-summary-meta">
@@ -78,13 +82,13 @@ permalink: "/study-notes.html"
     margin-bottom:0;
 }
 .ai-learning-table .resource-col {
-    width:28%;
+    width:16%;
 }
-.ai-learning-table .author-col {
-    width:18%;
+.ai-learning-table .name-col {
+    width:32%;
 }
-.ai-learning-table .summary-col {
-    width:54%;
+.ai-learning-table .progress-col {
+    width:52%;
 }
 .ai-learning-table thead th {
     background:#f5f8fb;
@@ -100,37 +104,36 @@ permalink: "/study-notes.html"
     padding:1.15rem;
     vertical-align:middle;
 }
-.resource-type {
+.resource-image-placeholder {
     align-items:center;
-    border-radius:999px;
-    display:inline-flex;
-    font-size:0.78rem;
+    aspect-ratio:4 / 3;
+    background:repeating-linear-gradient(135deg, #f1eadc 0, #f1eadc 10px, #e8decc 10px, #e8decc 20px);
+    border:1px dashed #b5a48e;
+    border-radius:12px;
+    color:#8a785f;
+    display:flex;
+    font-size:0.86rem;
     font-weight:700;
-    gap:0.35rem;
-    letter-spacing:0.04em;
-    margin-right:0.65rem;
-    padding:0.25rem 0.65rem;
-    white-space:nowrap;
-}
-.resource-type-book {
-    background:#e8f6f1;
-    color:#027b5d;
-}
-.resource-type-course {
-    background:#eef4ff;
-    color:#1f5da8;
+    justify-content:center;
+    max-width:110px;
+    min-width:84px;
 }
 .resource-link {
     color:#16213e;
     display:inline-block;
     font-weight:700;
-    margin-top:0.45rem;
 }
 .resource-link:hover {
     color:#03a87c;
 }
+.resource-author {
+    color:#6c757d;
+    display:block;
+    font-size:0.92rem;
+    margin-top:0.45rem;
+}
 .progress-summary {
-    min-width:320px;
+    min-width:360px;
 }
 .progress-summary-meta {
     align-items:center;
@@ -166,8 +169,8 @@ permalink: "/study-notes.html"
     .ai-learning-table th {
         padding:0.9rem;
     }
-    .resource-type {
-        margin-bottom:0.45rem;
+    .progress-summary {
+        min-width:280px;
     }
 }
 </style>
