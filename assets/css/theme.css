@@ -197,8 +197,8 @@ a.text-dark:hover {
 	box-shadow:0 8px 24px rgba(66,55,43,0.08);
 }
 .topnav .nav-shell {
-	padding-left:1rem;
-	padding-right:1rem;
+	align-items:center;
+	display:flex;
 }
 .navbar .highlight .nav-link {
 	color:#03a87c !important;

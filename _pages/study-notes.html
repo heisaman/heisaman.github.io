@@ -23,7 +23,7 @@ permalink: "/study-notes.html"
                 <tbody>
                     <tr>
                         <td>
-                            <div class="resource-image-placeholder">图片</div>
+                            <img class="resource-image" src="{{site.baseurl}}/assets/images/study-icon-01.jpg" alt="大模型动力引擎">
                         </td>
                         <td>
                             <a class="resource-link" href="https://book.douban.com/subject/37119405/" target="_blank" rel="noopener noreferrer">《大模型动力引擎》</a>
@@ -44,7 +44,7 @@ permalink: "/study-notes.html"
                     </tr>
                     <tr>
                         <td>
-                            <div class="resource-image-placeholder">图片</div>
+                            <img class="resource-image" src="{{site.baseurl}}/assets/images/study-icon-02.jpg" alt="Neural Networks: Zero to Hero">
                         </td>
                         <td>
                             <a class="resource-link" href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener noreferrer">《Neural Networks: Zero to Hero》</a>
@@ -104,19 +104,13 @@ permalink: "/study-notes.html"
     padding:1.15rem;
     vertical-align:middle;
 }
-.resource-image-placeholder {
-    align-items:center;
-    aspect-ratio:4 / 3;
-    background:repeating-linear-gradient(135deg, #f1eadc 0, #f1eadc 10px, #e8decc 10px, #e8decc 20px);
-    border:1px dashed #b5a48e;
+.resource-image {
     border-radius:12px;
-    color:#8a785f;
-    display:flex;
-    font-size:0.86rem;
-    font-weight:700;
-    justify-content:center;
+    display:block;
+    height:auto;
     max-width:110px;
     min-width:84px;
+    width:100%;
 }
 .resource-link {
     color:#16213e;
