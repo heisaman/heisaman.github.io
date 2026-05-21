@@ -199,6 +199,27 @@ a.text-dark:hover {
 .topnav .nav-shell {
 	align-items:center;
 	display:flex;
+	max-width:none;
+}
+@media (min-width:992px) {
+	.topnav .navbar-brand {
+		left:1rem;
+		margin-right:0;
+		position:absolute;
+	}
+	.topnav .navbar-collapse {
+		margin-left:calc((100vw - 960px) / 2);
+	}
+}
+@media (min-width:1200px) {
+	.topnav .navbar-collapse {
+		margin-left:calc((100vw - 1140px) / 2);
+	}
+}
+@media (min-width:1920px) {
+	.topnav .navbar-collapse {
+		margin-left:calc((100vw - 1522px) / 2);
+	}
 }
 .navbar .highlight .nav-link {
 	color:#03a87c !important;
