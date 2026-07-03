@@ -80,8 +80,8 @@ permalink: "/my-progress.html"
     /* ===== 可编辑的进度数据 =====
        未来接入自动化触发器（钉钉打卡 / 扫码 App）时，只需更新下面的数值。 */
     var CONFIG = {
-        // 新工作单位：填入到岗日期，天数按当天自动计算
-        job:    { startDate: '2026-06-16', target: 365 },
+        // 新工作单位：到岗第一天为第 1 天，天数按当天自动计算
+        job:    { startDate: '2026-02-24', target: 365 },
         // CS336：手动填写已完成课时数
         cs336:  { current: 0, target: 16 },
         // 在读书籍：书名、当前页、总页数
@@ -92,7 +92,7 @@ permalink: "/my-progress.html"
         var start = new Date(dateStr + 'T00:00:00');
         var now = new Date();
         var diff = Math.floor((now - start) / 86400000);
-        return diff < 0 ? 0 : diff;
+        return diff < 0 ? 0 : diff + 1; // 到岗当天算第 1 天
     }
 
     var CIRC = 2 * Math.PI * 52; // 周长，r = 52
