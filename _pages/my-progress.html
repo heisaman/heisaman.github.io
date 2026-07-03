@@ -77,22 +77,28 @@ permalink: "/my-progress.html"
 
 <script>
 (function () {
-    /* ===== 可编辑的进度数据 =====
-       未来接入自动化触发器（钉钉打卡 / 扫码 App）时，只需更新下面的数值。 */
+    /* ===== 进度数据 =====
+       单一数据源是 assets/data/progress.json（由钉钉打卡 / 扫码 App 通过
+       GitHub Actions 自动更新）。下面的 CONFIG 仅作为拉取失败时的兜底默认值。 */
     var CONFIG = {
-        // 新工作单位：到岗第一天为第 1 天，天数按当天自动计算
+        // 新工作单位：到岗第一天为第 1 天，兜底时按当天日期计算
         job:    { startDate: '2026-02-24', target: 365 },
-        // CS336：手动填写已完成课时数
+        // CS336：已完成课时数
         cs336:  { current: 0, target: 16 },
         // 在读书籍：书名、当前页、总页数
         book:   { title: '《在读的一本书》', current: 0, total: 320 }
     };
+    var DATA_URL = '{{site.baseurl}}/assets/data/progress.json';
 
     function daysSince(dateStr) {
         var start = new Date(dateStr + 'T00:00:00');
         var now = new Date();
         var diff = Math.floor((now - start) / 86400000);
         return diff < 0 ? 0 : diff + 1; // 到岗当天算第 1 天
+    }
+
+    function num(v, fallback) {
+        return typeof v === 'number' && !isNaN(v) ? v : fallback;
     }
 
     var CIRC = 2 * Math.PI * 52; // 周长，r = 52
@@ -108,19 +114,38 @@ permalink: "/my-progress.html"
     }
 
     var cards = document.querySelectorAll('.progress-card');
-    cards.forEach(function (card) {
-        var goal = card.getAttribute('data-goal');
-        if (goal === 'job') {
-            fillCard(card, daysSince(CONFIG.job.startDate), CONFIG.job.target);
-        } else if (goal === 'cs336') {
-            fillCard(card, CONFIG.cs336.current, CONFIG.cs336.target);
-        } else if (goal === 'book') {
-            fillCard(card, CONFIG.book.current, CONFIG.book.total, function (c) {
-                c.querySelector('[data-book-title]').textContent = CONFIG.book.title;
-                c.querySelector('[data-book-total]').textContent = '/ ' + CONFIG.book.total + ' 页';
-            });
-        }
-    });
+
+    function render(data) {
+        data = data || {};
+        var job = data.job || {}, cs = data.cs336 || {}, bk = data.book || {};
+        cards.forEach(function (card) {
+            var goal = card.getAttribute('data-goal');
+            if (goal === 'job') {
+                // 有存储的打卡天数就用它，否则回退到按日期计算
+                fillCard(card, num(job.days, daysSince(CONFIG.job.startDate)),
+                               num(job.target, CONFIG.job.target));
+            } else if (goal === 'cs336') {
+                fillCard(card, num(cs.current, CONFIG.cs336.current),
+                               num(cs.target, CONFIG.cs336.target));
+            } else if (goal === 'book') {
+                var total = num(bk.total, CONFIG.book.total);
+                var title = bk.title || CONFIG.book.title;
+                fillCard(card, num(bk.current, CONFIG.book.current), total, function (c) {
+                    c.querySelector('[data-book-title]').textContent = title;
+                    c.querySelector('[data-book-total]').textContent = '/ ' + total + ' 页';
+                });
+            }
+        });
+    }
+
+    // 先用兜底数据渲染一次（保证离线或文件缺失时也有内容），再拉取最新数据覆盖
+    render(null);
+    if (window.fetch) {
+        fetch(DATA_URL, { cache: 'no-store' })
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (d) { if (d) render(d); })
+            .catch(function () { /* 拉取失败则保持兜底渲染结果 */ });
+    }
 
     /* ===== 滑动圆点指示器 ===== */
     var track = document.getElementById('progressCards');
