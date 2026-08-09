@@ -4,326 +4,316 @@ layout: default
 permalink: "/my-progress.html"
 ---
 
-<div class="container">
-    <div class="progress-page-head">
+<div class="container progress-page">
+    <header class="progress-page-head">
+        <p class="progress-page-kicker">ONGOING</p>
         <h1 class="progress-page-title">我的进度</h1>
-        <p class="progress-page-sub">左右滑动查看每一项目标的最新进展 · 左右拖动或滑动卡片</p>
-    </div>
+        <p class="progress-page-sub">一些正在发生的事，慢慢完成。</p>
+    </header>
 
-    <div class="progress-cards" id="progressCards">
-        <!-- 卡片 1：新工作单位天数 -->
+    <section class="progress-cards" aria-label="当前进度">
         <article class="progress-card" data-goal="job">
-            <div class="progress-card-top">
-                <span class="progress-card-emoji">🏢</span>
-                <span class="progress-card-trigger">钉钉打卡</span>
+            <div class="progress-card-meta">
+                <span>01</span>
+                <span>工作</span>
             </div>
             <h2 class="progress-card-name">新工作单位天数</h2>
-            <div class="progress-ring-wrap">
-                <svg class="progress-ring" viewBox="0 0 120 120">
-                    <circle class="ring-track" cx="60" cy="60" r="52"></circle>
-                    <circle class="ring-fill" cx="60" cy="60" r="52"></circle>
-                </svg>
-                <div class="progress-ring-center">
-                    <strong class="ring-current" data-current>0</strong>
-                    <span class="ring-target">/ 365 天</span>
-                </div>
+            <div class="progress-card-value">
+                <strong data-current>0</strong>
+                <span data-target>/ 365 天</span>
             </div>
-            <p class="progress-card-foot"><span class="progress-card-pct" data-pct>0%</span> · 到岗满一年</p>
+            <div class="progress-line" role="progressbar" aria-label="新工作单位天数" aria-valuemin="0" aria-valuemax="365" aria-valuenow="0">
+                <span data-fill></span>
+            </div>
+            <div class="progress-card-foot">
+                <span data-pct>0%</span>
+                <span>到岗满一年</span>
+            </div>
         </article>
 
-        <!-- 卡片 2：公开课 CS336 完成课时数 -->
         <article class="progress-card" data-goal="cs336">
-            <div class="progress-card-top">
-                <span class="progress-card-emoji">🎓</span>
-                <span class="progress-card-trigger">手动更新</span>
+            <div class="progress-card-meta">
+                <span>02</span>
+                <span>课程</span>
             </div>
-            <h2 class="progress-card-name">公开课 CS336 课时</h2>
-            <div class="progress-ring-wrap">
-                <svg class="progress-ring" viewBox="0 0 120 120">
-                    <circle class="ring-track" cx="60" cy="60" r="52"></circle>
-                    <circle class="ring-fill" cx="60" cy="60" r="52"></circle>
-                </svg>
-                <div class="progress-ring-center">
-                    <strong class="ring-current" data-current>0</strong>
-                    <span class="ring-target">/ 16 课时</span>
-                </div>
+            <h2 class="progress-card-name">公开课 CS336</h2>
+            <div class="progress-card-value">
+                <strong data-current>0</strong>
+                <span data-target>/ 16 课时</span>
             </div>
-            <p class="progress-card-foot"><span class="progress-card-pct" data-pct>0%</span> · Language Modeling from Scratch</p>
+            <div class="progress-line" role="progressbar" aria-label="公开课 CS336 课时" aria-valuemin="0" aria-valuemax="16" aria-valuenow="0">
+                <span data-fill></span>
+            </div>
+            <div class="progress-card-foot">
+                <span data-pct>0%</span>
+                <span>Language Modeling from Scratch</span>
+            </div>
         </article>
 
-        <!-- 卡片 3：在读书籍页码 -->
-        <article class="progress-card" data-goal="book">
-            <div class="progress-card-top">
-                <span class="progress-card-emoji">📖</span>
-                <span class="progress-card-trigger">扫码记页</span>
+        <article class="progress-card" data-goal="reasoning-model">
+            <div class="progress-card-meta">
+                <span>03</span>
+                <span>阅读</span>
             </div>
-            <h2 class="progress-card-name" data-book-title>在读的一本书</h2>
-            <div class="progress-ring-wrap">
-                <svg class="progress-ring" viewBox="0 0 120 120">
-                    <circle class="ring-track" cx="60" cy="60" r="52"></circle>
-                    <circle class="ring-fill" cx="60" cy="60" r="52"></circle>
-                </svg>
-                <div class="progress-ring-center">
-                    <strong class="ring-current" data-current>0</strong>
-                    <span class="ring-target" data-book-total>/ 0 页</span>
-                </div>
+            <h2 class="progress-card-name">Build a Reasoning Model <span>(From Scratch)</span></h2>
+            <div class="progress-card-value">
+                <strong data-current>42</strong>
+                <span data-target>/ 302 页</span>
             </div>
-            <p class="progress-card-foot"><span class="progress-card-pct" data-pct>0%</span> · 安卓 App 扫描页码</p>
+            <div class="progress-line" role="progressbar" aria-label="Build a Reasoning Model 阅读页数" aria-valuemin="0" aria-valuemax="302" aria-valuenow="42">
+                <span data-fill></span>
+            </div>
+            <div class="progress-card-foot">
+                <span data-pct>14%</span>
+                <span>在读</span>
+            </div>
         </article>
-    </div>
 
-    <div class="progress-dots" id="progressDots" aria-hidden="true"></div>
+        <article class="progress-card" data-goal="claude-code">
+            <div class="progress-card-meta">
+                <span>04</span>
+                <span>阅读</span>
+            </div>
+            <h2 class="progress-card-name">Learn Claude Code</h2>
+            <div class="progress-card-value progress-card-value-simple">
+                <strong data-current>0</strong>
+                <span>页</span>
+            </div>
+            <div class="progress-card-foot progress-card-foot-simple">
+                <span>待读</span>
+            </div>
+        </article>
+
+        <article class="progress-card" data-goal="infinity-machine">
+            <div class="progress-card-meta">
+                <span>05</span>
+                <span>传记</span>
+            </div>
+            <h2 class="progress-card-name">The Infinity Machine</h2>
+            <p class="progress-card-note">Demis Hassabis 传记</p>
+            <div class="progress-card-value progress-card-value-simple">
+                <strong data-current>8</strong>
+                <span>页</span>
+            </div>
+            <div class="progress-card-foot progress-card-foot-simple">
+                <span>在读</span>
+            </div>
+        </article>
+
+        <article class="progress-card" data-goal="musketeers">
+            <div class="progress-card-meta">
+                <span>06</span>
+                <span>法语原版</span>
+            </div>
+            <h2 class="progress-card-name progress-card-name-long">Les Trois Mousquetaires <span>/ Vingt ans après</span></h2>
+            <div class="progress-card-value progress-card-value-simple">
+                <strong data-current>0</strong>
+                <span>页</span>
+            </div>
+            <div class="progress-card-foot progress-card-foot-simple">
+                <span>待读</span>
+            </div>
+        </article>
+    </section>
 </div>
 
 <script>
 (function () {
-    /* ===== 可编辑的进度数据 =====
-       未来接入自动化触发器（钉钉打卡 / 扫码 App）时，只需更新下面的数值。 */
     var CONFIG = {
-        // 新工作单位：到岗第一天为第 1 天，天数按当天自动计算
-        job:    { startDate: '2026-02-24', target: 365 },
-        // CS336：手动填写已完成课时数
-        cs336:  { current: 0, target: 16 },
-        // 在读书籍：书名、当前页、总页数
-        book:   { title: '《Build a Reasoning Model (From Scratch)》', current: 0, total: 302 }
+        job: { startDate: '2026-02-24', target: 365 },
+        cs336: { current: 0, target: 16 },
+        'reasoning-model': { current: 42, target: 302 }
     };
 
     function daysSince(dateStr) {
         var start = new Date(dateStr + 'T00:00:00');
         var now = new Date();
         var diff = Math.floor((now - start) / 86400000);
-        return diff < 0 ? 0 : diff + 1; // 到岗当天算第 1 天
+        return diff < 0 ? 0 : diff + 1;
     }
 
-    var CIRC = 2 * Math.PI * 52; // 周长，r = 52
+    Object.keys(CONFIG).forEach(function (goal) {
+        var card = document.querySelector('[data-goal="' + goal + '"]');
+        var item = CONFIG[goal];
+        var current = item.startDate ? daysSince(item.startDate) : item.current;
+        var pct = Math.min(100, Math.round((current / item.target) * 100));
+        var bar = card.querySelector('.progress-line');
 
-    function fillCard(card, current, target, extra) {
-        var pct = target > 0 ? Math.min(100, Math.round((current / target) * 100)) : 0;
-        var ring = card.querySelector('.ring-fill');
-        ring.style.strokeDasharray = CIRC;
-        ring.style.strokeDashoffset = CIRC * (1 - Math.min(1, pct / 100));
         card.querySelector('[data-current]').textContent = current;
         card.querySelector('[data-pct]').textContent = pct + '%';
-        if (extra) extra(card);
-    }
-
-    var cards = document.querySelectorAll('.progress-card');
-    cards.forEach(function (card) {
-        var goal = card.getAttribute('data-goal');
-        if (goal === 'job') {
-            fillCard(card, daysSince(CONFIG.job.startDate), CONFIG.job.target);
-        } else if (goal === 'cs336') {
-            fillCard(card, CONFIG.cs336.current, CONFIG.cs336.target);
-        } else if (goal === 'book') {
-            fillCard(card, CONFIG.book.current, CONFIG.book.total, function (c) {
-                c.querySelector('[data-book-title]').textContent = CONFIG.book.title;
-                c.querySelector('[data-book-total]').textContent = '/ ' + CONFIG.book.total + ' 页';
-            });
-        }
-    });
-
-    /* ===== 滑动圆点指示器 ===== */
-    var track = document.getElementById('progressCards');
-    var dotsWrap = document.getElementById('progressDots');
-    cards.forEach(function (card, i) {
-        var dot = document.createElement('button');
-        dot.className = 'progress-dot';
-        dot.type = 'button';
-        dot.addEventListener('click', function () {
-            card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        });
-        dotsWrap.appendChild(dot);
-    });
-    var dots = dotsWrap.querySelectorAll('.progress-dot');
-    function syncDots() {
-        var center = track.scrollLeft + track.clientWidth / 2;
-        var best = 0, bestDist = Infinity;
-        cards.forEach(function (card, i) {
-            var mid = card.offsetLeft + card.offsetWidth / 2;
-            var d = Math.abs(mid - center);
-            if (d < bestDist) { bestDist = d; best = i; }
-        });
-        dots.forEach(function (dot, i) {
-            dot.classList.toggle('is-active', i === best);
-        });
-    }
-    track.addEventListener('scroll', function () {
-        window.requestAnimationFrame(syncDots);
-    });
-    syncDots();
-
-    /* ===== 桌面端鼠标拖拽滑动 ===== */
-    var isDown = false, startX = 0, startScroll = 0;
-    track.addEventListener('mousedown', function (e) {
-        isDown = true;
-        track.classList.add('is-dragging');
-        startX = e.pageX;
-        startScroll = track.scrollLeft;
-    });
-    window.addEventListener('mouseup', function () {
-        isDown = false;
-        track.classList.remove('is-dragging');
-    });
-    track.addEventListener('mousemove', function (e) {
-        if (!isDown) return;
-        e.preventDefault();
-        track.scrollLeft = startScroll - (e.pageX - startX);
+        card.querySelector('[data-fill]').style.width = pct + '%';
+        bar.setAttribute('aria-valuenow', current);
     });
 })();
 </script>
 
 <style>
+.progress-page {
+    max-width: 1120px;
+    padding-bottom: 4rem;
+}
+
 .progress-page-head {
-    margin: 1.5rem 0 1.75rem;
-    text-align: center;
+    margin: 2.5rem 0 2rem;
+}
+.progress-page-kicker {
+    color: #8a8177;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    margin: 0 0 0.65rem;
 }
 .progress-page-title {
-    color: #16213e;
+    color: #252421;
+    font-family: Lora, Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.1rem);
     font-weight: 700;
-    margin-bottom: 0.4rem;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+    margin: 0;
 }
 .progress-page-sub {
-    color: #6c757d;
+    color: #7a756e;
     font-size: 0.95rem;
-    margin: 0;
+    margin: 0.75rem 0 0;
 }
 
 .progress-cards {
-    display: flex;
-    gap: 1.25rem;
-    overflow-x: auto;
-    padding: 0.5rem 0.25rem 1.25rem;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.progress-cards::-webkit-scrollbar { display: none; }
-.progress-cards.is-dragging { cursor: grabbing; }
 
 .progress-card {
     background: #fff;
-    border: 1px solid #e8edf1;
-    border-radius: 20px;
-    box-shadow: 0 14px 38px rgba(15, 52, 96, 0.08);
+    border: 1px solid #e6e1da;
+    border-radius: 12px;
     box-sizing: border-box;
     display: flex;
-    flex: 0 0 clamp(260px, 82%, 340px);
     flex-direction: column;
-    padding: 1.6rem;
-    scroll-snap-align: center;
-    user-select: none;
+    min-height: 270px;
+    padding: 1.35rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.progress-card:hover {
+    border-color: #c9c1b7;
+    transform: translateY(-2px);
 }
 
-.progress-card-top {
-    align-items: center;
+.progress-card-meta {
+    color: #989188;
     display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.72rem;
     justify-content: space-between;
-    margin-bottom: 0.9rem;
-}
-.progress-card-emoji { font-size: 1.9rem; line-height: 1; }
-.progress-card-trigger {
-    background: #f0f9f6;
-    border-radius: 999px;
-    color: #03a87c;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    padding: 0.28rem 0.75rem;
+    letter-spacing: 0.08em;
 }
 .progress-card-name {
-    color: #16213e;
-    font-size: 1.15rem;
+    color: #292724;
+    font-family: Lora, Georgia, serif;
+    font-size: 1.18rem;
     font-weight: 700;
-    margin: 0 0 1.2rem;
+    line-height: 1.4;
+    margin: 1rem 0 0;
+}
+.progress-card-name span {
+    color: #635f59;
+    font-size: 0.88em;
+    font-weight: 400;
+}
+.progress-card-name-long {
+    font-size: 1.08rem;
+}
+.progress-card-name-long span {
+    display: block;
+    margin-top: 0.15rem;
+}
+.progress-card-note {
+    color: #8a847c;
+    font-size: 0.8rem;
+    margin: 0.35rem 0 0;
 }
 
-.progress-ring-wrap {
-    align-self: center;
-    height: 168px;
-    position: relative;
-    width: 168px;
-}
-.progress-ring {
-    height: 100%;
-    transform: rotate(-90deg);
-    width: 100%;
-}
-.ring-track {
-    fill: none;
-    stroke: #e8edf1;
-    stroke-width: 10;
-}
-.ring-fill {
-    fill: none;
-    stroke: #03a87c;
-    stroke-linecap: round;
-    stroke-width: 10;
-    transition: stroke-dashoffset 0.9s ease;
-}
-.progress-card[data-goal="job"] .ring-fill { stroke: #03a87c; }
-.progress-card[data-goal="cs336"] .ring-fill { stroke: #35bdff; }
-.progress-card[data-goal="book"] .ring-fill { stroke: #f0803c; }
-
-.progress-ring-center {
-    align-items: center;
+.progress-card-value {
+    align-items: baseline;
     display: flex;
-    flex-direction: column;
-    inset: 0;
-    justify-content: center;
-    position: absolute;
-    text-align: center;
+    gap: 0.45rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
 }
-.ring-current {
-    color: #16213e;
-    font-size: 2.4rem;
-    font-weight: 700;
+.progress-card-value strong {
+    color: #252421;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 2.35rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    letter-spacing: -0.05em;
     line-height: 1;
 }
-.ring-target {
-    color: #6c757d;
-    font-size: 0.9rem;
-    margin-top: 0.35rem;
+.progress-card-value span {
+    color: #888179;
+    font-size: 0.82rem;
+}
+.progress-card-value-simple strong {
+    font-size: 2.7rem;
+}
+
+.progress-line {
+    background: #eeeae5;
+    border-radius: 999px;
+    height: 3px;
+    margin-top: 1.2rem;
+    overflow: hidden;
+}
+.progress-line span {
+    background: #4d6554;
+    display: block;
+    height: 100%;
+    min-width: 0;
+    transition: width 0.6s ease;
+    width: 0;
 }
 
 .progress-card-foot {
-    color: #4f5d6b;
-    font-size: 0.9rem;
-    margin: 1.3rem 0 0;
-    text-align: center;
-}
-.progress-card-pct {
-    color: #03a87c;
-    font-weight: 700;
-}
-
-.progress-dots {
+    color: #918a82;
     display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    margin: 0.25rem 0 2rem;
+    font-size: 0.74rem;
+    justify-content: space-between;
+    margin-top: 0.75rem;
 }
-.progress-dot {
-    background: #d5dde5;
-    border: 0;
-    border-radius: 999px;
-    cursor: pointer;
-    height: 8px;
-    padding: 0;
-    transition: width 0.25s ease, background 0.25s ease;
-    width: 8px;
+.progress-card-foot > span:first-child {
+    color: #4d6554;
+    font-weight: 600;
 }
-.progress-dot.is-active {
-    background: #03a87c;
-    width: 22px;
+.progress-card-foot-simple {
+    border-top: 1px solid #eeeae5;
+    margin-top: 1.2rem;
+    padding-top: 0.75rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 991px) {
     .progress-cards {
-        cursor: grab;
-        justify-content: center;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 575px) {
+    .progress-page-head {
+        margin-top: 1.5rem;
+    }
+    .progress-cards {
+        grid-template-columns: 1fr;
     }
     .progress-card {
-        flex-basis: 320px;
+        min-height: 235px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .progress-card,
+    .progress-line span {
+        transition: none;
     }
 }
 </style>
