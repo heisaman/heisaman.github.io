@@ -192,33 +192,24 @@ a.text-dark:hover {
 	font-weight:400;
 }
 .topnav {
-	background:#f7f0df;
-	border-bottom:1px solid rgba(66,55,43,0.18);
-	box-shadow:0 8px 24px rgba(66,55,43,0.08);
+	background:#17233b;
+	border-bottom:3px solid #ef8354;
+	box-shadow:0 8px 24px rgba(23,35,59,0.2);
+	padding-bottom:0.7rem;
+	padding-top:0.7rem;
 }
 .topnav .nav-shell {
 	align-items:center;
 	display:flex;
-	max-width:none;
+	max-width:1180px;
+	width:100%;
 }
 @media (min-width:992px) {
 	.topnav .navbar-brand {
-		left:1rem;
-		margin-right:0;
-		position:absolute;
+		margin-right:2.7rem;
 	}
 	.topnav .navbar-collapse {
-		margin-left:calc((100vw - 960px) / 2);
-	}
-}
-@media (min-width:1200px) {
-	.topnav .navbar-collapse {
-		margin-left:calc((100vw - 1140px) / 2);
-	}
-}
-@media (min-width:1920px) {
-	.topnav .navbar-collapse {
-		margin-left:calc((100vw - 1522px) / 2);
+		margin-left:0;
 	}
 }
 .navbar .highlight .nav-link {
@@ -239,6 +230,26 @@ a.text-dark:hover {
 	letter-spacing:0.08em;
 	color:#2f261d !important;
 	white-space:nowrap;
+}
+.topnav .navbar-brand {
+	align-items:center;
+	color:#fff !important;
+	dis:flex;
+	font-size:1.25rem;
+	letter-spacing:0.08em;
+	line-height:1;
+}
+.topnav .navbar-brand::before {
+	background:#ef8354;
+	border-radius:2px;
+	content:"";
+	height:1.45rem;
+	margin-right:0.7rem;
+	width:4px;
+}
+.topnav .navbar-brand:hover,
+.topnav .navbar-brand:focus {
+	color:#fff !important;
 }
 .dropdown-item {
 	font-weight:400;
@@ -267,43 +278,91 @@ a.text-dark:hover {
 	color:rgba(0,0,0,0.9);
 }
 .navbar-dark .navbar-nav .nav-link {
-	color:#3f352b;
+	color:#cbd3df;
 	font-size:1rem;
 }
 .navbar-dark .navbar-nav .nav-link.nav-pill {
 	align-items:center;
-	color:#3f352b;
+	border-radius:0;
+	color:#cbd3df;
 	display:flex;
-	font-weight:500;
-	font-size:0.98rem;
-	padding:0.45rem 0.85rem;
-	margin:0 0.2rem;
-	border-radius:6px;
-	transition:all .25s ease;
-	letter-spacing:0.06em;
+	font-size:0.9rem;
+	font-weight:600;
+	letter-spacing:0.05em;
+	margin:0 0.7rem;
+	padding:0.55rem 0.15rem;
+	position:relative;
+	transition:color .2s ease;
+}
+.navbar-dark .navbar-nav .nav-link.nav-pill::after {
+	background:#ef8354;
+	bottom:-0.15rem;
+	content:"";
+	height:2px;
+	left:50%;
+	position:absolute;
+	transform:translateX(-50%) scaleX(0);
+	transition:transform .2s ease;
+	width:100%;
 }
 .navbar-dark .navbar-nav .nav-link.nav-pill:hover,
 .navbar-dark .navbar-nav .nav-link.nav-pill:focus {
-	color:#2a221a;
-	background-color:rgba(77,57,38,0.09);
+	background:transparent;
+	color:#fff;
 }
-.navbar-dark .navbar-nav .nav-link.nav-pill .nav-mark {
-	align-items:center;
-	border:1px solid rgba(63,53,43,0.35);
-	border-radius:50%;
-	color:#7a5130;
-	display:inline-flex;
-	font-family:"Georgia","Times New Roman",serif;
-	font-size:0.8rem;
-	height:1.45rem;
-	justify-content:center;
-	line-height:1;
-	margin-right:0.45rem;
-	width:1.45rem;
+.navbar-dark .navbar-nav .nav-link.nav-pill:hover::after,
+.navbar-dark .navbar-nav .nav-link.nav-pill:focus::after,
+.navbar-dark .navbar-nav .nav-link.nav-pill.is-active::after {
+	transform:translateX(-50%) scaleX(1);
+}
+.navbar-dark .navbar-nav .nav-link.nav-pill.is-active {
+	color:#fff;
 }
 .navbar-dark .navbar-toggler {
-	background:#3f352b;
-	border-color:#3f352b;
+	background:transparent;
+	border-color:rgba(255,255,255,0.34);
+	border-radius:6px;
+	padding:0.35rem 0.5rem;
+}
+.topnav .bd-search .form-control {
+	background:rgba(255,255,255,0.08);
+	border:1px solid rgba(255,255,255,0.2);
+	border-radius:6px;
+	color:#fff;
+	height:34px;
+	transition:background .2s ease, border-color .2s ease;
+	width:160px;
+}
+.topnav .bd-search .form-control::placeholder {
+	color:#aeb8c8;
+}
+.topnav .bd-search .form-control:focus {
+	background:rgba(255,255,255,0.12);
+	border-color:#ef8354;
+	box-shadow:none;
+}
+@media (max-width:991.98px) {
+	.topnav .navbar-collapse {
+		border-top:1px solid rgba(255,255,255,0.13);
+		margin-top:0.75rem;
+		padding:0.55rem 0 0.2rem;
+	}
+	.navbar-dark .navbar-nav .nav-link.nav-pill {
+		margin:0;
+		padding:0.7rem 0.15rem;
+	}
+	.navbar-dark .navbar-nav .nav-link.nav-pill::after {
+		bottom:0.25rem;
+		left:0.15rem;
+		transform:scaleX(0);
+		transform-origin:left;
+		width:2rem;
+	}
+	.navbar-dark .navbar-nav .nav-link.nav-pill:hover::after,
+	.navbar-dark .navbar-nav .nav-link.nav-pill:focus::after,
+	.navbar-dark .navbar-nav .nav-link.nav-pill.is-active::after {
+		transform:scaleX(1);
+	}
 }
 .navbar-light .navbar-nav .nav-link:hover,.navbar-light .navbar-nav .nav-link:focus {
 	color:rgba(0,0,0,0.7);
