@@ -71,19 +71,33 @@ permalink: "/my-progress.html"
             </div>
         </article>
 
-        <article class="progress-card progress-card--book progress-card--claude" data-goal="claude-code">
+        <article class="progress-card progress-card--agi" data-goal="agi-plan">
             <div class="progress-card-meta">
                 <span>04</span>
-                <span>阅读</span>
+                <span>长期计划</span>
             </div>
-            <h2 class="progress-card-name">Learn Claude Code</h2>
-            <div class="book-page-widget">
-                <div class="book-page-count">
-                    <span>已读</span>
-                    <strong data-current>0</strong>
-                    <small>页</small>
+            <h2 class="progress-card-name">AGI 原理学习</h2>
+            <p class="progress-card-note">1000H 计划</p>
+            <div class="agi-chart" role="progressbar" aria-label="AGI 原理学习时长" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="7">
+                <div class="agi-chart-head">
+                    <div class="agi-chart-value">
+                        <strong data-current>7</strong>
+                        <span>小时</span>
+                    </div>
+                    <strong class="agi-chart-pct" data-pct>0.7%</strong>
                 </div>
-                <span class="book-status">待读书单</span>
+                <div class="agi-chart-plot" style="--progress: 0.7%">
+                    <span class="agi-chart-fill" data-fill></span>
+                    <i class="agi-chart-marker" aria-hidden="true"></i>
+                </div>
+                <div class="agi-chart-axis" aria-hidden="true">
+                    <span>0H</span>
+                    <span>250</span>
+                    <span>500</span>
+                    <span>750</span>
+                    <span>1000H</span>
+                </div>
+                <p class="agi-chart-remaining" data-remaining>距离目标还剩 993 小时</p>
             </div>
         </article>
 
@@ -127,7 +141,8 @@ permalink: "/my-progress.html"
     var CONFIG = {
         job: { startDate: '2026-02-24', target: 365 },
         cs336: { current: 0, target: 16 },
-        'reasoning-model': { current: 42, target: 302 }
+        'reasoning-model': { current: 42, target: 302 },
+        'agi-plan': { current: 7, target: 1000, decimals: 1 }
     };
 
     function daysSince(dateStr) {
@@ -141,9 +156,11 @@ permalink: "/my-progress.html"
         var card = document.querySelector('[data-goal="' + goal + '"]');
         var item = CONFIG[goal];
         var current = item.startDate ? daysSince(item.startDate) : item.current;
-        var pct = Math.min(100, Math.round((current / item.target) * 100));
+        var rawPct = Math.min(100, (current / item.target) * 100);
+        var pct = item.decimals ? Number(rawPct.toFixed(item.decimals)) : Math.round(rawPct);
         var bar = card.querySelector('.progress-line');
         var ring = card.querySelector('.book-progress-ring');
+        var chart = card.querySelector('.agi-chart');
 
         card.querySelector('[data-current]').textContent = current;
         card.querySelector('[data-pct]').textContent = pct + '%';
@@ -155,6 +172,11 @@ permalink: "/my-progress.html"
             ring.style.setProperty('--progress', pct);
             ring.setAttribute('aria-valuenow', current);
             card.querySelector('[data-remaining]').textContent = '还剩 ' + Math.max(0, item.target - current) + ' 页';
+        }
+        if (chart) {
+            chart.querySelector('.agi-chart-plot').style.setProperty('--progress', pct + '%');
+            chart.setAttribute('aria-valuenow', current);
+            chart.querySelector('[data-remaining]').textContent = '距离目标还剩 ' + Math.max(0, item.target - current) + ' 小时';
         }
     });
 })();
@@ -244,7 +266,7 @@ permalink: "/my-progress.html"
 .progress-card--job { --accent: #087f5b; }
 .progress-card--course { --accent: #3563b8; }
 .progress-card--reasoning { --accent: #c6533f; }
-.progress-card--claude { --accent: #4b63c6; }
+.progress-card--agi { --accent: #2d5fca; }
 .progress-card--infinity { --accent: #27755b; }
 .progress-card--musketeers { --accent: #8d3e5f; }
 
@@ -336,6 +358,86 @@ permalink: "/my-progress.html"
 .progress-card-foot > span:first-child {
     color: var(--accent);
     font-weight: 800;
+}
+
+.agi-chart {
+    margin-top: auto;
+    padding-top: 1rem;
+}
+.agi-chart-head {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+}
+.agi-chart-value {
+    align-items: baseline;
+    display: flex;
+    gap: 0.35rem;
+}
+.agi-chart-value strong {
+    color: #17233b;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 2.7rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+.agi-chart-value span {
+    color: #526078;
+    font-size: 0.75rem;
+}
+.agi-chart-pct {
+    background: var(--accent);
+    border-radius: 6px;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.78rem;
+    padding: 0.35rem 0.5rem;
+}
+.agi-chart-plot {
+    background-color: #e4e9f1;
+    background-image: linear-gradient(to right, rgba(45, 95, 202, 0.18) 1px, transparent 1px);
+    background-size: 25% 100%;
+    border-bottom: 2px solid #9ca8ba;
+    height: 36px;
+    margin-top: 0.85rem;
+    position: relative;
+}
+.agi-chart-fill {
+    background: var(--accent);
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    min-width: 2px;
+    position: absolute;
+    transition: width 0.6s ease;
+    width: var(--progress);
+}
+.agi-chart-marker {
+    background: #fff;
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+    bottom: -6px;
+    height: 12px;
+    left: var(--progress);
+    position: absolute;
+    transform: translateX(-50%);
+    width: 12px;
+}
+.agi-chart-axis {
+    color: #6b7688;
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.58rem;
+    justify-content: space-between;
+    margin-top: 0.45rem;
+}
+.agi-chart-remaining {
+    color: #344258;
+    font-size: 0.7rem;
+    margin: 0.75rem 0 0;
+    text-align: right;
 }
 
 .progress-card--book {
