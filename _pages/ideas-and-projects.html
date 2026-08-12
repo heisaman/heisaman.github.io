@@ -1,12 +1,317 @@
 ---
-title: "想法项目"
+title: "Vibe 项目"
 layout: default
 permalink: "/ideas-and-projects.html"
 ---
 
-<div class="container">
-<h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
-    <div class="row gap-y listrecent listrecent listauthor">
-        TODO:
-    </div>
+<div class="container vibe-page">
+    <header class="vibe-head">
+        <p class="vibe-kicker">BUILDING IN PUBLIC</p>
+        <h1 class="vibe-title">Vibe 项目</h1>
+        <p class="vibe-sub">观察浪潮，也亲手造船。这里记录正在构想、验证与推进的项目。</p>
+    </header>
+
+    <section class="vibe-project startup-project" aria-labelledby="startup-title">
+        <div class="project-heading">
+            <div class="project-number">01</div>
+            <div>
+                <p class="project-eyebrow">AI STARTUP LANDSCAPE</p>
+                <h2 id="startup-title">千帆竞发</h2>
+                <p>ChatGPT 之后，中美 AI 创业公司的资本航海图。</p>
+            </div>
+            <span class="project-status project-status--active">持续更新</span>
+        </div>
+
+        <div class="startup-metrics" aria-label="榜单概览">
+            <div><strong id="startupCount">100</strong><span>收录公司</span></div>
+            <div><strong>60 / 40</strong><span>美国 / 中国</span></div>
+            <div><strong>≥ $10M</strong><span>公开融资门槛</span></div>
+            <div><strong>2026.08</strong><span>数据截止</span></div>
+        </div>
+
+        <div class="startup-table-card" id="startupSwipeZone">
+            <div class="startup-toolbar">
+                <div class="startup-tabs" role="tablist" aria-label="按国家筛选">
+                    <button class="startup-tab is-active" type="button" data-country="全部" role="tab" aria-selected="true">全部 <span>100</span></button>
+                    <button class="startup-tab" type="button" data-country="美国" role="tab" aria-selected="false">美国 <span>60</span></button>
+                    <button class="startup-tab" type="button" data-country="中国" role="tab" aria-selected="false">中国 <span>40</span></button>
+                </div>
+                <div class="startup-sort">融资额从高到低</div>
+            </div>
+
+            <div class="startup-table-scroll">
+                <table class="startup-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">排名</th>
+                            <th scope="col">公司 / 总部</th>
+                            <th scope="col">方向</th>
+                            <th scope="col">公开融资估算</th>
+                            <th scope="col">融资图表 <small>对数刻度</small></th>
+                            <th scope="col">状态</th>
+                        </tr>
+                    </thead>
+                    <tbody id="startupRows"></tbody>
+                </table>
+            </div>
+
+            <div class="startup-pagination">
+                <button id="startupPrev" type="button" aria-label="上一页">←</button>
+                <div id="startupPages" class="startup-pages" aria-label="分页"></div>
+                <button id="startupNext" type="button" aria-label="下一页">→</button>
+            </div>
+            <p class="startup-swipe-hint">每页 20 家 · 可左右滑动翻页</p>
+        </div>
+
+        <details class="startup-method">
+            <summary>数据口径与来源</summary>
+            <div>
+                <p>这是公开信息研究榜单，不是完整私募数据库。金额为 2022 年 12 月至 2026 年 8 月公开披露的股权及战略融资估算，按美元统一换算；不计 IPO 募资，未披露轮次可能造成低估。窗口期内以创业公司身份完成融资、随后上市或被战略收购的公司仍保留。DeepSeek 等未披露可核验外部融资额的公司不纳入金额榜。</p>
+                <p class="startup-sources">交叉参考：<a href="https://news.crunchbase.com/ai/largest-ai-startup-funding-deals-2024/" target="_blank" rel="noopener noreferrer">Crunchbase 2024 AI 融资</a>、<a href="https://news.crunchbase.com/venture/big-dollar-ai-investors-2025-softbank/" target="_blank" rel="noopener noreferrer">Crunchbase 2025 资本集中度</a>、<a href="https://techcrunch.com/2025/03/08/9-us-ai-startups-have-raised-100m-or-more-in-2025/" target="_blank" rel="noopener noreferrer">TechCrunch 美国公司追踪</a>、<a href="https://pdf.dfcfw.com/pdf/H3_AP202604101821126894_1.pdf" target="_blank" rel="noopener noreferrer">全球 AI 企业创新报告 2026</a>及企业公告与公开报道。</p>
+            </div>
+        </details>
+    </section>
+
+    <section class="vibe-project project-card project-card--signal" aria-labelledby="blessing-title">
+        <div class="project-heading">
+            <div class="project-number">02</div>
+            <div>
+                <p class="project-eyebrow">INVESTMENT INTELLIGENCE</p>
+                <h2 id="blessing-title">tombkeeper’s blessing</h2>
+                <p>从持续信息流中提炼值得进一步研究的投资信号。</p>
+            </div>
+            <span class="project-status">规划中</span>
+        </div>
+        <div class="signal-layout">
+            <div class="signal-pipeline" aria-label="项目处理流程">
+                <div><span>01</span><strong>实时订阅</strong><small>tombkeeper 等微博博主</small></div>
+                <i>→</i>
+                <div><span>02</span><strong>语义分析</strong><small>趋势、行业与催化事件</small></div>
+                <i>→</i>
+                <div><span>03</span><strong>证据交叉验证</strong><small>来源、时效与反方观点</small></div>
+                <i>→</i>
+                <div><span>04</span><strong>候选标的</strong><small>股票、逻辑与风险提示</small></div>
+            </div>
+            <p class="project-guardrail"><strong>决策边界</strong>：系统提供研究候选与证据，不自动交易；最终买卖由人工确认。</p>
+        </div>
+    </section>
+
+    <section class="vibe-project project-card project-card--assistant" aria-labelledby="assistant-title">
+        <div class="project-heading">
+            <div class="project-number">03</div>
+            <div>
+                <p class="project-eyebrow">PERSONAL OPERATING SYSTEM</p>
+                <h2 id="assistant-title">个人助理</h2>
+                <p>一个随时在身边、可以真正执行任务的移动端 App。</p>
+            </div>
+            <span class="project-status">概念验证</span>
+        </div>
+        <div class="assistant-grid">
+            <div class="phone-shell" aria-label="移动端助理概念界面">
+                <span class="phone-time">09:41</span>
+                <div class="voice-orb"><i></i></div>
+                <strong>今天要处理什么？</strong>
+                <small>按住说话 · 支持连续对话</small>
+            </div>
+            <div class="capability-list">
+                <div><span>VOICE</span><strong>自然语音对话</strong><p>走路、通勤或开会间隙都能快速交代事情。</p></div>
+                <div><span>MEMORY</span><strong>长期个人记忆</strong><p>理解工作上下文、生活偏好与未完成事项。</p></div>
+                <div><span>ACTION</span><strong>连接工具并执行</strong><p>日程、消息、文档、搜索与自动化工作流。</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vibe-project project-card project-card--vision" aria-labelledby="vision-title">
+        <div class="project-heading">
+            <div class="project-number">04</div>
+            <div>
+                <p class="project-eyebrow">LONG-TERM VISION</p>
+                <h2 id="vision-title">个人 Agent 项目规划</h2>
+                <p>让智能从理解信息，走向理解世界并改变世界。</p>
+            </div>
+            <span class="project-status">长期愿景</span>
+        </div>
+        <div class="vision-map">
+            <div class="vision-node"><span>感知</span><strong>传感器 Agent</strong><small>视觉 · 声音 · 空间 · 行为</small></div>
+            <div class="vision-connector"><i></i><span>持续数据</span></div>
+            <div class="vision-node vision-node--core"><span>认知</span><strong>世界模型</strong><small>理解 · 预测 · 规划 · 模拟</small></div>
+            <div class="vision-connector"><i></i><span>闭环学习</span></div>
+            <div class="vision-node"><span>行动</span><strong>具身智能</strong><small>在真实世界中可靠执行</small></div>
+        </div>
+        <blockquote class="vision-manifesto">Build the new world.</blockquote>
+    </section>
 </div>
+
+<script>
+(function () {
+    var startups = {{ site.data.ai_startups | jsonify }};
+    var pageSize = 20;
+    var state = { country: '全部', page: 0 };
+    var maxFunding = Math.max.apply(null, startups.map(function (item) { return item.funding; }));
+    var statusLabels = { Private: '未上市', Public: '已上市', Strategic: '战略投资', Acquired: '已收购', Merged: '已合并', Subsidiary: '独立运营' };
+
+    startups.sort(function (a, b) { return b.funding - a.funding; });
+    startups.forEach(function (item, index) { item.rank = index + 1; });
+
+    function formatFunding(value) {
+        if (value >= 1000) {
+            var billions = value / 1000;
+            return '≈ $' + (billions >= 10 || Number.isInteger(billions) ? billions.toFixed(0) : billions.toFixed(1)) + 'B';
+        }
+        return '≈ $' + value + 'M';
+    }
+
+    function chartWidth(value) {
+        var min = Math.log(10);
+        var max = Math.log(maxFunding);
+        return Math.max(5, ((Math.log(value) - min) / (max - min)) * 100);
+    }
+
+    function filteredRows() {
+        return startups.filter(function (item) {
+            return state.country === '全部' || item.country === state.country;
+        });
+    }
+
+    function render() {
+        var rows = filteredRows();
+        var pageCount = Math.ceil(rows.length / pageSize);
+        state.page = Math.max(0, Math.min(state.page, pageCount - 1));
+        var visible = rows.slice(state.page * pageSize, (state.page + 1) * pageSize);
+        var tbody = document.getElementById('startupRows');
+
+        tbody.innerHTML = visible.map(function (item) {
+            return '<tr>' +
+                '<td><span class="startup-rank">' + String(item.rank).padStart(2, '0') + '</span></td>' +
+                '<td><strong class="startup-name">' + item.name + '</strong><small class="startup-location"><b>' + item.country + '</b> · ' + item.city + '</small></td>' +
+                '<td><span class="startup-sector">' + item.sector + '</span></td>' +
+                '<td><strong class="startup-funding">' + formatFunding(item.funding) + '</strong></td>' +
+                '<td><div class="funding-chart" aria-label="融资规模 ' + formatFunding(item.funding) + '"><span style="width:' + chartWidth(item.funding) + '%"></span></div></td>' +
+                '<td><span class="startup-state startup-state--' + item.status.toLowerCase() + '">' + (statusLabels[item.status] || item.status) + '</span></td>' +
+            '</tr>';
+        }).join('');
+
+        var pages = document.getElementById('startupPages');
+        pages.innerHTML = Array.from({ length: pageCount }, function (_, index) {
+            return '<button type="button" data-page="' + index + '" class="' + (index === state.page ? 'is-active' : '') + '" aria-label="第 ' + (index + 1) + ' 页" aria-current="' + (index === state.page ? 'page' : 'false') + '">' + (index + 1) + '</button>';
+        }).join('');
+        document.getElementById('startupPrev').disabled = state.page === 0;
+        document.getElementById('startupNext').disabled = state.page === pageCount - 1;
+        document.getElementById('startupCount').textContent = rows.length;
+    }
+
+    document.querySelectorAll('.startup-tab').forEach(function (button) {
+        button.addEventListener('click', function () {
+            state.country = button.getAttribute('data-country');
+            state.page = 0;
+            document.querySelectorAll('.startup-tab').forEach(function (tab) {
+                var active = tab === button;
+                tab.classList.toggle('is-active', active);
+                tab.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+            render();
+        });
+    });
+    document.getElementById('startupPages').addEventListener('click', function (event) {
+        var target = event.target.closest('[data-page]');
+        if (!target) return;
+        state.page = Number(target.getAttribute('data-page'));
+        render();
+    });
+    document.getElementById('startupPrev').addEventListener('click', function () { state.page -= 1; render(); });
+    document.getElementById('startupNext').addEventListener('click', function () { state.page += 1; render(); });
+
+    var touchStartX = 0;
+    var swipeZone = document.getElementById('startupSwipeZone');
+    swipeZone.addEventListener('touchstart', function (event) { touchStartX = event.changedTouches[0].screenX; }, { passive: true });
+    swipeZone.addEventListener('touchend', function (event) {
+        var distance = event.changedTouches[0].screenX - touchStartX;
+        var pageCount = Math.ceil(filteredRows().length / pageSize);
+        if (distance < -70 && state.page < pageCount - 1) { state.page += 1; render(); }
+        if (distance > 70 && state.page > 0) { state.page -= 1; render(); }
+    }, { passive: true });
+
+    render();
+})();
+</script>
+
+<style>
+.vibe-page { max-width:1120px; padding-bottom:4rem; }
+.vibe-head { background:#17233b; border-left:6px solid #ef8354; border-radius:16px; box-shadow:0 16px 34px rgba(23,35,59,.18); margin:2.5rem 0 1.4rem; overflow:hidden; padding:2.1rem 2.25rem; position:relative; }
+.vibe-head::after { border:1px solid rgba(255,255,255,.16); border-radius:50%; content:""; height:150px; position:absolute; right:-34px; top:-72px; width:150px; }
+.vibe-kicker,.project-eyebrow { color:#f3a683; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.16em; margin:0 0 .55rem; }
+.vibe-title { color:#fff; font-family:Lora,Georgia,serif; font-size:clamp(2rem,5vw,3.1rem); font-weight:700; letter-spacing:-.04em; line-height:1.15; margin:0; }
+.vibe-sub { color:#cbd3df; font-size:.95rem; margin:.75rem 0 0; }
+.vibe-project { background:#fff; border:1px solid #d8dee8; border-radius:14px; box-shadow:0 8px 20px rgba(23,35,59,.08); margin-top:1.2rem; overflow:hidden; padding:1.5rem; position:relative; }
+.vibe-project::before { background:var(--accent,#3563b8); content:""; height:5px; inset:0 0 auto; position:absolute; }
+.project-heading { align-items:flex-start; display:grid; gap:1rem; grid-template-columns:auto 1fr auto; }
+.project-number { color:var(--accent,#3563b8); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:.75rem; font-weight:800; letter-spacing:.08em; padding-top:.3rem; }
+.project-heading h2 { color:#182238; font-family:Lora,Georgia,serif; font-size:1.55rem; margin:0; }
+.project-heading p:not(.project-eyebrow) { color:#596579; font-size:.84rem; margin:.35rem 0 0; }
+.project-eyebrow { color:var(--accent,#3563b8); margin-bottom:.35rem; }
+.project-status { border:1px solid color-mix(in srgb,var(--accent,#3563b8) 45%,#d8dee8); border-radius:999px; color:var(--accent,#3563b8); font-size:.68rem; font-weight:700; padding:.32rem .62rem; white-space:nowrap; }
+.project-status--active { background:#087f5b; border-color:#087f5b; color:#fff; }
+
+.startup-project { --accent:#3563b8; }
+.startup-metrics { display:grid; gap:.75rem; grid-template-columns:repeat(4,1fr); margin:1.4rem 0 1rem; }
+.startup-metrics div { background:#f2f5fa; border:1px solid #dce2eb; border-radius:10px; padding:.85rem 1rem; }
+.startup-metrics strong { color:#17233b; display:block; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:1.25rem; }
+.startup-metrics span { color:#667387; display:block; font-size:.68rem; margin-top:.2rem; }
+.startup-table-card { border:1px solid #d6dde8; border-radius:12px; overflow:hidden; }
+.startup-toolbar { align-items:center; background:#17233b; display:flex; justify-content:space-between; padding:.75rem 1rem; }
+.startup-tabs { display:flex; gap:.35rem; }
+.startup-tab { background:transparent; border:0; border-radius:6px; color:#bfc9d7; cursor:pointer; font-size:.75rem; font-weight:700; padding:.42rem .65rem; }
+.startup-tab span { opacity:.68; }
+.startup-tab.is-active { background:#ef8354; color:#17233b; }
+.startup-sort { color:#aeb9c9; font-size:.68rem; }
+.startup-table-scroll { overflow-x:auto; }
+.startup-table { border-collapse:collapse; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; min-width:900px; table-layout:fixed; width:100%; }
+.startup-table th { background:#edf1f7; border-bottom:1px solid #cfd7e3; color:#394861; font-size:.65rem; letter-spacing:.08em; padding:.65rem .8rem; text-align:left; }
+.startup-table th:nth-child(1) { width:7%; }.startup-table th:nth-child(2) { width:25%; }.startup-table th:nth-child(3) { width:17%; }.startup-table th:nth-child(4) { width:16%; }.startup-table th:nth-child(5) { width:23%; }.startup-table th:nth-child(6) { width:12%; }
+.startup-table th small { display:block; font-size:.55rem; font-weight:400; letter-spacing:0; margin-top:.1rem; }
+.startup-table td { border-bottom:1px solid #e4e8ef; color:#344258; font-size:.72rem; padding:.65rem .8rem; vertical-align:middle; }
+.startup-table tr:last-child td { border-bottom:0; }.startup-table tbody tr:hover { background:#f9fafc; }
+.startup-rank { color:#8a96a8; font-variant-numeric:tabular-nums; font-weight:700; }
+.startup-name { color:#182238; display:block; font-size:.78rem; line-height:1.35; }
+.startup-location { color:#7a8596; display:block; font-size:.61rem; margin-top:.18rem; }.startup-location b { color:#3563b8; }
+.startup-sector { background:#edf1f7; border-radius:5px; display:inline-block; padding:.25rem .4rem; }
+.startup-funding { color:#182238; font-size:.75rem; font-variant-numeric:tabular-nums; }
+.funding-chart { background:#e1e6ee; border-radius:999px; height:7px; overflow:hidden; width:100%; }.funding-chart span { background:linear-gradient(90deg,#3563b8,#ef8354); border-radius:inherit; display:block; height:100%; }
+.startup-state { border:1px solid #c6ced9; border-radius:999px; color:#596579; display:inline-block; font-size:.59rem; padding:.22rem .4rem; white-space:nowrap; }.startup-state--public,.startup-state--acquired,.startup-state--merged { border-color:#d9a89d; color:#a54431; }
+.startup-pagination { align-items:center; background:#f7f9fc; border-top:1px solid #dce2eb; display:flex; justify-content:center; padding:.75rem; }
+.startup-pagination > button,.startup-pages button { align-items:center; background:#fff; border:1px solid #cfd7e3; border-radius:6px; color:#44536a; cursor:pointer; display:inline-flex; font-size:.7rem; height:30px; justify-content:center; margin:0 .15rem; min-width:30px; }
+.startup-pages button.is-active { background:#17233b; border-color:#17233b; color:#fff; }.startup-pagination button:disabled { cursor:not-allowed; opacity:.35; }
+.startup-swipe-hint { background:#f7f9fc; color:#7a8596; font-size:.62rem; margin:0; padding:0 0 .7rem; text-align:center; }
+.startup-method { background:#f7f9fc; border:1px solid #dce2eb; border-radius:10px; color:#526078; font-size:.72rem; margin-top:.8rem; padding:.75rem 1rem; }
+.startup-method summary { color:#263550; cursor:pointer; font-weight:700; }.startup-method p { line-height:1.65; margin:.7rem 0 0; }.startup-sources a { color:#3563b8; font-weight:700; }
+
+.project-card--signal { --accent:#8d3e5f; }.project-card--assistant { --accent:#087f5b; }.project-card--vision { --accent:#c6533f; }
+.signal-layout,.assistant-grid { margin-top:1.4rem; }
+.signal-pipeline { align-items:stretch; display:grid; gap:.55rem; grid-template-columns:1fr auto 1fr auto 1fr auto 1fr; }
+.signal-pipeline div { background:#f7f2f4; border:1px solid #ead6de; border-radius:10px; padding:.85rem; }.signal-pipeline > i { align-self:center; color:#8d3e5f; font-style:normal; }
+.signal-pipeline span { color:#8d3e5f; display:block; font-size:.6rem; font-weight:800; }.signal-pipeline strong { color:#263047; display:block; font-size:.78rem; margin-top:.3rem; }.signal-pipeline small { color:#697488; display:block; font-size:.62rem; line-height:1.45; margin-top:.25rem; }
+.project-guardrail { background:#fff8e8; border-left:4px solid #d69e2e; color:#5e5034; font-size:.72rem; margin:1rem 0 0; padding:.65rem .8rem; }
+.assistant-grid { align-items:center; display:grid; gap:2rem; grid-template-columns:210px 1fr; }
+.phone-shell { align-items:center; background:#17233b; border:6px solid #283955; border-radius:26px; box-shadow:0 12px 25px rgba(23,35,59,.2); color:#fff; display:flex; flex-direction:column; height:330px; justify-content:center; padding:1rem; position:relative; text-align:center; }
+.phone-time { font-size:.6rem; left:1rem; position:absolute; top:.7rem; }.voice-orb { align-items:center; background:rgba(8,127,91,.18); border:1px solid rgba(102,211,171,.5); border-radius:50%; display:flex; height:90px; justify-content:center; margin-bottom:1.2rem; width:90px; }.voice-orb i { animation:vibePulse 2s ease-in-out infinite; background:#5ed2a7; border-radius:50%; height:34px; width:34px; }.phone-shell strong { font-family:Lora,Georgia,serif; font-size:.95rem; }.phone-shell small { color:#aeb9c9; font-size:.6rem; margin-top:.45rem; }
+.capability-list { display:grid; gap:.75rem; }.capability-list div { border-bottom:1px solid #dce2eb; padding:.7rem 0; }.capability-list span { color:#087f5b; font-size:.6rem; font-weight:800; letter-spacing:.1em; }.capability-list strong { color:#263047; display:block; font-size:.9rem; margin-top:.22rem; }.capability-list p { color:#667387; font-size:.72rem; margin:.25rem 0 0; }
+.vision-map { align-items:center; display:grid; gap:.8rem; grid-template-columns:1fr 110px 1fr 110px 1fr; margin-top:1.5rem; }
+.vision-node { background:#fff8f5; border:1px solid #e8c9c0; border-radius:12px; padding:1rem; text-align:center; }.vision-node--core { background:#17233b; border-color:#17233b; }.vision-node span { color:#c6533f; display:block; font-size:.6rem; font-weight:800; letter-spacing:.12em; }.vision-node strong { color:#273249; display:block; font-family:Lora,Georgia,serif; font-size:1rem; margin:.35rem 0; }.vision-node small { color:#727c8e; font-size:.62rem; }.vision-node--core strong { color:#fff; }.vision-node--core small { color:#b9c3d2; }
+.vision-connector { color:#7c8798; font-size:.58rem; text-align:center; }.vision-connector i { background:#c6533f; display:block; height:2px; margin-bottom:.35rem; position:relative; }.vision-connector i::after { border-bottom:4px solid transparent; border-left:6px solid #c6533f; border-top:4px solid transparent; content:""; position:absolute; right:0; top:-3px; }
+.vision-manifesto { border:0; color:#17233b; font-family:Lora,Georgia,serif; font-size:1.25rem; font-style:italic; margin:1.3rem 0 0; padding:0; text-align:center; }
+@keyframes vibePulse { 50% { box-shadow:0 0 0 16px rgba(94,210,167,0); transform:scale(1.08); } 0%,100% { box-shadow:0 0 0 0 rgba(94,210,167,.28); } }
+
+@media (max-width:991px) {
+    .startup-metrics { grid-template-columns:repeat(2,1fr); }
+    .signal-pipeline { grid-template-columns:1fr 1fr; }.signal-pipeline > i { display:none; }
+    .vision-map { grid-template-columns:1fr; }.vision-connector { padding:0 35%; transform:rotate(90deg); }.vision-connector span { display:none; }
+}
+@media (max-width:575px) {
+    .vibe-head { margin-top:1.5rem; padding:1.7rem 1.4rem; }.vibe-project { padding:1.25rem; }
+    .project-heading { grid-template-columns:auto 1fr; }.project-status { grid-column:2; justify-self:start; }
+    .startup-metrics { gap:.5rem; }.startup-toolbar { align-items:flex-start; flex-direction:column; gap:.55rem; }.startup-tabs { width:100%; }.startup-tab { flex:1; }.startup-sort { padding-left:.25rem; }
+    .signal-pipeline { grid-template-columns:1fr; }
+    .assistant-grid { grid-template-columns:1fr; }.phone-shell { height:300px; justify-self:center; width:190px; }
+}
+@media (prefers-reduced-motion:reduce) { .voice-orb i { animation:none; } }
+</style>
