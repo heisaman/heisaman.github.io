@@ -12,20 +12,42 @@ permalink: "/ideas-and-projects.html"
     </header>
 
     <div class="project-showcase" id="projectShowcase">
-        <div class="project-deck-bar">
+        <div class="project-poster-stage">
+            <button class="project-poster-arrow" id="projectPrev" type="button" aria-label="上一个项目">←</button>
+            <div class="project-poster-rail" id="projectPosterRail" role="tablist" aria-label="选择 Vibe 项目">
+                <button class="project-poster is-active" id="projectPoster01" type="button" role="tab" aria-selected="true" aria-controls="projectSlide01" data-project-index="0" style="--poster-accent:#ef8354;--poster-deep:#17335f;--poster-glow:#4c86d9">
+                    <span class="project-poster-number">01</span><span class="project-poster-mark" aria-hidden="true">100</span><span class="project-poster-copy"><small>持续更新</small><strong>千帆竞发</strong></span>
+                </button>
+                <button class="project-poster" id="projectPoster02" type="button" role="tab" aria-selected="false" aria-controls="projectSlide02" data-project-index="1" style="--poster-accent:#d27a9d;--poster-deep:#4b1830;--poster-glow:#913e62">
+                    <span class="project-poster-number">02</span><span class="project-poster-mark" aria-hidden="true">信号</span><span class="project-poster-copy"><small>规划中</small><strong>tombkeeper’s blessing</strong></span>
+                </button>
+                <button class="project-poster" id="projectPoster03" type="button" role="tab" aria-selected="false" aria-controls="projectSlide03" data-project-index="2" style="--poster-accent:#65d4ad;--poster-deep:#064938;--poster-glow:#129773">
+                    <span class="project-poster-number">03</span><span class="project-poster-mark" aria-hidden="true">声</span><span class="project-poster-copy"><small>概念验证</small><strong>个人助理</strong></span>
+                </button>
+                <button class="project-poster" id="projectPoster04" type="button" role="tab" aria-selected="false" aria-controls="projectSlide04" data-project-index="3" style="--poster-accent:#f0a187;--poster-deep:#632b25;--poster-glow:#c6533f">
+                    <span class="project-poster-number">04</span><span class="project-poster-mark" aria-hidden="true">∞</span><span class="project-poster-copy"><small>长期愿景</small><strong>个人 Agent 项目规划</strong></span>
+                </button>
+                <button class="project-poster" id="projectPoster05" type="button" role="tab" aria-selected="false" aria-controls="projectSlide05" data-project-index="4" style="--poster-accent:#f1b45d;--poster-deep:#573412;--poster-glow:#b46a18">
+                    <span class="project-poster-number">05</span><span class="project-poster-mark" aria-hidden="true">算力</span><span class="project-poster-copy"><small>研究组合</small><strong>数据中心投资观察</strong></span>
+                </button>
+                <button class="project-poster" id="projectPoster06" type="button" role="tab" aria-selected="false" aria-controls="projectSlide06" data-project-index="5" style="--poster-accent:#a8b9ee;--poster-deep:#252f67;--poster-glow:#5b72bf">
+                    <span class="project-poster-number">06</span><span class="project-poster-mark" aria-hidden="true">R1</span><span class="project-poster-copy"><small>基线已建</small><strong>DeepSeek-R1 作者追踪</strong></span>
+                </button>
+            </div>
+            <button class="project-poster-arrow" id="projectNext" type="button" aria-label="下一个项目">→</button>
+        </div>
+
+        <div class="project-deck-caption">
             <div class="project-deck-current" aria-live="polite">
                 <span id="projectDeckCount">01 / 06</span>
                 <strong id="projectDeckTitle">千帆竞发</strong>
             </div>
-            <div class="project-deck-actions">
-                <button id="projectPrev" type="button" aria-label="上一个项目">←</button>
-                <button id="projectNext" type="button" aria-label="下一个项目">→</button>
-            </div>
+            <span>点击海报，左右翻开项目</span>
         </div>
 
         <div class="project-deck" id="projectDeck" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Vibe 项目卡片">
             <div class="project-track" id="projectTrack">
-    <section class="vibe-project startup-project project-slide" aria-labelledby="startup-title" aria-label="第 1 个项目，共 6 个" data-project-title="千帆竞发">
+    <section class="vibe-project startup-project project-slide" id="projectSlide01" aria-labelledby="startup-title" aria-label="第 1 个项目，共 6 个" data-project-title="千帆竞发">
         <div class="project-heading">
             <div class="project-number">01</div>
             <h2 id="startup-title">千帆竞发</h2>
@@ -82,7 +104,7 @@ permalink: "/ideas-and-projects.html"
         </details>
     </section>
 
-    <section class="vibe-project project-card project-card--signal project-slide" aria-labelledby="blessing-title" aria-label="第 2 个项目，共 6 个" data-project-title="tombkeeper’s blessing">
+    <section class="vibe-project project-card project-card--signal project-slide" id="projectSlide02" aria-labelledby="blessing-title" aria-label="第 2 个项目，共 6 个" data-project-title="tombkeeper’s blessing">
         <div class="project-heading">
             <div class="project-number">02</div>
             <h2 id="blessing-title">tombkeeper’s blessing</h2>
@@ -102,7 +124,7 @@ permalink: "/ideas-and-projects.html"
         </div>
     </section>
 
-    <section class="vibe-project project-card project-card--assistant project-slide" aria-labelledby="assistant-title" aria-label="第 3 个项目，共 6 个" data-project-title="个人助理">
+    <section class="vibe-project project-card project-card--assistant project-slide" id="projectSlide03" aria-labelledby="assistant-title" aria-label="第 3 个项目，共 6 个" data-project-title="个人助理">
         <div class="project-heading">
             <div class="project-number">03</div>
             <h2 id="assistant-title">个人助理</h2>
@@ -123,7 +145,7 @@ permalink: "/ideas-and-projects.html"
         </div>
     </section>
 
-    <section class="vibe-project project-card project-card--vision project-slide" aria-labelledby="vision-title" aria-label="第 4 个项目，共 6 个" data-project-title="个人 Agent 项目规划">
+    <section class="vibe-project project-card project-card--vision project-slide" id="projectSlide04" aria-labelledby="vision-title" aria-label="第 4 个项目，共 6 个" data-project-title="个人 Agent 项目规划">
         <div class="project-heading">
             <div class="project-number">04</div>
             <h2 id="vision-title">个人 Agent 项目规划</h2>
@@ -139,7 +161,7 @@ permalink: "/ideas-and-projects.html"
         <blockquote class="vision-manifesto">Build the new world.</blockquote>
     </section>
 
-    <section class="vibe-project project-card project-card--datacenter project-slide" aria-labelledby="datacenter-title" aria-label="第 5 个项目，共 6 个" data-project-title="中国大陆数据中心上游投资观察">
+    <section class="vibe-project project-card project-card--datacenter project-slide" id="projectSlide05" aria-labelledby="datacenter-title" aria-label="第 5 个项目，共 6 个" data-project-title="中国大陆数据中心上游投资观察">
         <div class="project-heading">
             <div class="project-number">05</div>
             <h2 id="datacenter-title">中国大陆数据中心上游投资观察</h2>
@@ -217,7 +239,7 @@ permalink: "/ideas-and-projects.html"
         </details>
     </section>
 
-    <section class="vibe-project project-card project-card--authors project-slide" aria-labelledby="authors-title" aria-label="第 6 个项目，共 6 个" data-project-title="DeepSeek-R1 作者公开轨迹追踪">
+    <section class="vibe-project project-card project-card--authors project-slide" id="projectSlide06" aria-labelledby="authors-title" aria-label="第 6 个项目，共 6 个" data-project-title="DeepSeek-R1 作者公开轨迹追踪">
         <div class="project-heading">
             <div class="project-number">06</div>
             <h2 id="authors-title">DeepSeek-R1 作者公开轨迹追踪</h2>
@@ -259,9 +281,8 @@ permalink: "/ideas-and-projects.html"
         </div>
 
         <div class="project-deck-footer">
-            <div class="project-deck-dots" id="projectDeckDots" aria-label="选择项目"></div>
             <div class="project-deck-progress" aria-hidden="true"><span id="projectDeckProgress"></span></div>
-            <span class="project-deck-hint">拖动卡片或使用方向键切换</span>
+            <span class="project-deck-hint">卡片支持拖动与方向键切换</span>
         </div>
     </div>
 </div>
@@ -418,7 +439,8 @@ permalink: "/ideas-and-projects.html"
     var slides = Array.prototype.slice.call(track.querySelectorAll('.project-slide'));
     var prev = document.getElementById('projectPrev');
     var next = document.getElementById('projectNext');
-    var dots = document.getElementById('projectDeckDots');
+    var posterRail = document.getElementById('projectPosterRail');
+    var posters = Array.prototype.slice.call(posterRail.querySelectorAll('.project-poster'));
     var count = document.getElementById('projectDeckCount');
     var title = document.getElementById('projectDeckTitle');
     var progress = document.getElementById('projectDeckProgress');
@@ -426,9 +448,6 @@ permalink: "/ideas-and-projects.html"
 
     if (!slides.length) return;
 
-    dots.innerHTML = slides.map(function (slide, index) {
-        return '<button type="button" data-project-index="' + index + '" aria-label="查看项目 ' + (index + 1) + '：' + slide.getAttribute('data-project-title') + '"><span>' + String(index + 1).padStart(2, '0') + '</span></button>';
-    }).join('');
     showcase.classList.add('is-enhanced');
 
     function positionTrack(offset) {
@@ -454,10 +473,11 @@ permalink: "/ideas-and-projects.html"
             slide.setAttribute('aria-hidden', active ? 'false' : 'true');
             if ('inert' in slide) slide.inert = !active;
         });
-        dots.querySelectorAll('button').forEach(function (dot, index) {
+        posters.forEach(function (poster, index) {
             var active = index === state.index;
-            dot.classList.toggle('is-active', active);
-            dot.setAttribute('aria-current', active ? 'true' : 'false');
+            poster.classList.toggle('is-active', active);
+            poster.setAttribute('aria-selected', active ? 'true' : 'false');
+            poster.setAttribute('tabindex', active ? '0' : '-1');
         });
 
         prev.disabled = state.index === 0;
@@ -466,31 +486,47 @@ permalink: "/ideas-and-projects.html"
         title.textContent = slides[state.index].getAttribute('data-project-title');
         progress.style.width = (((state.index + 1) / slides.length) * 100) + '%';
 
+        if (options.revealPoster && posters[state.index]) {
+            var targetLeft = posters[state.index].offsetLeft - (posterRail.clientWidth - posters[state.index].offsetWidth) / 2;
+            posterRail.scrollTo({ left: Math.max(0, targetLeft), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        }
         if (options.focusSlide) deck.focus({ preventScroll: true });
     }
 
     function goTo(index, options) {
         if (index === state.index || index < 0 || index >= slides.length) {
-            update();
+            update(options);
             return;
         }
         state.index = index;
         update(options);
     }
 
-    prev.addEventListener('click', function () { goTo(state.index - 1); });
-    next.addEventListener('click', function () { goTo(state.index + 1); });
-    dots.addEventListener('click', function (event) {
-        var dot = event.target.closest('[data-project-index]');
-        if (dot) goTo(Number(dot.getAttribute('data-project-index')));
+    prev.addEventListener('click', function () { goTo(state.index - 1, { revealPoster: true }); });
+    next.addEventListener('click', function () { goTo(state.index + 1, { revealPoster: true }); });
+    posterRail.addEventListener('click', function (event) {
+        var poster = event.target.closest('[data-project-index]');
+        if (poster) goTo(Number(poster.getAttribute('data-project-index')), { revealPoster: true });
+    });
+    posterRail.addEventListener('keydown', function (event) {
+        var targetIndex = state.index;
+        if (event.key === 'ArrowLeft') targetIndex -= 1;
+        else if (event.key === 'ArrowRight') targetIndex += 1;
+        else if (event.key === 'Home') targetIndex = 0;
+        else if (event.key === 'End') targetIndex = posters.length - 1;
+        else return;
+        event.preventDefault();
+        targetIndex = Math.max(0, Math.min(targetIndex, posters.length - 1));
+        goTo(targetIndex, { revealPoster: true });
+        posters[targetIndex].focus({ preventScroll: true });
     });
 
     deck.addEventListener('keydown', function (event) {
         if (event.target !== deck) return;
-        if (event.key === 'ArrowLeft') { event.preventDefault(); goTo(state.index - 1); }
-        if (event.key === 'ArrowRight') { event.preventDefault(); goTo(state.index + 1); }
-        if (event.key === 'Home') { event.preventDefault(); goTo(0); }
-        if (event.key === 'End') { event.preventDefault(); goTo(slides.length - 1); }
+        if (event.key === 'ArrowLeft') { event.preventDefault(); goTo(state.index - 1, { revealPoster: true }); }
+        if (event.key === 'ArrowRight') { event.preventDefault(); goTo(state.index + 1, { revealPoster: true }); }
+        if (event.key === 'Home') { event.preventDefault(); goTo(0, { revealPoster: true }); }
+        if (event.key === 'End') { event.preventDefault(); goTo(slides.length - 1, { revealPoster: true }); }
     });
 
     function isInteractiveTarget(target) {
@@ -521,8 +557,8 @@ permalink: "/ideas-and-projects.html"
         showcase.classList.remove('is-dragging');
         if (deck.hasPointerCapture(event.pointerId)) deck.releasePointerCapture(event.pointerId);
         var threshold = Math.min(90, deck.clientWidth * 0.12);
-        if (state.deltaX < -threshold) goTo(state.index + 1);
-        else if (state.deltaX > threshold) goTo(state.index - 1);
+        if (state.deltaX < -threshold) goTo(state.index + 1, { revealPoster: true });
+        else if (state.deltaX > threshold) goTo(state.index - 1, { revealPoster: true });
         else update();
     }
     deck.addEventListener('pointerup', finishDrag);
@@ -551,13 +587,19 @@ permalink: "/ideas-and-projects.html"
 .vibe-sub { color:#cbd3df; font-size:.95rem; margin:.75rem 0 0; }
 .vibe-project { background:#fff; border:1px solid #d8dee8; border-radius:14px; box-shadow:0 8px 20px rgba(23,35,59,.08); margin-top:1.2rem; overflow:hidden; padding:1.5rem; position:relative; }
 .vibe-project::before { background:var(--accent,#3563b8); content:""; height:5px; inset:0 0 auto; position:absolute; }
-.project-deck-bar,.project-deck-footer { display:none; }
+.project-poster-stage,.project-deck-caption,.project-deck-footer { display:none; }
 .project-showcase.is-enhanced { margin-top:1.2rem; }
-.project-showcase.is-enhanced .project-deck-bar { align-items:center; background:#17233b; border:1px solid #2c3b57; border-radius:13px 13px 0 0; display:flex; justify-content:space-between; padding:.8rem 1rem; }
-.project-deck-current { align-items:baseline; display:flex; gap:.7rem; min-width:0; }.project-deck-current span { color:#f3a683; font-size:.65rem; font-variant-numeric:tabular-nums; font-weight:800; letter-spacing:.09em; }.project-deck-current strong { color:#fff; font-family:Lora,Georgia,serif; font-size:.9rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.project-deck-actions { display:flex; gap:.4rem; }.project-deck-actions button { align-items:center; background:#24324d; border:1px solid #44516a; border-radius:50%; color:#fff; cursor:pointer; display:flex; font-size:1rem; height:38px; justify-content:center; transition:background .2s ease,border-color .2s ease,transform .2s ease; width:38px; }.project-deck-actions button:hover:not(:disabled) { background:#ef8354; border-color:#ef8354; color:#17233b; transform:translateY(-1px); }.project-deck-actions button:disabled { cursor:not-allowed; opacity:.3; }
-.project-showcase.is-enhanced .project-deck { cursor:grab; margin:0 -10px; outline:none; overflow:hidden; padding:10px 10px 18px; touch-action:pan-y; transition:height .46s cubic-bezier(.22,1,.36,1); }.project-showcase.is-enhanced .project-deck:focus-visible { box-shadow:0 0 0 3px rgba(53,99,184,.22); }.project-showcase.is-enhanced .project-track { align-items:flex-start; display:flex; transition:transform .58s cubic-bezier(.22,1,.36,1); will-change:transform; }.project-showcase.is-enhanced.is-dragging .project-deck { cursor:grabbing; }.project-showcase.is-enhanced.is-dragging .project-track { transition:none; }.project-showcase.is-enhanced .project-slide { box-sizing:border-box; flex:0 0 100%; margin:0; opacity:.48; transform:scale(.985); transition:opacity .42s ease,transform .42s ease; width:100%; }.project-showcase.is-enhanced .project-slide.is-active { opacity:1; transform:scale(1); }
-.project-showcase.is-enhanced .project-deck-footer { align-items:center; display:grid; gap:.8rem; grid-template-columns:auto minmax(100px,1fr) auto; margin-top:.1rem; padding:0 .2rem; }.project-deck-dots { display:flex; gap:.35rem; }.project-deck-dots button { align-items:center; background:#e4e9f1; border:0; border-radius:999px; color:#6d788a; cursor:pointer; display:flex; height:25px; justify-content:center; padding:0; transition:background .25s ease,color .25s ease,width .35s cubic-bezier(.22,1,.36,1); width:25px; }.project-deck-dots button span { font-size:.54rem; font-weight:800; }.project-deck-dots button.is-active { background:#17233b; color:#fff; width:42px; }.project-deck-progress { background:#dce2eb; border-radius:999px; height:3px; overflow:hidden; }.project-deck-progress span { background:linear-gradient(90deg,#3563b8,#ef8354); border-radius:inherit; display:block; height:100%; transition:width .5s cubic-bezier(.22,1,.36,1); width:16.666%; }.project-deck-hint { color:#7b8798; font-size:.59rem; white-space:nowrap; }
+.project-showcase.is-enhanced .project-poster-stage { align-items:stretch; display:grid; gap:.65rem; grid-template-columns:42px minmax(0,1fr) 42px; perspective:1600px; }
+.project-poster-rail { display:flex; gap:.5rem; height:270px; min-width:0; overflow:hidden; padding:5px 2px 10px; }
+.project-poster { appearance:none; background:radial-gradient(circle at 72% 24%,color-mix(in srgb,var(--poster-glow) 70%,transparent),transparent 36%),linear-gradient(155deg,var(--poster-deep),#0c1422 88%); border:1px solid color-mix(in srgb,var(--poster-accent) 34%,#2d3748); border-radius:11px; box-shadow:0 10px 22px rgba(15,23,38,.17); color:#fff; cursor:pointer; flex:.72 1 0; min-width:0; overflow:hidden; padding:1rem; position:relative; text-align:left; transform-origin:center bottom; transition:flex .62s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease,border-color .3s ease; }
+.project-poster::before { background:repeating-linear-gradient(90deg,rgba(255,255,255,.13) 0,rgba(255,255,255,.13) 1px,transparent 1px,transparent 13px); content:""; inset:0; opacity:.26; pointer-events:none; position:absolute; transform:scaleX(.84); transition:opacity .4s ease,transform .62s cubic-bezier(.22,1,.36,1); }.project-poster::after { border:1px solid rgba(255,255,255,.12); border-radius:8px; content:""; inset:7px; pointer-events:none; position:absolute; }
+.project-poster:hover { border-color:var(--poster-accent); transform:translateY(-3px); }.project-poster:focus-visible { outline:3px solid color-mix(in srgb,var(--poster-accent) 60%,#fff); outline-offset:3px; }.project-poster.is-active { border-color:var(--poster-accent); box-shadow:0 18px 34px color-mix(in srgb,var(--poster-deep) 38%,transparent); flex:3.5 1 0; transform:translateY(-5px); }.project-poster.is-active::before { opacity:.5; transform:scaleX(1); }
+.project-poster-number { color:var(--poster-accent); font-size:.67rem; font-weight:800; left:1rem; letter-spacing:.12em; position:absolute; top:1rem; z-index:2; }.project-poster-mark { color:rgba(255,255,255,.16); font-family:Lora,Georgia,serif; font-size:clamp(1.8rem,4vw,3.7rem); font-weight:700; left:50%; letter-spacing:-.07em; position:absolute; top:45%; transform:translate(-50%,-50%) rotate(-8deg); transition:color .4s ease,transform .55s cubic-bezier(.22,1,.36,1); white-space:nowrap; }.project-poster.is-active .project-poster-mark { color:color-mix(in srgb,var(--poster-accent) 32%,transparent); transform:translate(-50%,-50%) rotate(0) scale(1.12); }
+.project-poster-copy { bottom:1rem; left:1rem; position:absolute; right:1rem; z-index:2; }.project-poster-copy small { color:var(--poster-accent); display:block; font-size:.6rem; font-weight:800; letter-spacing:.08em; margin-bottom:.4rem; opacity:0; transform:translateY(6px); transition:opacity .28s ease,transform .36s ease; }.project-poster-copy strong { display:block; font-family:Lora,Georgia,serif; font-size:.78rem; line-height:1.25; max-height:165px; overflow:hidden; text-overflow:ellipsis; transform:rotate(180deg); white-space:nowrap; writing-mode:vertical-rl; }.project-poster.is-active .project-poster-copy small { opacity:1; transform:translateY(0); }.project-poster.is-active .project-poster-copy strong { font-size:clamp(1.25rem,2.4vw,1.75rem); max-height:none; overflow:visible; transform:none; white-space:normal; writing-mode:horizontal-tb; }
+.project-poster-arrow { align-items:center; align-self:center; background:#17233b; border:1px solid #3f4d66; border-radius:50%; color:#fff; cursor:pointer; display:flex; font-size:1rem; height:42px; justify-content:center; transition:background .2s ease,border-color .2s ease,transform .2s ease; width:42px; }.project-poster-arrow:hover:not(:disabled) { background:#ef8354; border-color:#ef8354; color:#17233b; transform:scale(1.06); }.project-poster-arrow:disabled { cursor:not-allowed; opacity:.25; }
+.project-showcase.is-enhanced .project-deck-caption { align-items:baseline; display:flex; justify-content:space-between; padding:.25rem .35rem 0; }.project-deck-caption > span { color:#7b8798; font-size:.6rem; }.project-deck-current { align-items:baseline; display:flex; gap:.7rem; min-width:0; }.project-deck-current span { color:#c6533f; font-size:.65rem; font-variant-numeric:tabular-nums; font-weight:800; letter-spacing:.09em; }.project-deck-current strong { color:#1c2940; font-family:Lora,Georgia,serif; font-size:.9rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.project-showcase.is-enhanced .project-deck { cursor:grab; margin:0 -10px; outline:none; overflow:hidden; padding:10px 10px 18px; touch-action:pan-y; transition:height .5s cubic-bezier(.22,1,.36,1); }.project-showcase.is-enhanced .project-deck:focus-visible { box-shadow:0 0 0 3px rgba(53,99,184,.22); }.project-showcase.is-enhanced .project-track { align-items:flex-start; display:flex; perspective:1500px; transition:transform .62s cubic-bezier(.22,1,.36,1); will-change:transform; }.project-showcase.is-enhanced.is-dragging .project-deck { cursor:grabbing; }.project-showcase.is-enhanced.is-dragging .project-track { transition:none; }.project-showcase.is-enhanced .project-slide { box-sizing:border-box; filter:saturate(.72); flex:0 0 100%; margin:0; opacity:.24; transform:perspective(1200px) rotateY(9deg) scale(.975); transform-origin:left center; transition:opacity .38s ease,transform .58s cubic-bezier(.22,1,.36,1),filter .38s ease; width:100%; }.project-showcase.is-enhanced .project-slide.is-active { filter:none; opacity:1; transform:perspective(1200px) rotateY(0) scale(1); }
+.project-showcase.is-enhanced .project-deck-footer { align-items:center; display:grid; gap:.75rem; grid-template-columns:minmax(100px,1fr) auto; margin-top:.1rem; padding:0 .3rem; }.project-deck-progress { background:#dce2eb; border-radius:999px; height:3px; overflow:hidden; }.project-deck-progress span { background:linear-gradient(90deg,#3563b8,#ef8354); border-radius:inherit; display:block; height:100%; transition:width .5s cubic-bezier(.22,1,.36,1); width:16.666%; }.project-deck-hint { color:#7b8798; font-size:.59rem; white-space:nowrap; }
 .project-heading { align-items:center; display:grid; gap:.75rem; grid-template-columns:auto 1fr auto; }
 .project-number { color:var(--accent,#3563b8); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:.75rem; font-weight:800; letter-spacing:.08em; padding-top:.3rem; }
 .project-heading h2 { color:#182238; font-family:Lora,Georgia,serif; font-size:1.55rem; margin:0; }
@@ -631,6 +673,7 @@ permalink: "/ideas-and-projects.html"
     .vision-map { grid-template-columns:1fr; }.vision-connector { padding:0 35%; transform:rotate(90deg); }.vision-connector span { display:none; }
     .author-metrics { grid-template-columns:repeat(2,1fr); }.author-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
     .tracking-roadmap { grid-template-columns:repeat(2,1fr); }.tracking-roadmap > i { display:none; }
+    .project-poster-rail { height:240px; }.project-poster.is-active { flex:3 1 0; }
 }
 @media (max-width:575px) {
     .vibe-head { margin-top:.5rem; padding:1.7rem 1.4rem; }.vibe-project { padding:1.25rem; }
@@ -640,7 +683,7 @@ permalink: "/ideas-and-projects.html"
     .assistant-grid { grid-template-columns:1fr; }.phone-shell { height:300px; justify-self:center; width:190px; }
     .datacenter-dashboard,.supplier-grid { grid-template-columns:1fr; }.datacenter-watchline { grid-template-columns:repeat(2,1fr); }.stock-list { grid-template-columns:1fr; }
     .author-metrics { grid-template-columns:1fr 1fr; }.author-search { grid-column:1 / -1; }.author-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.tracking-roadmap { grid-template-columns:1fr; }
-    .project-showcase.is-enhanced .project-deck-bar { padding:.7rem .75rem; }.project-deck-current { gap:.5rem; }.project-deck-current strong { font-size:.78rem; max-width:190px; }.project-deck-actions button { height:34px; width:34px; }.project-showcase.is-enhanced .project-deck-footer { grid-template-columns:1fr auto; }.project-deck-progress { grid-column:1 / -1; grid-row:2; }.project-deck-hint { display:none; }.project-deck-dots { overflow-x:auto; padding-bottom:.15rem; }.project-deck-dots button { flex:0 0 25px; }.project-deck-dots button.is-active { flex-basis:42px; }
+    .project-showcase.is-enhanced .project-poster-stage { gap:.35rem; grid-template-columns:34px minmax(0,1fr) 34px; }.project-poster-arrow { height:34px; width:34px; }.project-poster-rail { height:220px; overflow-x:auto; padding:5px 3px 10px; scroll-snap-type:x proximity; scrollbar-width:none; }.project-poster-rail::-webkit-scrollbar { display:none; }.project-poster { flex:0 0 72px; scroll-snap-align:center; }.project-poster.is-active { flex:0 0 205px; }.project-poster-copy { bottom:.8rem; left:.8rem; right:.8rem; }.project-poster-number { left:.8rem; top:.8rem; }.project-poster.is-active .project-poster-copy strong { font-size:1.22rem; }.project-showcase.is-enhanced .project-deck-caption { padding-top:.15rem; }.project-deck-caption > span { display:none; }.project-deck-current { gap:.5rem; }.project-deck-current strong { font-size:.78rem; max-width:235px; }.project-deck-hint { display:none; }.project-showcase.is-enhanced .project-deck-footer { grid-template-columns:1fr; }
 }
-@media (prefers-reduced-motion:reduce) { .voice-orb i { animation:none; }.project-showcase.is-enhanced .project-deck,.project-showcase.is-enhanced .project-track,.project-showcase.is-enhanced .project-slide,.project-deck-dots button,.project-deck-progress span { transition:none; } }
+@media (prefers-reduced-motion:reduce) { .voice-orb i { animation:none; }.project-poster,.project-poster::before,.project-poster-mark,.project-poster-copy small,.project-showcase.is-enhanced .project-deck,.project-showcase.is-enhanced .project-track,.project-showcase.is-enhanced .project-slide,.project-deck-progress span { transition:none; } }
 </style>
