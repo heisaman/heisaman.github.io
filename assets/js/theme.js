@@ -52,9 +52,6 @@
     }
     
     
-    $('.site-content').css('margin-top', $('header').outerHeight() + 'px');
-
-
 function loadSearch(){
     // Create a new Index
     idx = lunr(function(){
