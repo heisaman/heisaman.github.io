@@ -11,7 +11,21 @@ permalink: "/ideas-and-projects.html"
         <p class="vibe-sub">观察浪潮，也亲手造船。这里记录正在构想、验证与推进的项目。</p>
     </header>
 
-    <section class="vibe-project startup-project" aria-labelledby="startup-title">
+    <div class="project-showcase" id="projectShowcase">
+        <div class="project-deck-bar">
+            <div class="project-deck-current" aria-live="polite">
+                <span id="projectDeckCount">01 / 06</span>
+                <strong id="projectDeckTitle">千帆竞发</strong>
+            </div>
+            <div class="project-deck-actions">
+                <button id="projectPrev" type="button" aria-label="上一个项目">←</button>
+                <button id="projectNext" type="button" aria-label="下一个项目">→</button>
+            </div>
+        </div>
+
+        <div class="project-deck" id="projectDeck" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Vibe 项目卡片">
+            <div class="project-track" id="projectTrack">
+    <section class="vibe-project startup-project project-slide" aria-labelledby="startup-title" aria-label="第 1 个项目，共 6 个" data-project-title="千帆竞发">
         <div class="project-heading">
             <div class="project-number">01</div>
             <h2 id="startup-title">千帆竞发</h2>
@@ -68,7 +82,7 @@ permalink: "/ideas-and-projects.html"
         </details>
     </section>
 
-    <section class="vibe-project project-card project-card--signal" aria-labelledby="blessing-title">
+    <section class="vibe-project project-card project-card--signal project-slide" aria-labelledby="blessing-title" aria-label="第 2 个项目，共 6 个" data-project-title="tombkeeper’s blessing">
         <div class="project-heading">
             <div class="project-number">02</div>
             <h2 id="blessing-title">tombkeeper’s blessing</h2>
@@ -88,7 +102,7 @@ permalink: "/ideas-and-projects.html"
         </div>
     </section>
 
-    <section class="vibe-project project-card project-card--assistant" aria-labelledby="assistant-title">
+    <section class="vibe-project project-card project-card--assistant project-slide" aria-labelledby="assistant-title" aria-label="第 3 个项目，共 6 个" data-project-title="个人助理">
         <div class="project-heading">
             <div class="project-number">03</div>
             <h2 id="assistant-title">个人助理</h2>
@@ -109,7 +123,7 @@ permalink: "/ideas-and-projects.html"
         </div>
     </section>
 
-    <section class="vibe-project project-card project-card--vision" aria-labelledby="vision-title">
+    <section class="vibe-project project-card project-card--vision project-slide" aria-labelledby="vision-title" aria-label="第 4 个项目，共 6 个" data-project-title="个人 Agent 项目规划">
         <div class="project-heading">
             <div class="project-number">04</div>
             <h2 id="vision-title">个人 Agent 项目规划</h2>
@@ -125,7 +139,7 @@ permalink: "/ideas-and-projects.html"
         <blockquote class="vision-manifesto">Build the new world.</blockquote>
     </section>
 
-    <section class="vibe-project project-card project-card--datacenter" aria-labelledby="datacenter-title">
+    <section class="vibe-project project-card project-card--datacenter project-slide" aria-labelledby="datacenter-title" aria-label="第 5 个项目，共 6 个" data-project-title="中国大陆数据中心上游投资观察">
         <div class="project-heading">
             <div class="project-number">05</div>
             <h2 id="datacenter-title">中国大陆数据中心上游投资观察</h2>
@@ -203,7 +217,7 @@ permalink: "/ideas-and-projects.html"
         </details>
     </section>
 
-    <section class="vibe-project project-card project-card--authors" aria-labelledby="authors-title">
+    <section class="vibe-project project-card project-card--authors project-slide" aria-labelledby="authors-title" aria-label="第 6 个项目，共 6 个" data-project-title="DeepSeek-R1 作者公开轨迹追踪">
         <div class="project-heading">
             <div class="project-number">06</div>
             <h2 id="authors-title">DeepSeek-R1 作者公开轨迹追踪</h2>
@@ -241,6 +255,15 @@ permalink: "/ideas-and-projects.html"
         </div>
         <p class="author-privacy"><strong>追踪边界：</strong>只收录公开、可核验的专业动态，不采集私人生活、住址、家庭或非公开社交信息。作者基线来自 <a href="https://arxiv.org/abs/2501.12948" target="_blank" rel="noopener noreferrer">DeepSeek-R1 官方 arXiv 页面</a>。</p>
     </section>
+            </div>
+        </div>
+
+        <div class="project-deck-footer">
+            <div class="project-deck-dots" id="projectDeckDots" aria-label="选择项目"></div>
+            <div class="project-deck-progress" aria-hidden="true"><span id="projectDeckProgress"></span></div>
+            <span class="project-deck-hint">拖动卡片或使用方向键切换</span>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -387,6 +410,136 @@ permalink: "/ideas-and-projects.html"
 
     renderAuthors();
 })();
+
+(function () {
+    var showcase = document.getElementById('projectShowcase');
+    var deck = document.getElementById('projectDeck');
+    var track = document.getElementById('projectTrack');
+    var slides = Array.prototype.slice.call(track.querySelectorAll('.project-slide'));
+    var prev = document.getElementById('projectPrev');
+    var next = document.getElementById('projectNext');
+    var dots = document.getElementById('projectDeckDots');
+    var count = document.getElementById('projectDeckCount');
+    var title = document.getElementById('projectDeckTitle');
+    var progress = document.getElementById('projectDeckProgress');
+    var state = { index: 0, startX: 0, startY: 0, deltaX: 0, dragging: false };
+
+    if (!slides.length) return;
+
+    dots.innerHTML = slides.map(function (slide, index) {
+        return '<button type="button" data-project-index="' + index + '" aria-label="查看项目 ' + (index + 1) + '：' + slide.getAttribute('data-project-title') + '"><span>' + String(index + 1).padStart(2, '0') + '</span></button>';
+    }).join('');
+    showcase.classList.add('is-enhanced');
+
+    function positionTrack(offset) {
+        var slideWidth = slides[0] ? slides[0].offsetWidth : deck.clientWidth;
+        var pixels = -(state.index * slideWidth) + (offset || 0);
+        track.style.transform = 'translate3d(' + pixels + 'px,0,0)';
+    }
+
+    function syncHeight() {
+        var active = slides[state.index];
+        if (active) deck.style.height = active.offsetHeight + 'px';
+    }
+
+    function update(options) {
+        options = options || {};
+        state.index = Math.max(0, Math.min(state.index, slides.length - 1));
+        positionTrack(0);
+        syncHeight();
+
+        slides.forEach(function (slide, index) {
+            var active = index === state.index;
+            slide.classList.toggle('is-active', active);
+            slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+            if ('inert' in slide) slide.inert = !active;
+        });
+        dots.querySelectorAll('button').forEach(function (dot, index) {
+            var active = index === state.index;
+            dot.classList.toggle('is-active', active);
+            dot.setAttribute('aria-current', active ? 'true' : 'false');
+        });
+
+        prev.disabled = state.index === 0;
+        next.disabled = state.index === slides.length - 1;
+        count.textContent = String(state.index + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+        title.textContent = slides[state.index].getAttribute('data-project-title');
+        progress.style.width = (((state.index + 1) / slides.length) * 100) + '%';
+
+        if (options.focusSlide) deck.focus({ preventScroll: true });
+    }
+
+    function goTo(index, options) {
+        if (index === state.index || index < 0 || index >= slides.length) {
+            update();
+            return;
+        }
+        state.index = index;
+        update(options);
+    }
+
+    prev.addEventListener('click', function () { goTo(state.index - 1); });
+    next.addEventListener('click', function () { goTo(state.index + 1); });
+    dots.addEventListener('click', function (event) {
+        var dot = event.target.closest('[data-project-index]');
+        if (dot) goTo(Number(dot.getAttribute('data-project-index')));
+    });
+
+    deck.addEventListener('keydown', function (event) {
+        if (event.target !== deck) return;
+        if (event.key === 'ArrowLeft') { event.preventDefault(); goTo(state.index - 1); }
+        if (event.key === 'ArrowRight') { event.preventDefault(); goTo(state.index + 1); }
+        if (event.key === 'Home') { event.preventDefault(); goTo(0); }
+        if (event.key === 'End') { event.preventDefault(); goTo(slides.length - 1); }
+    });
+
+    function isInteractiveTarget(target) {
+        return Boolean(target.closest('a,button,input,summary,details,table,.startup-table-card,.author-board'));
+    }
+
+    deck.addEventListener('pointerdown', function (event) {
+        if ((event.pointerType === 'mouse' && event.button !== 0) || isInteractiveTarget(event.target)) return;
+        state.startX = event.clientX;
+        state.startY = event.clientY;
+        state.deltaX = 0;
+        state.dragging = true;
+        deck.setPointerCapture(event.pointerId);
+        showcase.classList.add('is-dragging');
+    });
+    deck.addEventListener('pointermove', function (event) {
+        if (!state.dragging) return;
+        var deltaY = event.clientY - state.startY;
+        state.deltaX = event.clientX - state.startX;
+        if (Math.abs(deltaY) > Math.abs(state.deltaX)) return;
+        var resistance = (state.index === 0 && state.deltaX > 0) || (state.index === slides.length - 1 && state.deltaX < 0) ? 0.22 : 1;
+        positionTrack(state.deltaX * resistance);
+    });
+
+    function finishDrag(event) {
+        if (!state.dragging) return;
+        state.dragging = false;
+        showcase.classList.remove('is-dragging');
+        if (deck.hasPointerCapture(event.pointerId)) deck.releasePointerCapture(event.pointerId);
+        var threshold = Math.min(90, deck.clientWidth * 0.12);
+        if (state.deltaX < -threshold) goTo(state.index + 1);
+        else if (state.deltaX > threshold) goTo(state.index - 1);
+        else update();
+    }
+    deck.addEventListener('pointerup', finishDrag);
+    deck.addEventListener('pointercancel', finishDrag);
+
+    if ('ResizeObserver' in window) {
+        var observer = new ResizeObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.target === slides[state.index]) syncHeight();
+            });
+        });
+        slides.forEach(function (slide) { observer.observe(slide); });
+    }
+    window.addEventListener('resize', function () { positionTrack(0); syncHeight(); });
+
+    requestAnimationFrame(function () { update(); });
+})();
 </script>
 
 <style>
@@ -398,6 +551,13 @@ permalink: "/ideas-and-projects.html"
 .vibe-sub { color:#cbd3df; font-size:.95rem; margin:.75rem 0 0; }
 .vibe-project { background:#fff; border:1px solid #d8dee8; border-radius:14px; box-shadow:0 8px 20px rgba(23,35,59,.08); margin-top:1.2rem; overflow:hidden; padding:1.5rem; position:relative; }
 .vibe-project::before { background:var(--accent,#3563b8); content:""; height:5px; inset:0 0 auto; position:absolute; }
+.project-deck-bar,.project-deck-footer { display:none; }
+.project-showcase.is-enhanced { margin-top:1.2rem; }
+.project-showcase.is-enhanced .project-deck-bar { align-items:center; background:#17233b; border:1px solid #2c3b57; border-radius:13px 13px 0 0; display:flex; justify-content:space-between; padding:.8rem 1rem; }
+.project-deck-current { align-items:baseline; display:flex; gap:.7rem; min-width:0; }.project-deck-current span { color:#f3a683; font-size:.65rem; font-variant-numeric:tabular-nums; font-weight:800; letter-spacing:.09em; }.project-deck-current strong { color:#fff; font-family:Lora,Georgia,serif; font-size:.9rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.project-deck-actions { display:flex; gap:.4rem; }.project-deck-actions button { align-items:center; background:#24324d; border:1px solid #44516a; border-radius:50%; color:#fff; cursor:pointer; display:flex; font-size:1rem; height:38px; justify-content:center; transition:background .2s ease,border-color .2s ease,transform .2s ease; width:38px; }.project-deck-actions button:hover:not(:disabled) { background:#ef8354; border-color:#ef8354; color:#17233b; transform:translateY(-1px); }.project-deck-actions button:disabled { cursor:not-allowed; opacity:.3; }
+.project-showcase.is-enhanced .project-deck { cursor:grab; margin:0 -10px; outline:none; overflow:hidden; padding:10px 10px 18px; touch-action:pan-y; transition:height .46s cubic-bezier(.22,1,.36,1); }.project-showcase.is-enhanced .project-deck:focus-visible { box-shadow:0 0 0 3px rgba(53,99,184,.22); }.project-showcase.is-enhanced .project-track { align-items:flex-start; display:flex; transition:transform .58s cubic-bezier(.22,1,.36,1); will-change:transform; }.project-showcase.is-enhanced.is-dragging .project-deck { cursor:grabbing; }.project-showcase.is-enhanced.is-dragging .project-track { transition:none; }.project-showcase.is-enhanced .project-slide { box-sizing:border-box; flex:0 0 100%; margin:0; opacity:.48; transform:scale(.985); transition:opacity .42s ease,transform .42s ease; width:100%; }.project-showcase.is-enhanced .project-slide.is-active { opacity:1; transform:scale(1); }
+.project-showcase.is-enhanced .project-deck-footer { align-items:center; display:grid; gap:.8rem; grid-template-columns:auto minmax(100px,1fr) auto; margin-top:.1rem; padding:0 .2rem; }.project-deck-dots { display:flex; gap:.35rem; }.project-deck-dots button { align-items:center; background:#e4e9f1; border:0; border-radius:999px; color:#6d788a; cursor:pointer; display:flex; height:25px; justify-content:center; padding:0; transition:background .25s ease,color .25s ease,width .35s cubic-bezier(.22,1,.36,1); width:25px; }.project-deck-dots button span { font-size:.54rem; font-weight:800; }.project-deck-dots button.is-active { background:#17233b; color:#fff; width:42px; }.project-deck-progress { background:#dce2eb; border-radius:999px; height:3px; overflow:hidden; }.project-deck-progress span { background:linear-gradient(90deg,#3563b8,#ef8354); border-radius:inherit; display:block; height:100%; transition:width .5s cubic-bezier(.22,1,.36,1); width:16.666%; }.project-deck-hint { color:#7b8798; font-size:.59rem; white-space:nowrap; }
 .project-heading { align-items:center; display:grid; gap:.75rem; grid-template-columns:auto 1fr auto; }
 .project-number { color:var(--accent,#3563b8); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:.75rem; font-weight:800; letter-spacing:.08em; padding-top:.3rem; }
 .project-heading h2 { color:#182238; font-family:Lora,Georgia,serif; font-size:1.55rem; margin:0; }
@@ -480,6 +640,7 @@ permalink: "/ideas-and-projects.html"
     .assistant-grid { grid-template-columns:1fr; }.phone-shell { height:300px; justify-self:center; width:190px; }
     .datacenter-dashboard,.supplier-grid { grid-template-columns:1fr; }.datacenter-watchline { grid-template-columns:repeat(2,1fr); }.stock-list { grid-template-columns:1fr; }
     .author-metrics { grid-template-columns:1fr 1fr; }.author-search { grid-column:1 / -1; }.author-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.tracking-roadmap { grid-template-columns:1fr; }
+    .project-showcase.is-enhanced .project-deck-bar { padding:.7rem .75rem; }.project-deck-current { gap:.5rem; }.project-deck-current strong { font-size:.78rem; max-width:190px; }.project-deck-actions button { height:34px; width:34px; }.project-showcase.is-enhanced .project-deck-footer { grid-template-columns:1fr auto; }.project-deck-progress { grid-column:1 / -1; grid-row:2; }.project-deck-hint { display:none; }.project-deck-dots { overflow-x:auto; padding-bottom:.15rem; }.project-deck-dots button { flex:0 0 25px; }.project-deck-dots button.is-active { flex-basis:42px; }
 }
-@media (prefers-reduced-motion:reduce) { .voice-orb i { animation:none; } }
+@media (prefers-reduced-motion:reduce) { .voice-orb i { animation:none; }.project-showcase.is-enhanced .project-deck,.project-showcase.is-enhanced .project-track,.project-showcase.is-enhanced .project-slide,.project-deck-dots button,.project-deck-progress span { transition:none; } }
 </style>
