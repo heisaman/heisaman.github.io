@@ -5,101 +5,78 @@ description: "从苏北出发，穿过工程、互联网与人工智能，持续
 ---
 
 <div class="container home-portrait">
-    <header class="home-intro">
-        <p class="home-intro-kicker">个人站点 · 持续建造中</p>
-        <div class="home-intro-grid">
-            <h1>从苏北出发，<br>向智能时代继续建造。</h1>
-            <p>工程、远行、互联网与创业，构成了我的坐标。这里收录正在思考的未来，也记录一路走来的路径。</p>
-        </div>
-    </header>
-
-    <section class="home-poster-section" aria-labelledby="home-poster-title">
-        <div class="home-section-head">
-            <span>01</span>
-            <div>
-                <h2 id="home-poster-title">正在思考的两个未来</h2>
-                <p>点击海报，左右展开画面。</p>
-            </div>
-        </div>
-
+    <section class="home-poster-section" aria-label="正在思考的两个未来">
         <div class="home-shutters" id="homeShutters" tabindex="0" role="region" aria-roledescription="carousel" aria-label="主题海报">
             <button class="home-shutter is-active" type="button" data-poster-index="0" aria-expanded="true" aria-label="展开星际文明海报 V2">
                 <img src="{{site.baseurl}}/assets/images/poster-interstellar-civilization-v2.png" alt="月面基地、火箭与远方地球构成的星际文明场景" fetchpriority="high">
-                <span class="home-shutter-number">01</span>
-                <span class="home-shutter-copy"><small>海报 V2</small><strong>星际文明</strong></span>
+                <span class="home-shutter-copy"><i class="fas fa-rocket" aria-hidden="true"></i><strong>星际文明</strong></span>
             </button>
             <button class="home-shutter" type="button" data-poster-index="1" aria-expanded="false" aria-label="展开软件生产力海报 V2">
                 <img src="{{site.baseurl}}/assets/images/poster-software-productivity-v2.png" alt="人与智能设备协同运转的未来城市软件生产力场景" loading="lazy">
-                <span class="home-shutter-number">02</span>
-                <span class="home-shutter-copy"><small>海报 V2</small><strong>软件生产力</strong></span>
+                <span class="home-shutter-copy"><i class="fas fa-code" aria-hidden="true"></i><strong>软件生产力</strong></span>
             </button>
         </div>
 
         <div class="home-shutter-controls">
-            <div class="home-shutter-state" aria-live="polite"><span id="homePosterCount">01 / 02</span><strong id="homePosterName">星际文明</strong></div>
-            <div class="home-shutter-progress" aria-hidden="true"><span id="homePosterProgress"></span></div>
-            <div class="home-shutter-actions">
-                <button id="homePosterPrev" type="button" aria-label="上一张海报">←</button>
-                <button id="homePosterNext" type="button" aria-label="下一张海报">→</button>
+            <button class="home-shutter-arrow" id="homePosterPrev" type="button" aria-label="上一张海报">←</button>
+            <div class="home-shutter-legend" aria-label="海报图例">
+                <button class="is-active" type="button" data-poster-target="0" aria-pressed="true"><i class="fas fa-rocket" aria-hidden="true"></i><span>星际文明</span></button>
+                <button type="button" data-poster-target="1" aria-pressed="false"><i class="fas fa-code" aria-hidden="true"></i><span>软件生产力</span></button>
             </div>
+            <button class="home-shutter-arrow" id="homePosterNext" type="button" aria-label="下一张海报">→</button>
         </div>
     </section>
 
+    <header class="home-intro">
+        <h1>从苏北出发，向智能时代继续建造。</h1>
+    </header>
+
     <section class="home-journey" aria-labelledby="home-journey-title">
         <div class="home-section-head">
-            <span>02</span>
-            <div>
-                <h2 id="home-journey-title">个人经历路线图</h2>
-                <p>从故乡出发，沿着学习、工程与时代变化一路向前。</p>
-            </div>
+            <i class="fas fa-route" aria-hidden="true"></i>
+            <h2 id="home-journey-title">个人经历路线图</h2>
         </div>
 
         <div class="journey-track">
             <article class="journey-stop">
                 <div class="journey-card">
-                    <span>01 · 出发</span>
+                    <i class="fas fa-seedling" aria-hidden="true"></i>
                     <h3>来自苏北农村</h3>
-                    <p>从土地、季节与朴素生活中出发。</p>
                 </div>
                 <div class="journey-node" aria-hidden="true"><i></i></div>
             </article>
             <article class="journey-stop">
                 <div class="journey-card">
-                    <span>02 · 求学</span>
+                    <i class="fas fa-school" aria-hidden="true"></i>
                     <h3>省盐中求学</h3>
-                    <p>在中学阶段，把更远的世界放进视野。</p>
                 </div>
                 <div class="journey-node" aria-hidden="true"><i></i></div>
             </article>
             <article class="journey-stop">
                 <div class="journey-card">
-                    <span>03 · 扎根</span>
+                    <i class="fas fa-university" aria-hidden="true"></i>
                     <h3>南京念大学</h3>
-                    <p>完成大学阶段，建立技术与工程基础。</p>
                 </div>
                 <div class="journey-node" aria-hidden="true"><i></i></div>
             </article>
             <article class="journey-stop">
                 <div class="journey-card">
-                    <span>04 · 远行</span>
+                    <i class="fas fa-plane" aria-hidden="true"></i>
                     <h3>法国工程师学校留学</h3>
-                    <p>进入工程师教育体系，经历跨文化学习。</p>
                 </div>
                 <div class="journey-node" aria-hidden="true"><i></i></div>
             </article>
             <article class="journey-stop">
                 <div class="journey-card">
-                    <span>05 · 实践</span>
+                    <i class="fas fa-building" aria-hidden="true"></i>
                     <h3>上海互联网公司工作</h3>
-                    <p>在真实业务与规模化系统中积累经验。</p>
                 </div>
                 <div class="journey-node" aria-hidden="true"><i></i></div>
             </article>
             <article class="journey-stop journey-stop--current">
                 <div class="journey-card">
-                    <span>06 · 正在发生</span>
+                    <i class="fas fa-rocket" aria-hidden="true"></i>
                     <h3>AI 时代创业</h3>
-                    <p>把过去的积累带进新一轮技术浪潮。</p>
                 </div>
                 <div class="journey-node" aria-hidden="true"><i></i></div>
             </article>
@@ -108,10 +85,10 @@ description: "从苏北出发，穿过工程、互联网与人工智能，持续
 
     <aside class="home-blog-bridge">
         <div>
-            <span>旧首页内容已迁移</span>
-            <h2>技术文章仍在，只是有了更安静的位置。</h2>
+            <i class="fas fa-book-open" aria-hidden="true"></i>
+            <h2>技术文章</h2>
         </div>
-        <a href="{{site.baseurl}}/blog.html">进入技术博客 <span>→</span></a>
+        <a href="{{site.baseurl}}/blog.html" aria-label="进入技术博客"><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
     </aside>
 </div>
 
@@ -119,12 +96,9 @@ description: "从苏北出发，穿过工程、互联网与人工智能，持续
 (function () {
     var stage = document.getElementById('homeShutters');
     var panels = Array.prototype.slice.call(stage.querySelectorAll('.home-shutter'));
+    var legendButtons = Array.prototype.slice.call(document.querySelectorAll('[data-poster-target]'));
     var previous = document.getElementById('homePosterPrev');
     var next = document.getElementById('homePosterNext');
-    var count = document.getElementById('homePosterCount');
-    var name = document.getElementById('homePosterName');
-    var progress = document.getElementById('homePosterProgress');
-    var titles = ['星际文明', '软件生产力'];
     var state = { index: 0, startX: 0, deltaX: 0, dragging: false, suppressClick: false };
 
     function activate(index) {
@@ -134,11 +108,13 @@ description: "从苏北出发，穿过工程、互联网与人工智能，持续
             panel.classList.toggle('is-active', active);
             panel.setAttribute('aria-expanded', active ? 'true' : 'false');
         });
+        legendButtons.forEach(function (button, buttonIndex) {
+            var active = buttonIndex === state.index;
+            button.classList.toggle('is-active', active);
+            button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
         previous.disabled = state.index === 0;
         next.disabled = state.index === panels.length - 1;
-        count.textContent = String(state.index + 1).padStart(2, '0') + ' / 02';
-        name.textContent = titles[state.index];
-        progress.style.width = ((state.index + 1) / panels.length * 100) + '%';
     }
 
     panels.forEach(function (panel, index) {
@@ -150,6 +126,9 @@ description: "从苏北出发，穿过工程、互联网与人工智能，持续
             }
             activate(index);
         });
+    });
+    legendButtons.forEach(function (button) {
+        button.addEventListener('click', function () { activate(Number(button.getAttribute('data-poster-target'))); });
     });
     previous.addEventListener('click', function () { activate(state.index - 1); });
     next.addEventListener('click', function () { activate(state.index + 1); });
@@ -187,16 +166,15 @@ description: "从苏北出发，穿过工程、互联网与人工智能，持续
 </script>
 
 <style>
-.home-portrait { max-width:1180px; padding-bottom:4rem; }
-.home-intro { background:#17233b; border-left:6px solid #ef8354; border-radius:16px; box-shadow:0 16px 34px rgba(23,35,59,.18); margin:.75rem 0 1.4rem; overflow:hidden; padding:2rem 2.25rem; position:relative; }.home-intro::after { border:1px solid rgba(255,255,255,.14); border-radius:50%; content:""; height:190px; position:absolute; right:-38px; top:-92px; width:190px; }.home-intro-kicker { color:#f3a683; font-size:.68rem; font-weight:800; letter-spacing:.16em; margin:0 0 .8rem; }.home-intro-grid { align-items:end; display:grid; gap:2rem; grid-template-columns:1.5fr 1fr; }.home-intro h1 { color:#fff; font-family:Lora,Georgia,serif; font-size:clamp(2.05rem,5vw,3.65rem); font-weight:700; letter-spacing:-.05em; line-height:1.12; margin:0; }.home-intro-grid > p { border-left:1px solid rgba(255,255,255,.23); color:#cbd3df; font-size:.88rem; line-height:1.75; margin:0; padding-left:1.25rem; }
-.home-poster-section,.home-journey { margin-top:2rem; }.home-section-head { align-items:flex-start; display:flex; gap:.8rem; margin-bottom:1rem; }.home-section-head > span { color:#c6533f; font-size:.7rem; font-weight:800; letter-spacing:.1em; padding-top:.38rem; }.home-section-head h2 { color:#17233b; font-family:Lora,Georgia,serif; font-size:1.55rem; margin:0; }.home-section-head p { color:#6a7587; font-size:.76rem; margin:.3rem 0 0; }
-.home-shutters { background:#0b1018; border:1px solid #263146; border-radius:16px; box-shadow:0 18px 38px rgba(12,18,28,.2); display:flex; gap:8px; height:min(52vw,575px); min-height:410px; overflow:hidden; padding:8px; touch-action:pan-y; }.home-shutters:focus-visible { outline:3px solid rgba(239,131,84,.4); outline-offset:3px; }.home-shutter { background:#111927; border:0; border-radius:10px; cursor:pointer; flex:.72 1 0; min-width:0; overflow:hidden; padding:0; position:relative; text-align:left; transition:flex .72s cubic-bezier(.22,1,.36,1),filter .42s ease,transform .42s ease; }.home-shutter::after { background:linear-gradient(180deg,rgba(7,11,18,.02) 35%,rgba(7,11,18,.88) 100%); content:""; inset:0; pointer-events:none; position:absolute; }.home-shutter img { height:100%; inset:0; object-fit:cover; position:absolute; transition:filter .42s ease,transform .72s cubic-bezier(.22,1,.36,1); width:100%; }.home-shutter:not(.is-active) img { filter:brightness(.58) saturate(.7); transform:scale(1.06); }.home-shutter.is-active { flex:4.15 1 0; }.home-shutter.is-active img { transform:scale(1); }.home-shutter:hover:not(.is-active) { flex:.92 1 0; }.home-shutter:focus-visible { outline:3px solid #ef8354; outline-offset:-4px; }
-.home-shutter-number { color:#fff; font-size:.65rem; font-weight:800; left:1rem; letter-spacing:.12em; position:absolute; top:1rem; z-index:2; }.home-shutter-copy { bottom:1.25rem; left:1.25rem; position:absolute; right:1.25rem; z-index:2; }.home-shutter-copy small { color:#f3a683; display:block; font-size:.62rem; font-weight:800; letter-spacing:.12em; margin-bottom:.35rem; opacity:0; transform:translateY(6px); transition:opacity .3s ease,transform .4s ease; }.home-shutter-copy strong { color:#fff; display:block; font-family:Lora,Georgia,serif; font-size:.9rem; line-height:1.25; text-orientation:mixed; writing-mode:vertical-rl; }.home-shutter.is-active .home-shutter-copy small { opacity:1; transform:translateY(0); }.home-shutter.is-active .home-shutter-copy strong { font-size:clamp(1.55rem,3.5vw,2.7rem); writing-mode:horizontal-tb; }
-.home-shutter-controls { align-items:center; display:grid; gap:.8rem; grid-template-columns:auto minmax(120px,1fr) auto; padding:.8rem .25rem 0; }.home-shutter-state { align-items:baseline; display:flex; gap:.55rem; }.home-shutter-state span { color:#c6533f; font-size:.64rem; font-weight:800; letter-spacing:.08em; }.home-shutter-state strong { color:#243047; font-family:Lora,Georgia,serif; font-size:.82rem; }.home-shutter-progress { background:#dce2eb; border-radius:999px; height:3px; overflow:hidden; }.home-shutter-progress span { background:linear-gradient(90deg,#3563b8,#ef8354); border-radius:inherit; display:block; height:100%; transition:width .55s cubic-bezier(.22,1,.36,1); width:50%; }.home-shutter-actions { display:flex; gap:.35rem; }.home-shutter-actions button { align-items:center; background:#17233b; border:1px solid #35435c; border-radius:50%; color:#fff; cursor:pointer; display:flex; height:34px; justify-content:center; width:34px; }.home-shutter-actions button:hover:not(:disabled) { background:#ef8354; border-color:#ef8354; color:#17233b; }.home-shutter-actions button:disabled { cursor:not-allowed; opacity:.28; }
-.home-journey { background:#f4f6f9; border:1px solid #d9e0e9; border-radius:16px; overflow:hidden; padding:1.5rem; }.home-journey .home-section-head { margin-bottom:.25rem; }.journey-track { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); min-height:420px; position:relative; }.journey-track::before { background:linear-gradient(90deg,#8090aa,#3563b8 58%,#ef8354); content:""; height:3px; left:3%; position:absolute; right:3%; top:50%; transform:translateY(-50%); }.journey-track::after { border-bottom:5px solid transparent; border-left:8px solid #ef8354; border-top:5px solid transparent; content:""; position:absolute; right:2.4%; top:calc(50% - 5px); }
-.journey-stop { display:grid; grid-template-rows:1fr 44px 1fr; min-width:0; padding:0 .3rem; position:relative; }.journey-card { align-self:end; background:#fff; border:1px solid #d9e0e9; border-radius:10px; box-shadow:0 7px 17px rgba(23,35,59,.07); grid-row:1; margin-bottom:.6rem; min-height:126px; padding:.8rem; }.journey-stop:nth-child(even) .journey-card { align-self:start; grid-row:3; margin-bottom:0; margin-top:.6rem; }.journey-card > span { color:#3563b8; display:block; font-size:.56rem; font-weight:800; letter-spacing:.08em; }.journey-card h3 { color:#202c42; font-family:Lora,Georgia,serif; font-size:.82rem; line-height:1.4; margin:.4rem 0 .32rem; }.journey-card p { color:#687488; font-size:.62rem; line-height:1.55; margin:0; }.journey-node { align-items:center; display:flex; grid-row:2; justify-content:center; position:relative; z-index:2; }.journey-node i { background:#fff; border:4px solid #3563b8; border-radius:50%; box-shadow:0 0 0 5px #f4f6f9; height:17px; width:17px; }.journey-stop--current .journey-card { background:#17233b; border-color:#17233b; }.journey-stop--current .journey-card > span { color:#f3a683; }.journey-stop--current .journey-card h3 { color:#fff; }.journey-stop--current .journey-card p { color:#c2cbd8; }.journey-stop--current .journey-node i { border-color:#ef8354; }
-.home-blog-bridge { align-items:center; background:#17233b; border-left:5px solid #3563b8; border-radius:13px; display:flex; justify-content:space-between; margin-top:1.3rem; padding:1.2rem 1.35rem; }.home-blog-bridge span { color:#8fa7d0; display:block; font-size:.62rem; font-weight:700; letter-spacing:.08em; }.home-blog-bridge h2 { color:#fff; font-family:Lora,Georgia,serif; font-size:1rem; margin:.25rem 0 0; }.home-blog-bridge > a { background:#ef8354; border-radius:999px; color:#17233b; font-size:.72rem; font-weight:800; padding:.62rem .9rem; white-space:nowrap; }.home-blog-bridge > a span { color:inherit; display:inline; margin-left:.35rem; }
-@media (max-width:991px) { .home-intro-grid { grid-template-columns:1fr; gap:1.2rem; }.home-intro-grid > p { max-width:560px; }.journey-track { grid-template-columns:repeat(3,minmax(0,1fr)); min-height:auto; padding-top:1rem; }.journey-track::before,.journey-track::after { display:none; }.journey-stop { grid-template-rows:36px auto; padding:.35rem; }.journey-card,.journey-stop:nth-child(even) .journey-card { align-self:stretch; grid-row:2; margin:.25rem 0 0; }.journey-node,.journey-stop:nth-child(even) .journey-node { grid-row:1; }.journey-stop::before { background:#b8c3d3; content:""; height:2px; left:0; position:absolute; right:0; top:22px; }.journey-card { min-height:120px; } }
-@media (max-width:575px) { .home-intro { margin-top:.5rem; padding:1.6rem 1.35rem; }.home-intro-grid > p { border-left:0; border-top:1px solid rgba(255,255,255,.2); padding-left:0; padding-top:1rem; }.home-poster-section,.home-journey { margin-top:1.4rem; }.home-shutters { height:clamp(175px,50vw,205px); min-height:0; }.home-shutter { flex:.58 1 0; }.home-shutter.is-active { flex:7.2 1 0; }.home-shutter-copy { bottom:.75rem; left:.75rem; right:.75rem; }.home-shutter-number { left:.7rem; top:.7rem; }.home-shutter.is-active .home-shutter-copy strong { font-size:1.3rem; }.home-shutter:not(.is-active) .home-shutter-copy { bottom:.65rem; left:50%; right:auto; transform:translateX(-50%); }.home-shutter:not(.is-active) .home-shutter-copy strong { font-size:.64rem; }.home-shutter-controls { grid-template-columns:1fr auto; }.home-shutter-progress { grid-column:1 / -1; grid-row:2; }.home-journey { padding:1.2rem; }.journey-track { display:block; padding:1rem 0 0 2.8rem; }.journey-track::before { background:linear-gradient(#8090aa,#3563b8 58%,#ef8354); bottom:1.2rem; display:block; height:auto; left:1rem; right:auto; top:1.4rem; transform:none; width:3px; }.journey-stop { display:block; padding:0 0 .8rem; }.journey-stop::before { display:none; }.journey-card,.journey-stop:nth-child(even) .journey-card { margin:0; min-height:0; }.journey-node,.journey-stop:nth-child(even) .journey-node { left:-2.55rem; position:absolute; top:.9rem; }.journey-node i { box-shadow:0 0 0 5px #f4f6f9; }.home-blog-bridge { align-items:flex-start; flex-direction:column; gap:1rem; }.home-blog-bridge > a { align-self:flex-start; } }
-@media (prefers-reduced-motion:reduce) { .home-shutter,.home-shutter img,.home-shutter-copy small,.home-shutter-progress span { transition:none; } }
+.home-portrait { max-width:1500px!important; padding-bottom:4rem; }
+.home-poster-section { margin-top:.55rem; }.home-shutters { background:#0b1018; border:1px solid #263146; border-radius:16px; box-shadow:0 20px 44px rgba(12,18,28,.24); display:flex; gap:8px; height:min(52vw,760px); min-height:520px; overflow:hidden; padding:8px; touch-action:pan-y; }.home-shutters:focus-visible { outline:3px solid rgba(239,131,84,.4); outline-offset:3px; }.home-shutter { background:#111927; border:0; border-radius:10px; cursor:pointer; flex:.68 1 0; min-width:0; overflow:hidden; padding:0; position:relative; text-align:left; transition:flex .72s cubic-bezier(.22,1,.36,1),filter .42s ease,transform .42s ease; }.home-shutter::after { background:linear-gradient(180deg,rgba(7,11,18,0) 45%,rgba(7,11,18,.88) 100%); content:""; inset:0; pointer-events:none; position:absolute; }.home-shutter img { height:100%; inset:0; object-fit:cover; position:absolute; transition:filter .42s ease,transform .72s cubic-bezier(.22,1,.36,1); width:100%; }.home-shutter:not(.is-active) img { filter:brightness(.5) saturate(.68); transform:scale(1.06); }.home-shutter.is-active { flex:5.8 1 0; }.home-shutter.is-active img { transform:scale(1); }.home-shutter:hover:not(.is-active) { flex:.9 1 0; }.home-shutter:focus-visible { outline:3px solid #ef8354; outline-offset:-4px; }
+.home-shutter-copy { align-items:center; bottom:1.35rem; display:flex; gap:.75rem; left:1.35rem; position:absolute; right:1.35rem; z-index:2; }.home-shutter-copy i { align-items:center; backdrop-filter:blur(8px); background:rgba(10,18,30,.58); border:1px solid rgba(255,255,255,.28); border-radius:50%; color:#f3a683; display:flex; flex:0 0 auto; height:40px; justify-content:center; width:40px; }.home-shutter-copy strong { color:#fff; font-family:Lora,Georgia,serif; font-size:clamp(1.8rem,3.5vw,3rem); line-height:1.1; opacity:0; transform:translateX(-10px); transition:opacity .35s ease,transform .45s ease; white-space:nowrap; }.home-shutter.is-active .home-shutter-copy strong { opacity:1; transform:translateX(0); }.home-shutter:not(.is-active) .home-shutter-copy { left:50%; right:auto; transform:translateX(-50%); }
+.home-shutter-controls { align-items:center; display:grid; gap:.75rem; grid-template-columns:auto minmax(220px,430px) auto; justify-content:center; padding:.8rem 0 0; }.home-shutter-arrow { align-items:center; background:#17233b; border:1px solid #35435c; border-radius:50%; color:#fff; cursor:pointer; display:flex; height:38px; justify-content:center; width:38px; }.home-shutter-arrow:hover:not(:disabled) { background:#ef8354; border-color:#ef8354; color:#17233b; }.home-shutter-arrow:disabled { cursor:not-allowed; opacity:.25; }.home-shutter-legend { background:#edf1f6; border:1px solid #d8dee8; border-radius:999px; display:grid; gap:.3rem; grid-template-columns:1fr 1fr; padding:.28rem; }.home-shutter-legend button { align-items:center; background:transparent; border:0; border-radius:999px; color:#637086; cursor:pointer; display:flex; font-size:.72rem; font-weight:700; gap:.45rem; justify-content:center; padding:.48rem .7rem; }.home-shutter-legend button i { color:#8b97a8; }.home-shutter-legend button.is-active { background:#17233b; color:#fff; }.home-shutter-legend button.is-active i { color:#ef8354; }
+.home-intro { background:#17233b; border-left:6px solid #ef8354; border-radius:15px; box-shadow:0 14px 30px rgba(23,35,59,.16); margin:1.6rem 0 0; overflow:hidden; padding:1.6rem 2rem; position:relative; }.home-intro::after { border:1px solid rgba(255,255,255,.14); border-radius:50%; content:""; height:170px; position:absolute; right:-35px; top:-88px; width:170px; }.home-intro h1 { color:#fff; font-family:Lora,Georgia,serif; font-size:clamp(1.75rem,4vw,3.15rem); font-weight:700; letter-spacing:-.045em; line-height:1.15; margin:0; position:relative; z-index:1; }
+.home-journey { background:#f4f6f9; border:1px solid #d9e0e9; border-radius:16px; margin-top:1.4rem; overflow:hidden; padding:1.5rem; }.home-section-head { align-items:center; display:flex; gap:.65rem; margin-bottom:.35rem; }.home-section-head > i { align-items:center; background:#17233b; border-radius:50%; color:#ef8354; display:flex; height:34px; justify-content:center; width:34px; }.home-section-head h2 { color:#17233b; font-family:Lora,Georgia,serif; font-size:1.45rem; margin:0; }.journey-track { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); min-height:340px; position:relative; }.journey-track::before { background:linear-gradient(90deg,#8090aa,#3563b8 58%,#ef8354); content:""; height:3px; left:3%; position:absolute; right:3%; top:50%; transform:translateY(-50%); }.journey-track::after { border-bottom:5px solid transparent; border-left:8px solid #ef8354; border-top:5px solid transparent; content:""; position:absolute; right:2.4%; top:calc(50% - 5px); }
+.journey-stop { display:grid; grid-template-rows:1fr 44px 1fr; min-width:0; padding:0 .35rem; position:relative; }.journey-card { align-items:center; align-self:end; background:#fff; border:1px solid #d9e0e9; border-radius:11px; box-shadow:0 7px 17px rgba(23,35,59,.07); display:flex; flex-direction:column; grid-row:1; justify-content:center; margin-bottom:.65rem; min-height:102px; padding:.8rem; text-align:center; }.journey-stop:nth-child(even) .journey-card { align-self:start; grid-row:3; margin-bottom:0; margin-top:.65rem; }.journey-card > i { color:#3563b8; font-size:1rem; }.journey-card h3 { color:#202c42; font-family:Lora,Georgia,serif; font-size:.82rem; line-height:1.4; margin:.55rem 0 0; }.journey-node { align-items:center; display:flex; grid-row:2; justify-content:center; position:relative; z-index:2; }.journey-node i { background:#fff; border:4px solid #3563b8; border-radius:50%; box-shadow:0 0 0 5px #f4f6f9; height:17px; width:17px; }.journey-stop--current .journey-card { background:#17233b; border-color:#17233b; }.journey-stop--current .journey-card > i { color:#ef8354; }.journey-stop--current .journey-card h3 { color:#fff; }.journey-stop--current .journey-node i { border-color:#ef8354; }
+.home-blog-bridge { align-items:center; background:#17233b; border-left:5px solid #3563b8; border-radius:13px; display:flex; justify-content:space-between; margin-top:1.3rem; padding:1rem 1.2rem; }.home-blog-bridge > div { align-items:center; display:flex; gap:.65rem; }.home-blog-bridge > div > i { color:#8fa7d0; font-size:1rem; }.home-blog-bridge h2 { color:#fff; font-family:Lora,Georgia,serif; font-size:1rem; margin:0; }.home-blog-bridge > a { align-items:center; background:#ef8354; border-radius:50%; color:#17233b; display:flex; height:38px; justify-content:center; width:38px; }
+@media (max-width:991px) { .home-shutters { height:min(56vw,520px); min-height:0; }.journey-track { grid-template-columns:repeat(3,minmax(0,1fr)); min-height:auto; padding-top:1rem; }.journey-track::before,.journey-track::after { display:none; }.journey-stop { grid-template-rows:36px auto; padding:.35rem; }.journey-card,.journey-stop:nth-child(even) .journey-card { align-self:stretch; grid-row:2; margin:.25rem 0 0; }.journey-node,.journey-stop:nth-child(even) .journey-node { grid-row:1; }.journey-stop::before { background:#b8c3d3; content:""; height:2px; left:0; position:absolute; right:0; top:22px; }.journey-card { min-height:100px; } }
+@media (max-width:575px) { .home-portrait { padding-left:10px; padding-right:10px; }.home-poster-section { margin-top:.35rem; }.home-shutters { border-radius:12px; height:clamp(185px,53vw,220px); padding:5px; }.home-shutter { border-radius:8px; flex:.55 1 0; }.home-shutter.is-active { flex:7.5 1 0; }.home-shutter-copy { bottom:.65rem; gap:.45rem; left:.65rem; right:.65rem; }.home-shutter-copy i { height:30px; width:30px; }.home-shutter-copy strong { font-size:1.2rem; }.home-shutter:not(.is-active) .home-shutter-copy { bottom:.6rem; }.home-shutter-controls { gap:.45rem; grid-template-columns:auto minmax(0,1fr) auto; padding-top:.65rem; }.home-shutter-arrow { height:34px; width:34px; }.home-shutter-legend button { padding:.42rem .5rem; }.home-shutter-legend button span { display:none; }.home-intro { margin-top:1.2rem; padding:1.3rem 1.25rem; }.home-intro h1 { font-size:1.65rem; }.home-journey { margin-top:1rem; padding:1.15rem; }.home-section-head h2 { font-size:1.25rem; }.journey-track { display:block; padding:1rem 0 0 2.8rem; }.journey-track::before { background:linear-gradient(#8090aa,#3563b8 58%,#ef8354); bottom:1.2rem; display:block; height:auto; left:1rem; right:auto; top:1.4rem; transform:none; width:3px; }.journey-stop { display:block; padding:0 0 .75rem; }.journey-stop::before { display:none; }.journey-card,.journey-stop:nth-child(even) .journey-card { align-items:flex-start; flex-direction:row; gap:.65rem; justify-content:flex-start; margin:0; min-height:0; padding:.85rem; text-align:left; }.journey-card h3 { margin:0; }.journey-node,.journey-stop:nth-child(even) .journey-node { left:-2.55rem; position:absolute; top:.9rem; }.journey-node i { box-shadow:0 0 0 5px #f4f6f9; } }
+@media (prefers-reduced-motion:reduce) { .home-shutter,.home-shutter img,.home-shutter-copy strong { transition:none; } }
 </style>
