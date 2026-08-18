@@ -1,0 +1,25 @@
+---
+title: "技术博客"
+layout: default
+permalink: "/blog.html"
+description: "技术文章、工程实践与长期思考。"
+---
+
+<div class="container blog-archive-page">
+    <header class="blog-archive-head">
+        <p>ARCHIVE</p>
+        <h1>技术博客</h1>
+        <span>{{ site.posts | size }} 篇文章 · 持续整理</span>
+    </header>
+
+    <div class="blog-archive-list">
+        {% for post in site.posts %}
+            {% include main-loop-card.html %}
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+.blog-archive-page { max-width:960px; padding-bottom:4rem; }.blog-archive-head { background:#17233b; border-left:6px solid #3563b8; border-radius:16px; box-shadow:0 16px 34px rgba(23,35,59,.18); margin:.75rem 0 1.6rem; padding:1.8rem 2rem; }.blog-archive-head p { color:#8fa7d0; font-size:.68rem; font-weight:800; letter-spacing:.16em; margin:0 0 .55rem; }.blog-archive-head h1 { color:#fff; font-family:Lora,Georgia,serif; font-size:clamp(2rem,5vw,3.1rem); letter-spacing:-.04em; margin:0; }.blog-archive-head span { color:#cbd3df; display:block; font-size:.75rem; margin-top:.65rem; }.blog-archive-list { background:#fff; border:1px solid #d8dee8; border-radius:14px; box-shadow:0 8px 20px rgba(23,35,59,.07); padding:1.5rem; }.blog-archive-list .main-loop-card { border-bottom:1px solid #e2e6ed; margin-bottom:1.4rem!important; padding-bottom:1.4rem; }.blog-archive-list .main-loop-card:last-child { border-bottom:0; margin-bottom:0!important; padding-bottom:0; }
+@media (max-width:575px) { .blog-archive-head { margin-top:.5rem; padding:1.5rem 1.3rem; }.blog-archive-list { padding:1.1rem; }.blog-archive-list .main-loop-card { align-items:flex-start; }.blog-archive-list .main-loop-card .col-md-3 { flex:0 0 32%; max-width:32%; } }
+</style>
