@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">江泽民 +1s 喝茶徽标</title>
+  <desc id="logo-desc">戴方框眼镜、端着茶杯微笑喝茶的江泽民风格化图标</desc>
+  <circle cx="48" cy="48" r="46" fill="#17233b"/>
+  <circle cx="48" cy="46" r="32" fill="#f1c7a5"/>
+  <path d="M22 37c2-15 13-25 27-25 11 0 20 5 25 14-8-3-16-7-23-12-7 8-16 14-29 16z" fill="#202838"/>
+  <path d="M24 37c1-7 4-13 9-18M67 20c5 5 7 11 7 18" fill="none" stroke="#0c1220" stroke-linecap="round" stroke-width="5"/>
+  <g fill="#f7eee6" fill-opacity=".3" stroke="#101725" stroke-width="3">
+    <rect x="24" y="34" width="20" height="14" rx="3"/>
+    <rect x="52" y="34" width="20" height="14" rx="3"/>
+    <path d="M44 39c3-2 5-2 8 0" fill="none"/>
+  </g>
+  <path d="M48 43l-2 9 5 1" fill="none" stroke="#a96d57" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <path d="M38 58c6 7 15 7 21 0" fill="none" stroke="#8e413e" stroke-linecap="round" stroke-width="3"/>
+  <path d="M32 54c-2 1-3 2-4 4M64 54c2 1 3 2 4 4" fill="none" stroke="#d98e76" stroke-linecap="round" stroke-width="2"/>
+  <path d="M55 69c3-8 9-12 17-11 7 1 11 6 11 13v10H49z" fill="#eef2f4"/>
+  <path d="M64 61c-1-5 1-7 4-10M71 59c0-6 2-9 5-12" fill="none" stroke="#f8eee4" stroke-linecap="round" stroke-width="5"/>
+  <g transform="translate(58 57)">
+    <path d="M1 2h21v12c0 5-4 8-9 8H10c-5 0-9-3-9-8z" fill="#fff" stroke="#17233b" stroke-width="2"/>
+    <path d="M22 6h3c5 0 5 9 0 9h-3" fill="none" stroke="#fff" stroke-width="5"/>
+    <path d="M22 6h3c5 0 5 9 0 9h-3" fill="none" stroke="#17233b" stroke-width="2"/>
+    <path d="M5 4h13" stroke="#b66d3c" stroke-linecap="round" stroke-width="2"/>
+    <path d="M7-1c-3-4 3-5 0-9M14-1c-3-4 3-5 0-9" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+  </g>
+  <g transform="translate(8 66)">
+    <rect width="38" height="20" rx="10" fill="#ef8354" stroke="#17233b" stroke-width="2"/>
+    <text x="19" y="14" fill="#17233b" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" text-anchor="middle">+1s</text>
+  </g>
+</svg>

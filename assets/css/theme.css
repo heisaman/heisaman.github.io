@@ -914,6 +914,22 @@ a.a2a_i, i.a2a_i, .a2a_menu a.a2a_i:visited, .a2a_menu a.a2a_more {
     color:#999 !important;
 }
 div.a2a_full_footer {display:none;}
+.site-brand {
+	align-items:center;
+	display:inline-flex;
+	line-height:1;
+	padding-bottom:0;
+	padding-top:0;
+}
+.site-logo {
+	display:block;
+	height:46px;
+	width:46px;
+}
+.site-logo--footer {
+	height:34px;
+	width:34px;
+}
 @media (min-width: 1920px) {
 	html {font-size:17px;}
 	.container, .container-lg {    

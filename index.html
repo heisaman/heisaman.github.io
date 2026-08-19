@@ -1,35 +1,31 @@
 ---
-title: "熊猫与鱼"
+title: "+1s"
 layout: default
 description: "从苏北出发，穿过工程、互联网与人工智能，持续学习，持续建造。"
 ---
 
 <div class="container home-portrait">
-    <section class="home-poster-section" aria-label="正在思考的两个未来">
-        <div class="home-shutters" id="homeShutters" tabindex="0" role="region" aria-roledescription="carousel" aria-label="主题海报">
-            <button class="home-shutter is-active" type="button" data-poster-index="0" aria-expanded="true" aria-label="展开星际文明海报 V2">
-                <img src="{{site.baseurl}}/assets/images/poster-interstellar-civilization-v2.png" alt="月面基地、火箭与远方地球构成的星际文明场景" fetchpriority="high">
-                <span class="home-shutter-copy"><i class="fas fa-rocket" aria-hidden="true"></i><strong>星际文明</strong></span>
-            </button>
-            <button class="home-shutter" type="button" data-poster-index="1" aria-expanded="false" aria-label="展开软件生产力海报 V2">
-                <img src="{{site.baseurl}}/assets/images/poster-software-productivity-v2.png" alt="人与智能设备协同运转的未来城市软件生产力场景" loading="lazy">
-                <span class="home-shutter-copy"><i class="fas fa-code" aria-hidden="true"></i><strong>软件生产力</strong></span>
-            </button>
-        </div>
-
-        <div class="home-shutter-controls">
-            <button class="home-shutter-arrow" id="homePosterPrev" type="button" aria-label="上一张海报">←</button>
-            <div class="home-shutter-legend" aria-label="海报图例">
-                <button class="is-active" type="button" data-poster-target="0" aria-pressed="true"><i class="fas fa-rocket" aria-hidden="true"></i><span>星际文明</span></button>
-                <button type="button" data-poster-target="1" aria-pressed="false"><i class="fas fa-code" aria-hidden="true"></i><span>软件生产力</span></button>
+    <section class="home-poster-section" aria-label="主题海报">
+        <div class="swiper home-poster-swiper" id="homePosterSwiper">
+            <div class="swiper-wrapper">
+                <article class="swiper-slide home-poster-slide">
+                    <div class="home-poster-frame">
+                        <img src="{{site.baseurl}}/assets/images/poster-interstellar-civilization-v2.png" alt="月面基地、火箭与远方地球构成的星际文明海报" fetchpriority="high">
+                        <div class="home-poster-caption"><i class="fas fa-rocket" aria-hidden="true"></i><h2>星际文明</h2></div>
+                    </div>
+                </article>
+                <article class="swiper-slide home-poster-slide">
+                    <div class="home-poster-frame">
+                        <img src="{{site.baseurl}}/assets/images/poster-software-productivity-v2.png" alt="人与智能设备协同运转的未来城市软件生产力海报" loading="lazy">
+                        <div class="home-poster-caption"><i class="fas fa-code" aria-hidden="true"></i><h2>软件生产力</h2></div>
+                    </div>
+                </article>
             </div>
-            <button class="home-shutter-arrow" id="homePosterNext" type="button" aria-label="下一张海报">→</button>
+            <button class="home-swiper-button home-swiper-prev" type="button" aria-label="上一张海报"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+            <button class="home-swiper-button home-swiper-next" type="button" aria-label="下一张海报"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+            <div class="swiper-pagination home-swiper-pagination" aria-label="选择海报"></div>
         </div>
     </section>
-
-    <header class="home-intro">
-        <h1>从苏北出发，向智能时代继续建造。</h1>
-    </header>
 
     <section class="home-journey" aria-labelledby="home-journey-title">
         <div class="home-section-head">
@@ -39,142 +35,150 @@ description: "从苏北出发，穿过工程、互联网与人工智能，持续
 
         <div class="journey-track">
             <article class="journey-stop">
-                <div class="journey-card">
-                    <i class="fas fa-seedling" aria-hidden="true"></i>
-                    <h3>来自苏北农村</h3>
-                </div>
+                <div class="journey-card"><i class="fas fa-seedling" aria-hidden="true"></i><h3>来自苏北农村</h3></div>
                 <div class="journey-node" aria-hidden="true"><i></i></div>
             </article>
             <article class="journey-stop">
-                <div class="journey-card">
-                    <i class="fas fa-school" aria-hidden="true"></i>
-                    <h3>省盐中求学</h3>
-                </div>
+                <div class="journey-card"><i class="fas fa-school" aria-hidden="true"></i><h3>省盐中求学</h3></div>
                 <div class="journey-node" aria-hidden="true"><i></i></div>
             </article>
             <article class="journey-stop">
-                <div class="journey-card">
-                    <i class="fas fa-university" aria-hidden="true"></i>
-                    <h3>南京念大学</h3>
-                </div>
+                <div class="journey-card"><i class="fas fa-university" aria-hidden="true"></i><h3>南京念大学</h3></div>
                 <div class="journey-node" aria-hidden="true"><i></i></div>
             </article>
             <article class="journey-stop">
-                <div class="journey-card">
-                    <i class="fas fa-plane" aria-hidden="true"></i>
-                    <h3>法国工程师学校留学</h3>
-                </div>
+                <div class="journey-card"><i class="fas fa-plane" aria-hidden="true"></i><h3>法国工程师学校留学</h3></div>
                 <div class="journey-node" aria-hidden="true"><i></i></div>
             </article>
             <article class="journey-stop">
-                <div class="journey-card">
-                    <i class="fas fa-building" aria-hidden="true"></i>
-                    <h3>上海互联网公司工作</h3>
-                </div>
+                <div class="journey-card"><i class="fas fa-building" aria-hidden="true"></i><h3>上海互联网公司工作</h3></div>
                 <div class="journey-node" aria-hidden="true"><i></i></div>
             </article>
             <article class="journey-stop journey-stop--current">
-                <div class="journey-card">
-                    <i class="fas fa-rocket" aria-hidden="true"></i>
-                    <h3>AI 时代创业</h3>
-                </div>
+                <div class="journey-card"><i class="fas fa-rocket" aria-hidden="true"></i><h3>AI 时代创业</h3></div>
                 <div class="journey-node" aria-hidden="true"><i></i></div>
             </article>
         </div>
     </section>
 
-    <aside class="home-blog-bridge">
-        <div>
-            <i class="fas fa-book-open" aria-hidden="true"></i>
-            <h2>技术文章</h2>
+    <section class="home-roosts" aria-labelledby="home-roosts-title">
+        <div class="home-section-head home-section-head--map">
+            <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+            <h2 id="home-roosts-title">狡兔三窟</h2>
         </div>
-        <a href="{{site.baseurl}}/blog.html" aria-label="进入技术博客"><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-    </aside>
+        <div id="lifeRoostsMap" class="home-roosts-map" role="region" aria-label="太平洋地图，标出上海、杭州、沙巴、新加坡、温哥华和魁北克三组长期居住目标"></div>
+        <div class="home-roosts-legend" aria-label="长期居住目标图例">
+            <span><i class="roost-dot roost-dot--yangtze"></i>上海 · 杭州</span>
+            <span><i class="roost-dot roost-dot--sea"></i>沙巴 · 新加坡</span>
+            <span><i class="roost-dot roost-dot--canada"></i>温哥华 · 魁北克</span>
+        </div>
+    </section>
+
+    {% comment %}技术文章入口暂时隐藏，文章仍保留在 /blog.html。{% endcomment %}
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 (function () {
-    var stage = document.getElementById('homeShutters');
-    var panels = Array.prototype.slice.call(stage.querySelectorAll('.home-shutter'));
-    var legendButtons = Array.prototype.slice.call(document.querySelectorAll('[data-poster-target]'));
-    var previous = document.getElementById('homePosterPrev');
-    var next = document.getElementById('homePosterNext');
-    var state = { index: 0, startX: 0, deltaX: 0, dragging: false, suppressClick: false };
+    new Swiper('#homePosterSwiper', {
+        effect: 'creative',
+        speed: 760,
+        grabCursor: true,
+        keyboard: { enabled: true },
+        navigation: { prevEl: '.home-swiper-prev', nextEl: '.home-swiper-next' },
+        pagination: { el: '.home-swiper-pagination', clickable: true },
+        creativeEffect: {
+            prev: { shadow: true, translate: ['-18%', 0, -1], scale: .94 },
+            next: { translate: ['100%', 0, 0] }
+        }
+    });
 
-    function activate(index) {
-        state.index = Math.max(0, Math.min(index, panels.length - 1));
-        panels.forEach(function (panel, panelIndex) {
-            var active = panelIndex === state.index;
-            panel.classList.toggle('is-active', active);
-            panel.setAttribute('aria-expanded', active ? 'true' : 'false');
-        });
-        legendButtons.forEach(function (button, buttonIndex) {
-            var active = buttonIndex === state.index;
-            button.classList.toggle('is-active', active);
-            button.setAttribute('aria-pressed', active ? 'true' : 'false');
-        });
-        previous.disabled = state.index === 0;
-        next.disabled = state.index === panels.length - 1;
-    }
+    var roosts = [
+        { name: '上海', coordinates: [31.2304, 121.4737], group: 'yangtze' },
+        { name: '杭州', coordinates: [30.2741, 120.1551], group: 'yangtze' },
+        { name: '沙巴', coordinates: [5.9804, 116.0735], group: 'sea' },
+        { name: '新加坡', coordinates: [1.3521, 103.8198], group: 'sea' },
+        { name: '温哥华', coordinates: [49.2827, 236.8793], group: 'canada' },
+        { name: '魁北克', coordinates: [46.8139, 288.7910], group: 'canada' }
+    ];
+    var groupColors = { yangtze: '#3563b8', sea: '#ef8354', canada: '#2f8b70' };
+    var map = L.map('lifeRoostsMap', {
+        center: [26, 195],
+        zoom: window.matchMedia('(max-width: 575px)').matches ? 1 : 2,
+        minZoom: 1,
+        maxZoom: 7,
+        worldCopyJump: true,
+        scrollWheelZoom: false
+    });
 
-    panels.forEach(function (panel, index) {
-        panel.addEventListener('click', function (event) {
-            if (state.suppressClick) {
-                event.preventDefault();
-                state.suppressClick = false;
-                return;
-            }
-            activate(index);
-        });
-    });
-    legendButtons.forEach(function (button) {
-        button.addEventListener('click', function () { activate(Number(button.getAttribute('data-poster-target'))); });
-    });
-    previous.addEventListener('click', function () { activate(state.index - 1); });
-    next.addEventListener('click', function () { activate(state.index + 1); });
-    stage.addEventListener('keydown', function (event) {
-        if (event.key === 'ArrowLeft') { event.preventDefault(); activate(state.index - 1); }
-        if (event.key === 'ArrowRight') { event.preventDefault(); activate(state.index + 1); }
-        if (event.key === 'Home') { event.preventDefault(); activate(0); }
-        if (event.key === 'End') { event.preventDefault(); activate(panels.length - 1); }
-    });
-    stage.addEventListener('pointerdown', function (event) {
-        if (event.pointerType === 'mouse' && event.button !== 0) return;
-        state.startX = event.clientX;
-        state.deltaX = 0;
-        state.dragging = true;
-        stage.setPointerCapture(event.pointerId);
-    });
-    stage.addEventListener('pointermove', function (event) {
-        if (!state.dragging) return;
-        state.deltaX = event.clientX - state.startX;
-    });
-    function finishGesture(event) {
-        if (!state.dragging) return;
-        state.dragging = false;
-        if (stage.hasPointerCapture(event.pointerId)) stage.releasePointerCapture(event.pointerId);
-        if (Math.abs(state.deltaX) < 55) return;
-        state.suppressClick = true;
-        activate(state.deltaX < 0 ? state.index + 1 : state.index - 1);
-        window.setTimeout(function () { state.suppressClick = false; }, 0);
-    }
-    stage.addEventListener('pointerup', finishGesture);
-    stage.addEventListener('pointercancel', finishGesture);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
 
-    activate(0);
+    ['yangtze', 'sea', 'canada'].forEach(function (group) {
+        var places = roosts.filter(function (place) { return place.group === group; });
+        L.polyline(places.map(function (place) { return place.coordinates; }), {
+            color: groupColors[group], weight: 3, opacity: .72, dashArray: '7 8'
+        }).addTo(map);
+    });
+
+    roosts.forEach(function (place) {
+        var icon = L.divIcon({
+            className: 'roost-marker-shell',
+            html: '<span class="roost-marker roost-marker--' + place.group + '"><i></i><b>' + place.name + '</b></span>',
+            iconSize: [92, 36],
+            iconAnchor: [16, 18]
+        });
+        L.marker(place.coordinates, { icon: icon, title: place.name, alt: place.name }).addTo(map);
+    });
 })();
 </script>
 
 <style>
 .home-portrait { max-width:1500px!important; padding-bottom:4rem; }
-.home-poster-section { margin-top:.55rem; }.home-shutters { background:#0b1018; border:1px solid #263146; border-radius:16px; box-shadow:0 20px 44px rgba(12,18,28,.24); display:flex; gap:8px; height:min(52vw,760px); min-height:520px; overflow:hidden; padding:8px; touch-action:pan-y; }.home-shutters:focus-visible { outline:3px solid rgba(239,131,84,.4); outline-offset:3px; }.home-shutter { background:#111927; border:0; border-radius:10px; cursor:pointer; flex:.68 1 0; min-width:0; overflow:hidden; padding:0; position:relative; text-align:left; transition:flex .72s cubic-bezier(.22,1,.36,1),filter .42s ease,transform .42s ease; }.home-shutter::after { background:linear-gradient(180deg,rgba(7,11,18,0) 45%,rgba(7,11,18,.88) 100%); content:""; inset:0; pointer-events:none; position:absolute; }.home-shutter img { height:100%; inset:0; object-fit:cover; position:absolute; transition:filter .42s ease,transform .72s cubic-bezier(.22,1,.36,1); width:100%; }.home-shutter:not(.is-active) img { filter:brightness(.5) saturate(.68); transform:scale(1.06); }.home-shutter.is-active { flex:5.8 1 0; }.home-shutter.is-active img { transform:scale(1); }.home-shutter:hover:not(.is-active) { flex:.9 1 0; }.home-shutter:focus-visible { outline:3px solid #ef8354; outline-offset:-4px; }
-.home-shutter-copy { align-items:center; bottom:1.35rem; display:flex; gap:.75rem; left:1.35rem; position:absolute; right:1.35rem; z-index:2; }.home-shutter-copy i { align-items:center; backdrop-filter:blur(8px); background:rgba(10,18,30,.58); border:1px solid rgba(255,255,255,.28); border-radius:50%; color:#f3a683; display:flex; flex:0 0 auto; height:40px; justify-content:center; width:40px; }.home-shutter-copy strong { color:#fff; font-family:Lora,Georgia,serif; font-size:clamp(1.8rem,3.5vw,3rem); line-height:1.1; opacity:0; transform:translateX(-10px); transition:opacity .35s ease,transform .45s ease; white-space:nowrap; }.home-shutter.is-active .home-shutter-copy strong { opacity:1; transform:translateX(0); }.home-shutter:not(.is-active) .home-shutter-copy { left:50%; right:auto; transform:translateX(-50%); }
-.home-shutter-controls { align-items:center; display:grid; gap:.75rem; grid-template-columns:auto minmax(220px,430px) auto; justify-content:center; padding:.8rem 0 0; }.home-shutter-arrow { align-items:center; background:#17233b; border:1px solid #35435c; border-radius:50%; color:#fff; cursor:pointer; display:flex; height:38px; justify-content:center; width:38px; }.home-shutter-arrow:hover:not(:disabled) { background:#ef8354; border-color:#ef8354; color:#17233b; }.home-shutter-arrow:disabled { cursor:not-allowed; opacity:.25; }.home-shutter-legend { background:#edf1f6; border:1px solid #d8dee8; border-radius:999px; display:grid; gap:.3rem; grid-template-columns:1fr 1fr; padding:.28rem; }.home-shutter-legend button { align-items:center; background:transparent; border:0; border-radius:999px; color:#637086; cursor:pointer; display:flex; font-size:.72rem; font-weight:700; gap:.45rem; justify-content:center; padding:.48rem .7rem; }.home-shutter-legend button i { color:#8b97a8; }.home-shutter-legend button.is-active { background:#17233b; color:#fff; }.home-shutter-legend button.is-active i { color:#ef8354; }
-.home-intro { background:#17233b; border-left:6px solid #ef8354; border-radius:15px; box-shadow:0 14px 30px rgba(23,35,59,.16); margin:1.6rem 0 0; overflow:hidden; padding:1.6rem 2rem; position:relative; }.home-intro::after { border:1px solid rgba(255,255,255,.14); border-radius:50%; content:""; height:170px; position:absolute; right:-35px; top:-88px; width:170px; }.home-intro h1 { color:#fff; font-family:Lora,Georgia,serif; font-size:clamp(1.75rem,4vw,3.15rem); font-weight:700; letter-spacing:-.045em; line-height:1.15; margin:0; position:relative; z-index:1; }
-.home-journey { background:#f4f6f9; border:1px solid #d9e0e9; border-radius:16px; margin-top:1.4rem; overflow:hidden; padding:1.5rem; }.home-section-head { align-items:center; display:flex; gap:.65rem; margin-bottom:.35rem; }.home-section-head > i { align-items:center; background:#17233b; border-radius:50%; color:#ef8354; display:flex; height:34px; justify-content:center; width:34px; }.home-section-head h2 { color:#17233b; font-family:Lora,Georgia,serif; font-size:1.45rem; margin:0; }.journey-track { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); min-height:340px; position:relative; }.journey-track::before { background:linear-gradient(90deg,#8090aa,#3563b8 58%,#ef8354); content:""; height:3px; left:3%; position:absolute; right:3%; top:50%; transform:translateY(-50%); }.journey-track::after { border-bottom:5px solid transparent; border-left:8px solid #ef8354; border-top:5px solid transparent; content:""; position:absolute; right:2.4%; top:calc(50% - 5px); }
-.journey-stop { display:grid; grid-template-rows:1fr 44px 1fr; min-width:0; padding:0 .35rem; position:relative; }.journey-card { align-items:center; align-self:end; background:#fff; border:1px solid #d9e0e9; border-radius:11px; box-shadow:0 7px 17px rgba(23,35,59,.07); display:flex; flex-direction:column; grid-row:1; justify-content:center; margin-bottom:.65rem; min-height:102px; padding:.8rem; text-align:center; }.journey-stop:nth-child(even) .journey-card { align-self:start; grid-row:3; margin-bottom:0; margin-top:.65rem; }.journey-card > i { color:#3563b8; font-size:1rem; }.journey-card h3 { color:#202c42; font-family:Lora,Georgia,serif; font-size:.82rem; line-height:1.4; margin:.55rem 0 0; }.journey-node { align-items:center; display:flex; grid-row:2; justify-content:center; position:relative; z-index:2; }.journey-node i { background:#fff; border:4px solid #3563b8; border-radius:50%; box-shadow:0 0 0 5px #f4f6f9; height:17px; width:17px; }.journey-stop--current .journey-card { background:#17233b; border-color:#17233b; }.journey-stop--current .journey-card > i { color:#ef8354; }.journey-stop--current .journey-card h3 { color:#fff; }.journey-stop--current .journey-node i { border-color:#ef8354; }
-.home-blog-bridge { align-items:center; background:#17233b; border-left:5px solid #3563b8; border-radius:13px; display:flex; justify-content:space-between; margin-top:1.3rem; padding:1rem 1.2rem; }.home-blog-bridge > div { align-items:center; display:flex; gap:.65rem; }.home-blog-bridge > div > i { color:#8fa7d0; font-size:1rem; }.home-blog-bridge h2 { color:#fff; font-family:Lora,Georgia,serif; font-size:1rem; margin:0; }.home-blog-bridge > a { align-items:center; background:#ef8354; border-radius:50%; color:#17233b; display:flex; height:38px; justify-content:center; width:38px; }
-@media (max-width:991px) { .home-shutters { height:min(56vw,520px); min-height:0; }.journey-track { grid-template-columns:repeat(3,minmax(0,1fr)); min-height:auto; padding-top:1rem; }.journey-track::before,.journey-track::after { display:none; }.journey-stop { grid-template-rows:36px auto; padding:.35rem; }.journey-card,.journey-stop:nth-child(even) .journey-card { align-self:stretch; grid-row:2; margin:.25rem 0 0; }.journey-node,.journey-stop:nth-child(even) .journey-node { grid-row:1; }.journey-stop::before { background:#b8c3d3; content:""; height:2px; left:0; position:absolute; right:0; top:22px; }.journey-card { min-height:100px; } }
-@media (max-width:575px) { .home-portrait { padding-left:10px; padding-right:10px; }.home-poster-section { margin-top:.35rem; }.home-shutters { border-radius:12px; height:clamp(185px,53vw,220px); padding:5px; }.home-shutter { border-radius:8px; flex:.55 1 0; }.home-shutter.is-active { flex:7.5 1 0; }.home-shutter-copy { bottom:.65rem; gap:.45rem; left:.65rem; right:.65rem; }.home-shutter-copy i { height:30px; width:30px; }.home-shutter-copy strong { font-size:1.2rem; }.home-shutter:not(.is-active) .home-shutter-copy { bottom:.6rem; }.home-shutter-controls { gap:.45rem; grid-template-columns:auto minmax(0,1fr) auto; padding-top:.65rem; }.home-shutter-arrow { height:34px; width:34px; }.home-shutter-legend button { padding:.42rem .5rem; }.home-shutter-legend button span { display:none; }.home-intro { margin-top:1.2rem; padding:1.3rem 1.25rem; }.home-intro h1 { font-size:1.65rem; }.home-journey { margin-top:1rem; padding:1.15rem; }.home-section-head h2 { font-size:1.25rem; }.journey-track { display:block; padding:1rem 0 0 2.8rem; }.journey-track::before { background:linear-gradient(#8090aa,#3563b8 58%,#ef8354); bottom:1.2rem; display:block; height:auto; left:1rem; right:auto; top:1.4rem; transform:none; width:3px; }.journey-stop { display:block; padding:0 0 .75rem; }.journey-stop::before { display:none; }.journey-card,.journey-stop:nth-child(even) .journey-card { align-items:flex-start; flex-direction:row; gap:.65rem; justify-content:flex-start; margin:0; min-height:0; padding:.85rem; text-align:left; }.journey-card h3 { margin:0; }.journey-node,.journey-stop:nth-child(even) .journey-node { left:-2.55rem; position:absolute; top:.9rem; }.journey-node i { box-shadow:0 0 0 5px #f4f6f9; } }
-@media (prefers-reduced-motion:reduce) { .home-shutter,.home-shutter img,.home-shutter-copy strong { transition:none; } }
+.home-poster-section { margin-top:.55rem; }
+.home-poster-swiper { background:#0b1018; border:1px solid #263146; border-radius:18px; box-shadow:0 22px 48px rgba(12,18,28,.26); height:min(54vw,790px); min-height:520px; overflow:hidden; }
+.home-poster-slide,.home-poster-frame { height:100%; }
+.home-poster-frame { background:#101827; overflow:hidden; position:relative; }
+.home-poster-frame::after { background:linear-gradient(180deg,rgba(7,11,18,0) 56%,rgba(7,11,18,.82)); content:""; inset:0; pointer-events:none; position:absolute; }
+.home-poster-frame img { height:100%; object-fit:cover; width:100%; }
+.home-poster-caption { align-items:center; bottom:1.75rem; display:flex; gap:.8rem; left:1.8rem; position:absolute; z-index:2; }
+.home-poster-caption i { align-items:center; backdrop-filter:blur(10px); background:rgba(10,18,30,.58); border:1px solid rgba(255,255,255,.32); border-radius:50%; color:#f3a683; display:flex; height:46px; justify-content:center; width:46px; }
+.home-poster-caption h2 { color:#fff; font-family:Lora,Georgia,serif; font-size:clamp(2rem,4vw,3.4rem); letter-spacing:-.04em; margin:0; }
+.home-swiper-button { align-items:center; backdrop-filter:blur(10px); background:rgba(13,22,38,.72); border:1px solid rgba(255,255,255,.36); border-radius:50%; color:#fff; cursor:pointer; display:flex; height:46px; justify-content:center; position:absolute; top:50%; transform:translateY(-50%); transition:background .2s ease,border-color .2s ease; width:46px; z-index:3; }
+.home-swiper-button:hover { background:#ef8354; border-color:#ef8354; color:#17233b; }
+.home-swiper-prev { left:1rem; }.home-swiper-next { right:1rem; }
+.home-swiper-button.swiper-button-disabled { opacity:.25; pointer-events:none; }
+.home-swiper-pagination { bottom:1rem!important; left:auto!important; right:1.5rem!important; text-align:right; width:auto!important; z-index:4; }
+.home-swiper-pagination .swiper-pagination-bullet { background:#fff; height:8px; opacity:.55; transition:width .25s ease,opacity .25s ease; width:8px; }
+.home-swiper-pagination .swiper-pagination-bullet-active { background:#ef8354; border-radius:999px; opacity:1; width:28px; }
+.home-journey,.home-roosts { background:#f4f6f9; border:1px solid #d9e0e9; border-radius:16px; margin-top:1.4rem; overflow:hidden; padding:1.5rem; }
+.home-section-head { align-items:center; display:flex; gap:.65rem; margin-bottom:.35rem; }
+.home-section-head > i { align-items:center; background:#17233b; border-radius:50%; color:#ef8354; display:flex; height:34px; justify-content:center; width:34px; }
+.home-section-head h2 { color:#17233b; font-family:Lora,Georgia,serif; font-size:1.45rem; margin:0; }
+.journey-track { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); min-height:340px; position:relative; }
+.journey-track::before { background:linear-gradient(90deg,#8090aa,#3563b8 58%,#ef8354); content:""; height:3px; left:3%; position:absolute; right:3%; top:50%; transform:translateY(-50%); }
+.journey-track::after { border-bottom:5px solid transparent; border-left:8px solid #ef8354; border-top:5px solid transparent; content:""; position:absolute; right:2.4%; top:calc(50% - 5px); }
+.journey-stop { display:grid; grid-template-rows:1fr 44px 1fr; min-width:0; padding:0 .35rem; position:relative; }
+.journey-card { align-items:center; align-self:end; background:#fff; border:1px solid #d9e0e9; border-radius:11px; box-shadow:0 7px 17px rgba(23,35,59,.07); display:flex; flex-direction:column; grid-row:1; justify-content:center; margin-bottom:.65rem; min-height:102px; padding:.8rem; text-align:center; }
+.journey-stop:nth-child(even) .journey-card { align-self:start; grid-row:3; margin-bottom:0; margin-top:.65rem; }
+.journey-card > i { color:#3563b8; font-size:1rem; }.journey-card h3 { color:#202c42; font-family:Lora,Georgia,serif; font-size:.82rem; line-height:1.4; margin:.55rem 0 0; }
+.journey-node { align-items:center; display:flex; grid-row:2; justify-content:center; position:relative; z-index:2; }.journey-node i { background:#fff; border:4px solid #3563b8; border-radius:50%; box-shadow:0 0 0 5px #f4f6f9; height:17px; width:17px; }
+.journey-stop--current .journey-card { background:#17233b; border-color:#17233b; }.journey-stop--current .journey-card > i { color:#ef8354; }.journey-stop--current .journey-card h3 { color:#fff; }.journey-stop--current .journey-node i { border-color:#ef8354; }
+.home-section-head--map { margin-bottom:1rem; }
+.home-roosts-map { background:#dce6ef; border:1px solid #cad4df; border-radius:12px; height:500px; overflow:hidden; z-index:1; }
+.home-roosts-map .leaflet-control-zoom a { color:#17233b; }.home-roosts-map .leaflet-control-attribution { font-size:9px; }
+.roost-marker-shell { background:transparent; border:0; }
+.roost-marker { align-items:center; display:flex; filter:drop-shadow(0 4px 6px rgba(20,30,45,.2)); gap:.45rem; white-space:nowrap; }
+.roost-marker > i { border:4px solid #fff; border-radius:50% 50% 50% 0; display:block; height:25px; transform:rotate(-45deg); width:25px; }
+.roost-marker > b { background:#17233b; border-radius:999px; color:#fff; font-size:.72rem; line-height:1; padding:.42rem .58rem; }
+.roost-marker--yangtze > i { background:#3563b8; }.roost-marker--sea > i { background:#ef8354; }.roost-marker--canada > i { background:#2f8b70; }
+.home-roosts-legend { display:flex; flex-wrap:wrap; gap:.7rem 1.5rem; justify-content:center; padding:1rem .25rem 0; }
+.home-roosts-legend span { align-items:center; color:#334158; display:flex; font-size:.78rem; font-weight:700; gap:.45rem; }
+.roost-dot { border-radius:50%; display:inline-block; height:9px; width:9px; }.roost-dot--yangtze { background:#3563b8; }.roost-dot--sea { background:#ef8354; }.roost-dot--canada { background:#2f8b70; }
+@media (max-width:991px) { .home-poster-swiper { height:min(56vw,520px); min-height:0; }.journey-track { grid-template-columns:repeat(3,minmax(0,1fr)); min-height:auto; padding-top:1rem; }.journey-track::before,.journey-track::after { display:none; }.journey-stop { grid-template-rows:36px auto; padding:.35rem; }.journey-card,.journey-stop:nth-child(even) .journey-card { align-self:stretch; grid-row:2; margin:.25rem 0 0; }.journey-node,.journey-stop:nth-child(even) .journey-node { grid-row:1; }.journey-stop::before { background:#b8c3d3; content:""; height:2px; left:0; position:absolute; right:0; top:22px; }.journey-card { min-height:100px; }.home-roosts-map { height:430px; } }
+@media (max-width:575px) { .home-portrait { padding-left:10px; padding-right:10px; }.home-poster-section { margin-top:.35rem; }.home-poster-swiper { border-radius:12px; height:clamp(210px,56vw,290px); }.home-poster-caption { bottom:.8rem; gap:.5rem; left:.8rem; }.home-poster-caption i { height:32px; width:32px; }.home-poster-caption h2 { font-size:1.35rem; }.home-swiper-button { height:34px; width:34px; }.home-swiper-prev { left:.55rem; }.home-swiper-next { right:.55rem; }.home-swiper-pagination { bottom:.55rem!important; right:.7rem!important; }.home-journey,.home-roosts { margin-top:1rem; padding:1.15rem; }.home-section-head h2 { font-size:1.25rem; }.journey-track { display:block; padding:1rem 0 0 2.8rem; }.journey-track::before { background:linear-gradient(#8090aa,#3563b8 58%,#ef8354); bottom:1.2rem; display:block; height:auto; left:1rem; right:auto; top:1.4rem; transform:none; width:3px; }.journey-stop { display:block; padding:0 0 .75rem; }.journey-stop::before { display:none; }.journey-card,.journey-stop:nth-child(even) .journey-card { align-items:flex-start; flex-direction:row; gap:.65rem; justify-content:flex-start; margin:0; min-height:0; padding:.85rem; text-align:left; }.journey-card h3 { margin:0; }.journey-node,.journey-stop:nth-child(even) .journey-node { left:-2.55rem; position:absolute; top:.9rem; }.journey-node i { box-shadow:0 0 0 5px #f4f6f9; }.home-roosts-map { height:390px; }.home-roosts-legend { justify-content:flex-start; } }
+@media (prefers-reduced-motion:reduce) { .home-poster-swiper * { transition-duration:0s!important; } }
 </style>

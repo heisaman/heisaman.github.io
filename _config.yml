@@ -1,8 +1,8 @@
 # Site
-name: '熊猫与鱼'
+name: '+1s'
 description: '从苏北出发，穿过工程、互联网与人工智能，持续学习，持续建造。'
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/favicon.ico'
+logo: 'assets/images/logo-plus-one-second.svg'
+favicon: 'assets/images/logo-plus-one-second.svg'
 baseurl: ''
 disqus: 'demowebsite'
 email: 'heyuwei.efrei@gmail.com'

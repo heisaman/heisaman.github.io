@@ -3,9 +3,7 @@
 <li class="nav-item">
 <a class="nav-link nav-pill{% if page.url == '/' or page.url == '/index.html' %} is-active{% endif %}" href="{{site.baseurl}}/index.html"{% if page.url == '/' or page.url == '/index.html' %} aria-current="page"{% endif %}>主页</a>
 </li>
-<li class="nav-item">
-    <a class="nav-link nav-pill{% if page.url == '/blog.html' %} is-active{% endif %}" href="{{site.baseurl}}/blog.html"{% if page.url == '/blog.html' %} aria-current="page"{% endif %}>技术博客</a>
-</li>
+{% comment %}技术博客入口暂时隐藏，页面与文章内容继续保留。{% endcomment %}
 <li class="nav-item">
     <a class="nav-link nav-pill{% if page.url == '/study-notes.html' %} is-active{% endif %}" href="{{site.baseurl}}/study-notes.html"{% if page.url == '/study-notes.html' %} aria-current="page"{% endif %}>AI学习</a>
 </li>
