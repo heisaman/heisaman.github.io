@@ -5,685 +5,171 @@ permalink: "/ideas-and-projects.html"
 ---
 
 <div class="container vibe-page">
-    <header class="vibe-head">
-        <p class="vibe-kicker">BUILDING IN PUBLIC</p>
-        <h1 class="vibe-title">Vibe 项目</h1>
-        <p class="vibe-sub">观察浪潮，也亲手造船。这里记录正在构想、验证与推进的项目。</p>
-    </header>
-
-    <div class="project-showcase" id="projectShowcase">
-        <div class="project-deck" id="projectDeck" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Vibe 项目卡片">
-            <div class="project-track" id="projectTrack">
-    <section class="vibe-project startup-project project-slide" id="projectSlide01" aria-labelledby="startup-title" aria-label="第 1 个项目，共 6 个" data-project-title="千帆竞发">
-        <div class="project-heading">
-            <div class="project-number">01</div>
-            <h2 id="startup-title">千帆竞发</h2>
-            <span class="project-status project-status--active">持续更新</span>
-        </div>
-
-        <div class="startup-metrics" aria-label="榜单概览">
-            <div><strong id="startupCount">100</strong><span>收录公司</span></div>
-            <div><strong>60 / 40</strong><span>美国 / 中国</span></div>
-            <div><strong>≥ $10M</strong><span>公开融资门槛</span></div>
-            <div><strong>2026.08</strong><span>数据截止</span></div>
-        </div>
-
-        <div class="startup-table-card" id="startupSwipeZone">
-            <div class="startup-toolbar">
-                <div class="startup-tabs" role="tablist" aria-label="按国家筛选">
-                    <button class="startup-tab is-active" type="button" data-country="全部" role="tab" aria-selected="true">全部 <span>100</span></button>
-                    <button class="startup-tab" type="button" data-country="美国" role="tab" aria-selected="false">美国 <span>60</span></button>
-                    <button class="startup-tab" type="button" data-country="中国" role="tab" aria-selected="false">中国 <span>40</span></button>
+    <h1 class="sr-only">Vibe 项目</h1>
+    <div class="project-list">
+        <details class="project-item project-item--featured project-item--model" id="nanochat" open>
+            <summary>
+                <span class="project-icon"><i class="fas fa-microchip" aria-hidden="true"></i></span>
+                <h2>自训练小模型 <span>nanochat</span></h2>
+                <span class="project-badge">新计划</span>
+                <span class="project-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="project-content">
+                <ol class="project-steps" aria-label="小模型实践计划">
+                    <li><i class="fas fa-database" aria-hidden="true"></i><span>数据与分词</span></li>
+                    <li><i class="fas fa-microchip" aria-hidden="true"></i><span>预训练</span></li>
+                    <li><i class="fas fa-comments" aria-hidden="true"></i><span>对话微调</span></li>
+                    <li><i class="fas fa-terminal" aria-hidden="true"></i><span>评测与部署</span></li>
+                </ol>
+                <div class="project-links">
+                    <a href="https://github.com/karpathy/nanochat" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> nanochat <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
                 </div>
-                <div class="startup-sort">融资额从高到低</div>
-            </div>
-
-            <div class="startup-table-scroll">
-                <table class="startup-table">
-                    <thead>
-                        <tr>
-                            <th scope="col">排名</th>
-                            <th scope="col">公司 / 总部</th>
-                            <th scope="col">方向</th>
-                            <th scope="col">公开融资估算</th>
-                            <th scope="col">融资图表 <small>对数刻度</small></th>
-                            <th scope="col">状态</th>
-                        </tr>
-                    </thead>
-                    <tbody id="startupRows"></tbody>
-                </table>
-            </div>
-
-            <div class="startup-pagination">
-                <button id="startupPrev" type="button" aria-label="上一页">←</button>
-                <div id="startupPages" class="startup-pages" aria-label="分页"></div>
-                <button id="startupNext" type="button" aria-label="下一页">→</button>
-            </div>
-            <p class="startup-swipe-hint">每页 20 家 · 可左右滑动翻页</p>
-        </div>
-
-        <details class="startup-method">
-            <summary>数据口径与来源</summary>
-            <div>
-                <p>这是公开信息研究榜单，不是完整私募数据库。金额为 2022 年 12 月至 2026 年 8 月公开披露的股权及战略融资估算，按美元统一换算；不计 IPO 募资，未披露轮次可能造成低估。窗口期内以创业公司身份完成融资、随后上市或被战略收购的公司仍保留。DeepSeek 等未披露可核验外部融资额的公司不纳入金额榜。</p>
-                <p class="startup-sources">交叉参考：<a href="https://news.crunchbase.com/ai/largest-ai-startup-funding-deals-2024/" target="_blank" rel="noopener noreferrer">Crunchbase 2024 AI 融资</a>、<a href="https://news.crunchbase.com/venture/big-dollar-ai-investors-2025-softbank/" target="_blank" rel="noopener noreferrer">Crunchbase 2025 资本集中度</a>、<a href="https://techcrunch.com/2025/03/08/9-us-ai-startups-have-raised-100m-or-more-in-2025/" target="_blank" rel="noopener noreferrer">TechCrunch 美国公司追踪</a>、<a href="https://pdf.dfcfw.com/pdf/H3_AP202604101821126894_1.pdf" target="_blank" rel="noopener noreferrer">全球 AI 企业创新报告 2026</a>及企业公告与公开报道。</p>
             </div>
         </details>
-    </section>
 
-    <section class="vibe-project project-card project-card--signal project-slide" id="projectSlide02" aria-labelledby="blessing-title" aria-label="第 2 个项目，共 6 个" data-project-title="tombkeeper’s blessing">
-        <div class="project-heading">
-            <div class="project-number">02</div>
-            <h2 id="blessing-title">tombkeeper’s blessing</h2>
-            <span class="project-status">规划中</span>
-        </div>
-        <div class="signal-layout">
-            <div class="signal-pipeline" aria-label="项目处理流程">
-                <div><span>01</span><strong>实时订阅</strong><small>tombkeeper 等微博博主</small></div>
-                <i>→</i>
-                <div><span>02</span><strong>语义分析</strong><small>趋势、行业与催化事件</small></div>
-                <i>→</i>
-                <div><span>03</span><strong>证据交叉验证</strong><small>来源、时效与反方观点</small></div>
-                <i>→</i>
-                <div><span>04</span><strong>候选标的</strong><small>股票、逻辑与风险提示</small></div>
-            </div>
-            <p class="project-guardrail"><strong>决策边界</strong>：系统提供研究候选与证据，不自动交易；最终买卖由人工确认。</p>
-        </div>
-    </section>
-
-    <section class="vibe-project project-card project-card--assistant project-slide" id="projectSlide03" aria-labelledby="assistant-title" aria-label="第 3 个项目，共 6 个" data-project-title="个人助理">
-        <div class="project-heading">
-            <div class="project-number">03</div>
-            <h2 id="assistant-title">个人助理</h2>
-            <span class="project-status">概念验证</span>
-        </div>
-        <div class="assistant-grid">
-            <div class="phone-shell" aria-label="移动端助理概念界面">
-                <span class="phone-time">09:41</span>
-                <div class="voice-orb"><i></i></div>
-                <strong>今天要处理什么？</strong>
-                <small>按住说话 · 支持连续对话</small>
-            </div>
-            <div class="capability-list">
-                <div><span>VOICE</span><strong>自然语音对话</strong><p>走路、通勤或开会间隙都能快速交代事情。</p></div>
-                <div><span>MEMORY</span><strong>长期个人记忆</strong><p>理解工作上下文、生活偏好与未完成事项。</p></div>
-                <div><span>ACTION</span><strong>连接工具并执行</strong><p>日程、消息、文档、搜索与自动化工作流。</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="vibe-project project-card project-card--vision project-slide" id="projectSlide04" aria-labelledby="vision-title" aria-label="第 4 个项目，共 6 个" data-project-title="个人 Agent 项目规划">
-        <div class="project-heading">
-            <div class="project-number">04</div>
-            <h2 id="vision-title">个人 Agent 项目规划</h2>
-            <span class="project-status">长期愿景</span>
-        </div>
-        <div class="vision-map">
-            <div class="vision-node"><span>感知</span><strong>传感器 Agent</strong><small>视觉 · 声音 · 空间 · 行为</small></div>
-            <div class="vision-connector"><i></i><span>持续数据</span></div>
-            <div class="vision-node vision-node--core"><span>认知</span><strong>世界模型</strong><small>理解 · 预测 · 规划 · 模拟</small></div>
-            <div class="vision-connector"><i></i><span>闭环学习</span></div>
-            <div class="vision-node"><span>行动</span><strong>具身智能</strong><small>在真实世界中可靠执行</small></div>
-        </div>
-        <blockquote class="vision-manifesto">Build the new world.</blockquote>
-    </section>
-
-    <section class="vibe-project project-card project-card--datacenter project-slide" id="projectSlide05" aria-labelledby="datacenter-title" aria-label="第 5 个项目，共 6 个" data-project-title="中国大陆数据中心上游投资观察">
-        <div class="project-heading">
-            <div class="project-number">05</div>
-            <h2 id="datacenter-title">中国大陆数据中心上游投资观察</h2>
-            <span class="project-status">研究组合</span>
-        </div>
-
-        <div class="datacenter-dashboard">
-            <div class="datacenter-thesis">
-                <span class="datacenter-thesis-label">需求传导</span>
-                <strong>AI 算力扩张 → 数据中心建设 → 上游设备增量</strong>
-                <div class="datacenter-flow" aria-label="数据中心上游产业链">
-                    <span>计算</span><i></i><span>连接</span><i></i><span>供电</span><i></i><span>散热</span>
+        <details class="project-item project-item--featured project-item--duck" id="microduck" open>
+            <summary>
+                <span class="project-icon"><i class="fas fa-shoe-prints" aria-hidden="true"></i></span>
+                <h2>自制行走小鸭子 <span>MicroDuck</span></h2>
+                <span class="project-badge">新计划</span>
+                <span class="project-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="project-content">
+                <ol class="project-steps" aria-label="行走小鸭子实践计划">
+                    <li><i class="fas fa-cube" aria-hidden="true"></i><span>仿真环境</span></li>
+                    <li><i class="fas fa-shoe-prints" aria-hidden="true"></i><span>步态训练</span></li>
+                    <li><i class="fas fa-robot" aria-hidden="true"></i><span>实机搭建</span></li>
+                    <li><i class="fas fa-sliders-h" aria-hidden="true"></i><span>行走调试</span></li>
+                </ol>
+                <div class="project-links">
+                    <a href="https://pollen-robotics.com/microduck/" target="_blank" rel="noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Microduck <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+                    <a href="https://github.com/pollen-robotics/microduck_rl" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> 训练代码 <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
                 </div>
-            </div>
-            <div class="datacenter-scoreboard" aria-label="观察池概览">
-                <div><strong>18</strong><span>股票观察池</span></div>
-                <div><strong>4</strong><span>上游环节</span></div>
-                <div><strong>沪 / 深 / 北交所</strong><span>市场覆盖</span></div>
-            </div>
-        </div>
-
-        <div class="supplier-grid">
-            <article class="supplier-card">
-                <div class="supplier-title"><span>01</span><h3>AI 服务器与网络</h3></div>
-                <div class="stock-list">
-                    <span><b>浪潮信息</b><small>000977.SZ</small></span>
-                    <span><b>中科曙光</b><small>603019.SH</small></span>
-                    <span><b>中兴通讯</b><small>000063.SZ</small></span>
-                    <span><b>紫光股份</b><small>000938.SZ</small></span>
-                </div>
-            </article>
-            <article class="supplier-card">
-                <div class="supplier-title"><span>02</span><h3>光互连与高速连接</h3></div>
-                <div class="stock-list">
-                    <span><b>中际旭创</b><small>300308.SZ</small></span>
-                    <span><b>新易盛</b><small>300502.SZ</small></span>
-                    <span><b>天孚通信</b><small>300394.SZ</small></span>
-                    <span><b>光迅科技</b><small>002281.SZ</small></span>
-                </div>
-            </article>
-            <article class="supplier-card">
-                <div class="supplier-title"><span>03</span><h3>供配电与电源</h3></div>
-                <div class="stock-list">
-                    <span><b>科华数据</b><small>002335.SZ</small></span>
-                    <span><b>科士达</b><small>002518.SZ</small></span>
-                    <span><b>盛弘股份</b><small>300693.SZ</small></span>
-                    <span><b>中航光电</b><small>002179.SZ</small></span>
-                </div>
-            </article>
-            <article class="supplier-card">
-                <div class="supplier-title"><span>04</span><h3>液冷与温控</h3></div>
-                <div class="stock-list">
-                    <span><b>英维克</b><small>002837.SZ</small></span>
-                    <span><b>申菱环境</b><small>301018.SZ</small></span>
-                    <span><b>高澜股份</b><small>300499.SZ</small></span>
-                    <span><b>佳力图</b><small>603912.SH</small></span>
-                    <span><b>同飞股份</b><small>300990.SZ</small></span>
-                    <span><b>曙光数创</b><small>872808.BJ</small></span>
-                </div>
-            </article>
-        </div>
-
-        <div class="datacenter-watchline">
-            <span>需求：机柜 / 电力 / PUE</span>
-            <span>供给：产能 / 交付 / 验证周期</span>
-            <span>财务：订单 / 毛利率 / 现金流</span>
-            <span>风险：估值 / 技术路线 / 客户集中</span>
-        </div>
-        <details class="startup-method datacenter-method">
-            <summary>观察口径、资料来源与风险边界</summary>
-            <div>
-                <p>观察池按数据中心建设的计算、连接、供电与散热环节整理，仅用于产业研究，不代表当前持仓、目标权重或买卖建议。需继续核验公司的数据中心业务占比、订单兑现、客户集中度及估值。</p>
-                <p class="startup-sources">产业链参考：<a href="https://www.chyxx.com/industry/1213168.html" target="_blank" rel="noopener noreferrer">智研咨询</a>、<a href="https://www.askci.com/news/chanye/20250319/083422274234446185351807.shtml" target="_blank" rel="noopener noreferrer">中商产业研究院</a>、<a href="https://www.cls.cn/detail/1950936" target="_blank" rel="noopener noreferrer">财联社液冷产业链</a>、<a href="https://pdf.dfcfw.com/pdf/H3_AP202601211818202147_1.pdf?1769007393000.pdf=" target="_blank" rel="noopener noreferrer">国信证券液冷专题</a>。</p>
             </div>
         </details>
-    </section>
 
-    <section class="vibe-project project-card project-card--authors project-slide" id="projectSlide06" aria-labelledby="authors-title" aria-label="第 6 个项目，共 6 个" data-project-title="DeepSeek-R1 作者公开轨迹追踪">
-        <div class="project-heading">
-            <div class="project-number">06</div>
-            <h2 id="authors-title">DeepSeek-R1 作者公开轨迹追踪</h2>
-            <span class="project-status project-status--active">基线已建</span>
-        </div>
-
-        <div class="author-metrics" aria-label="追踪项目概览">
-            <div><strong>200</strong><span>arXiv 作者条目</span></div>
-            <div><strong>4</strong><span>公开信号类型</span></div>
-            <div><strong>2026.01.04</strong><span>论文版本基线</span></div>
-            <label class="author-search"><span>搜索作者</span><input id="authorSearch" type="search" placeholder="输入姓名" autocomplete="off"></label>
-        </div>
-
-        <div class="author-board">
-            <div class="author-board-head">
-                <strong>公开职业路径卡片墙</strong>
-                <span id="authorResultCount">200 个条目</span>
+        <details class="project-item" id="blessing">
+            <summary>
+                <span class="project-icon"><i class="fas fa-rss" aria-hidden="true"></i></span>
+                <h2>tombkeeper’s blessing</h2>
+                <span class="project-badge">规划中</span>
+                <span class="project-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="project-content">
+                <ol class="project-steps" aria-label="投资信号研究流程">
+                    <li><i class="fab fa-weibo" aria-hidden="true"></i><span>微博订阅</span></li>
+                    <li><i class="fas fa-search" aria-hidden="true"></i><span>趋势分析</span></li>
+                    <li><i class="fas fa-check-double" aria-hidden="true"></i><span>证据核验</span></li>
+                    <li><i class="fas fa-chart-line" aria-hidden="true"></i><span>候选标的</span></li>
+                </ol>
+                <p class="project-note">研究候选，人工决策。</p>
             </div>
-            <div class="author-grid" id="authorGrid" aria-live="polite"></div>
-            <div class="author-pagination">
-                <button id="authorPrev" type="button" aria-label="上一页">←</button>
-                <span id="authorPageState">1 / 7</span>
-                <button id="authorNext" type="button" aria-label="下一页">→</button>
-            </div>
-        </div>
+        </details>
 
-        <div class="tracking-roadmap" aria-label="公开轨迹更新流程">
-            <div><span>01</span><strong>建立基线</strong><small>论文作者与版本</small></div>
-            <i>→</i>
-            <div><span>02</span><strong>抓取公开信号</strong><small>论文 · GitHub · 演讲 · 任职</small></div>
-            <i>→</i>
-            <div><span>03</span><strong>交叉验证</strong><small>官方主页与可信来源</small></div>
-            <i>→</i>
-            <div><span>04</span><strong>生成路线图</strong><small>按人、时间与方向更新</small></div>
-        </div>
-        <p class="author-privacy"><strong>追踪边界：</strong>只收录公开、可核验的专业动态，不采集私人生活、住址、家庭或非公开社交信息。作者基线来自 <a href="https://arxiv.org/abs/2501.12948" target="_blank" rel="noopener noreferrer">DeepSeek-R1 官方 arXiv 页面</a>。</p>
-    </section>
+        <details class="project-item" id="personal-assistant">
+            <summary>
+                <span class="project-icon"><i class="fas fa-microphone" aria-hidden="true"></i></span>
+                <h2>个人助理</h2>
+                <span class="project-badge">概念验证</span>
+                <span class="project-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="project-content">
+                <ul class="project-steps" aria-label="移动端助理能力">
+                    <li><i class="fas fa-mobile-alt" aria-hidden="true"></i><span>随身 App</span></li>
+                    <li><i class="fas fa-comment-dots" aria-hidden="true"></i><span>语音对话</span></li>
+                    <li><i class="fas fa-brain" aria-hidden="true"></i><span>个人记忆</span></li>
+                    <li><i class="fas fa-bolt" aria-hidden="true"></i><span>工具执行</span></li>
+                </ul>
             </div>
-        </div>
+        </details>
 
-        <div class="project-poster-stage">
-            <button class="project-poster-arrow" id="projectPrev" type="button" aria-label="上一个项目">←</button>
-            <div class="project-poster-rail" id="projectPosterRail" role="tablist" aria-label="选择 Vibe 项目">
-                <button class="project-poster is-active" id="projectPoster01" type="button" role="tab" aria-selected="true" aria-controls="projectSlide01" data-project-index="0" style="--poster-accent:#ef8354;--poster-deep:#17335f;--poster-glow:#4c86d9">
-                    <span class="project-poster-number">01</span><span class="project-poster-mark" aria-hidden="true">100</span><span class="project-poster-copy"><small>持续更新</small><strong>千帆竞发</strong></span>
-                </button>
-                <button class="project-poster" id="projectPoster02" type="button" role="tab" aria-selected="false" aria-controls="projectSlide02" data-project-index="1" style="--poster-accent:#d27a9d;--poster-deep:#4b1830;--poster-glow:#913e62">
-                    <span class="project-poster-number">02</span><span class="project-poster-mark" aria-hidden="true">信号</span><span class="project-poster-copy"><small>规划中</small><strong>tombkeeper’s blessing</strong></span>
-                </button>
-                <button class="project-poster" id="projectPoster03" type="button" role="tab" aria-selected="false" aria-controls="projectSlide03" data-project-index="2" style="--poster-accent:#65d4ad;--poster-deep:#064938;--poster-glow:#129773">
-                    <span class="project-poster-number">03</span><span class="project-poster-mark" aria-hidden="true">声</span><span class="project-poster-copy"><small>概念验证</small><strong>个人助理</strong></span>
-                </button>
-                <button class="project-poster" id="projectPoster04" type="button" role="tab" aria-selected="false" aria-controls="projectSlide04" data-project-index="3" style="--poster-accent:#f0a187;--poster-deep:#632b25;--poster-glow:#c6533f">
-                    <span class="project-poster-number">04</span><span class="project-poster-mark" aria-hidden="true">∞</span><span class="project-poster-copy"><small>长期愿景</small><strong>个人 Agent 项目规划</strong></span>
-                </button>
-                <button class="project-poster" id="projectPoster05" type="button" role="tab" aria-selected="false" aria-controls="projectSlide05" data-project-index="4" style="--poster-accent:#f1b45d;--poster-deep:#573412;--poster-glow:#b46a18">
-                    <span class="project-poster-number">05</span><span class="project-poster-mark" aria-hidden="true">算力</span><span class="project-poster-copy"><small>研究组合</small><strong>数据中心投资观察</strong></span>
-                </button>
-                <button class="project-poster" id="projectPoster06" type="button" role="tab" aria-selected="false" aria-controls="projectSlide06" data-project-index="5" style="--poster-accent:#a8b9ee;--poster-deep:#252f67;--poster-glow:#5b72bf">
-                    <span class="project-poster-number">06</span><span class="project-poster-mark" aria-hidden="true">R1</span><span class="project-poster-copy"><small>基线已建</small><strong>DeepSeek-R1 作者追踪</strong></span>
-                </button>
+        <details class="project-item" id="datacenter">
+            <summary>
+                <span class="project-icon"><i class="fas fa-server" aria-hidden="true"></i></span>
+                <h2>数据中心上游投资观察</h2>
+                <span class="project-badge">18 只观察股</span>
+                <span class="project-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="project-content">
+                <div class="supplier-grid">
+                    <section class="supplier-card">
+                        <h3><i class="fas fa-server" aria-hidden="true"></i>服务器与网络</h3>
+                        <dl class="stock-list">
+                            <div><dt>浪潮信息</dt><dd>000977.SZ</dd></div>
+                            <div><dt>中科曙光</dt><dd>603019.SH</dd></div>
+                            <div><dt>中兴通讯</dt><dd>000063.SZ</dd></div>
+                            <div><dt>紫光股份</dt><dd>000938.SZ</dd></div>
+                        </dl>
+                    </section>
+                    <section class="supplier-card">
+                        <h3><i class="fas fa-link" aria-hidden="true"></i>光互连</h3>
+                        <dl class="stock-list">
+                            <div><dt>中际旭创</dt><dd>300308.SZ</dd></div>
+                            <div><dt>新易盛</dt><dd>300502.SZ</dd></div>
+                            <div><dt>天孚通信</dt><dd>300394.SZ</dd></div>
+                            <div><dt>光迅科技</dt><dd>002281.SZ</dd></div>
+                        </dl>
+                    </section>
+                    <section class="supplier-card">
+                        <h3><i class="fas fa-bolt" aria-hidden="true"></i>供电与电源</h3>
+                        <dl class="stock-list">
+                            <div><dt>科华数据</dt><dd>002335.SZ</dd></div>
+                            <div><dt>科士达</dt><dd>002518.SZ</dd></div>
+                            <div><dt>盛弘股份</dt><dd>300693.SZ</dd></div>
+                            <div><dt>中航光电</dt><dd>002179.SZ</dd></div>
+                        </dl>
+                    </section>
+                    <section class="supplier-card">
+                        <h3><i class="fas fa-snowflake" aria-hidden="true"></i>液冷与温控</h3>
+                        <dl class="stock-list">
+                            <div><dt>英维克</dt><dd>002837.SZ</dd></div>
+                            <div><dt>申菱环境</dt><dd>301018.SZ</dd></div>
+                            <div><dt>高澜股份</dt><dd>300499.SZ</dd></div>
+                            <div><dt>佳力图</dt><dd>603912.SH</dd></div>
+                            <div><dt>同飞股份</dt><dd>300990.SZ</dd></div>
+                            <div><dt>曙光数创</dt><dd>872808.BJ</dd></div>
+                        </dl>
+                    </section>
+                </div>
+                <p class="project-note">产业研究观察池，非持仓或买卖建议。</p>
+                <div class="project-links">
+                    <a href="https://www.chyxx.com/industry/1213168.html" target="_blank" rel="noopener noreferrer">产业链资料 <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+                    <a href="https://www.cls.cn/detail/1950936" target="_blank" rel="noopener noreferrer">液冷资料 <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+                </div>
             </div>
-            <button class="project-poster-arrow" id="projectNext" type="button" aria-label="下一个项目">→</button>
-        </div>
+        </details>
 
-        <div class="project-deck-caption">
-            <div class="project-deck-current" aria-live="polite">
-                <span id="projectDeckCount">01 / 06</span>
-                <strong id="projectDeckTitle">千帆竞发</strong>
+        <details class="project-item" id="r1-authors">
+            <summary>
+                <span class="project-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></span>
+                <h2>DeepSeek-R1 作者追踪</h2>
+                <span class="project-badge">{{ site.data.deepseek_r1_authors | size }} 位作者</span>
+                <span class="project-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="project-content">
+                <div class="author-toolbar">
+                    <label class="author-search"><i class="fas fa-search" aria-hidden="true"></i><span class="sr-only">搜索作者</span><input id="authorSearch" type="search" placeholder="搜索作者" autocomplete="off"></label>
+                    <span id="authorResultCount" role="status">{{ site.data.deepseek_r1_authors | size }} 位作者</span>
+                </div>
+                <div class="author-grid" id="authorGrid">
+                    {% for author in site.data.deepseek_r1_authors %}
+                    {% assign initials = author | split: ' ' %}
+                    <article class="author-card" data-author="{{ author | escape }}">
+                        <span class="author-avatar" aria-hidden="true">{{ initials.first | slice: 0 }}{{ initials.last | slice: 0 }}</span>
+                        <h3>{{ author | escape }}</h3>
+                    </article>
+                    {% endfor %}
+                </div>
+                <p id="authorEmpty" class="project-note" hidden>没有匹配的作者。</p>
+                <div class="author-pagination" id="authorPagination" hidden>
+                    <button id="authorPrev" type="button" aria-label="上一页作者"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>
+                    <span id="authorPageState" aria-live="polite"></span>
+                    <button id="authorNext" type="button" aria-label="下一页作者"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
+                <p class="project-note">论文作者基线 · 2026.01.04；后续仅记录可核验的公开职业动态。</p>
+                <div class="project-links"><a href="https://arxiv.org/abs/2501.12948" target="_blank" rel="noopener noreferrer">arXiv 论文 <i class="fas fa-arrow-up" aria-hidden="true"></i></a></div>
             </div>
-            <span>点击海报，左右翻开项目</span>
-        </div>
-
-        <div class="project-deck-footer">
-            <div class="project-deck-progress" aria-hidden="true"><span id="projectDeckProgress"></span></div>
-            <span class="project-deck-hint">卡片支持拖动与方向键切换</span>
-        </div>
+        </details>
     </div>
 </div>
-
-<script>
-(function () {
-    var startups = {{ site.data.ai_startups | jsonify }};
-    var pageSize = 20;
-    var state = { country: '全部', page: 0 };
-    var maxFunding = Math.max.apply(null, startups.map(function (item) { return item.funding; }));
-    var statusLabels = { Private: '未上市', Public: '已上市', Strategic: '战略投资', Acquired: '已收购', Merged: '已合并', Subsidiary: '独立运营' };
-
-    startups.sort(function (a, b) { return b.funding - a.funding; });
-    startups.forEach(function (item, index) { item.rank = index + 1; });
-
-    function formatFunding(value) {
-        if (value >= 1000) {
-            var billions = value / 1000;
-            return '≈ $' + (billions >= 10 || Number.isInteger(billions) ? billions.toFixed(0) : billions.toFixed(1)) + 'B';
-        }
-        return '≈ $' + value + 'M';
-    }
-
-    function chartWidth(value) {
-        var min = Math.log(10);
-        var max = Math.log(maxFunding);
-        return Math.max(5, ((Math.log(value) - min) / (max - min)) * 100);
-    }
-
-    function filteredRows() {
-        return startups.filter(function (item) {
-            return state.country === '全部' || item.country === state.country;
-        });
-    }
-
-    function render() {
-        var rows = filteredRows();
-        var pageCount = Math.ceil(rows.length / pageSize);
-        state.page = Math.max(0, Math.min(state.page, pageCount - 1));
-        var visible = rows.slice(state.page * pageSize, (state.page + 1) * pageSize);
-        var tbody = document.getElementById('startupRows');
-
-        tbody.innerHTML = visible.map(function (item) {
-            return '<tr>' +
-                '<td><span class="startup-rank">' + String(item.rank).padStart(2, '0') + '</span></td>' +
-                '<td><strong class="startup-name">' + item.name + '</strong><small class="startup-location"><b>' + item.country + '</b> · ' + item.city + '</small></td>' +
-                '<td><span class="startup-sector">' + item.sector + '</span></td>' +
-                '<td><strong class="startup-funding">' + formatFunding(item.funding) + '</strong></td>' +
-                '<td><div class="funding-chart" aria-label="融资规模 ' + formatFunding(item.funding) + '"><span style="width:' + chartWidth(item.funding) + '%"></span></div></td>' +
-                '<td><span class="startup-state startup-state--' + item.status.toLowerCase() + '">' + (statusLabels[item.status] || item.status) + '</span></td>' +
-            '</tr>';
-        }).join('');
-
-        var pages = document.getElementById('startupPages');
-        pages.innerHTML = Array.from({ length: pageCount }, function (_, index) {
-            return '<button type="button" data-page="' + index + '" class="' + (index === state.page ? 'is-active' : '') + '" aria-label="第 ' + (index + 1) + ' 页" aria-current="' + (index === state.page ? 'page' : 'false') + '">' + (index + 1) + '</button>';
-        }).join('');
-        document.getElementById('startupPrev').disabled = state.page === 0;
-        document.getElementById('startupNext').disabled = state.page === pageCount - 1;
-        document.getElementById('startupCount').textContent = rows.length;
-    }
-
-    document.querySelectorAll('.startup-tab').forEach(function (button) {
-        button.addEventListener('click', function () {
-            state.country = button.getAttribute('data-country');
-            state.page = 0;
-            document.querySelectorAll('.startup-tab').forEach(function (tab) {
-                var active = tab === button;
-                tab.classList.toggle('is-active', active);
-                tab.setAttribute('aria-selected', active ? 'true' : 'false');
-            });
-            render();
-        });
-    });
-    document.getElementById('startupPages').addEventListener('click', function (event) {
-        var target = event.target.closest('[data-page]');
-        if (!target) return;
-        state.page = Number(target.getAttribute('data-page'));
-        render();
-    });
-    document.getElementById('startupPrev').addEventListener('click', function () { state.page -= 1; render(); });
-    document.getElementById('startupNext').addEventListener('click', function () { state.page += 1; render(); });
-
-    var touchStartX = 0;
-    var swipeZone = document.getElementById('startupSwipeZone');
-    swipeZone.addEventListener('touchstart', function (event) { touchStartX = event.changedTouches[0].screenX; }, { passive: true });
-    swipeZone.addEventListener('touchend', function (event) {
-        var distance = event.changedTouches[0].screenX - touchStartX;
-        var pageCount = Math.ceil(filteredRows().length / pageSize);
-        if (distance < -70 && state.page < pageCount - 1) { state.page += 1; render(); }
-        if (distance > 70 && state.page > 0) { state.page -= 1; render(); }
-    }, { passive: true });
-
-    render();
-})();
-
-(function () {
-    var authors = {{ site.data.deepseek_r1_authors | jsonify }};
-    var pageSize = 30;
-    var state = { page: 0, query: '' };
-    var palette = ['#2f5d9f', '#8d3e5f', '#087f5b', '#c6533f', '#6b4eb5', '#346b77'];
-
-    function initials(name) {
-        if (name === 'DeepSeek-AI') return 'DS';
-        var parts = name.replace(/\./g, '').split(/\s+/).filter(Boolean);
-        return parts.slice(0, 2).map(function (part) { return part.charAt(0); }).join('').toUpperCase();
-    }
-
-    function filteredAuthors() {
-        var query = state.query.toLowerCase();
-        return authors.map(function (name, index) { return { name: name, index: index }; }).filter(function (item) {
-            return !query || item.name.toLowerCase().indexOf(query) !== -1;
-        });
-    }
-
-    function renderAuthors() {
-        var matches = filteredAuthors();
-        var pageCount = Math.max(1, Math.ceil(matches.length / pageSize));
-        state.page = Math.max(0, Math.min(state.page, pageCount - 1));
-        var visible = matches.slice(state.page * pageSize, (state.page + 1) * pageSize);
-
-        document.getElementById('authorGrid').innerHTML = visible.map(function (item) {
-            var number = String(item.index + 1).padStart(3, '0');
-            return '<article class="author-card">' +
-                '<div class="author-avatar" style="--avatar:' + palette[item.index % palette.length] + '">' +
-                    '<span>' + number + '</span><strong>' + initials(item.name) + '</strong>' +
-                '</div>' +
-                '<h3>' + item.name + '</h3>' +
-                '<small><i></i>基线已录入</small>' +
-            '</article>';
-        }).join('') || '<p class="author-empty">没有匹配的作者。</p>';
-
-        document.getElementById('authorResultCount').textContent = matches.length + ' 个条目';
-        document.getElementById('authorPageState').textContent = (state.page + 1) + ' / ' + pageCount;
-        document.getElementById('authorPrev').disabled = state.page === 0;
-        document.getElementById('authorNext').disabled = state.page === pageCount - 1;
-    }
-
-    document.getElementById('authorSearch').addEventListener('input', function (event) {
-        state.query = event.target.value.trim();
-        state.page = 0;
-        renderAuthors();
-    });
-    document.getElementById('authorPrev').addEventListener('click', function () { state.page -= 1; renderAuthors(); });
-    document.getElementById('authorNext').addEventListener('click', function () { state.page += 1; renderAuthors(); });
-
-    renderAuthors();
-})();
-
-(function () {
-    var showcase = document.getElementById('projectShowcase');
-    var deck = document.getElementById('projectDeck');
-    var track = document.getElementById('projectTrack');
-    var slides = Array.prototype.slice.call(track.querySelectorAll('.project-slide'));
-    var prev = document.getElementById('projectPrev');
-    var next = document.getElementById('projectNext');
-    var posterRail = document.getElementById('projectPosterRail');
-    var posters = Array.prototype.slice.call(posterRail.querySelectorAll('.project-poster'));
-    var count = document.getElementById('projectDeckCount');
-    var title = document.getElementById('projectDeckTitle');
-    var progress = document.getElementById('projectDeckProgress');
-    var state = { index: 0, startX: 0, startY: 0, deltaX: 0, dragging: false };
-
-    if (!slides.length) return;
-
-    showcase.classList.add('is-enhanced');
-
-    function positionTrack(offset) {
-        var slideWidth = slides[0] ? slides[0].offsetWidth : deck.clientWidth;
-        var pixels = -(state.index * slideWidth) + (offset || 0);
-        track.style.transform = 'translate3d(' + pixels + 'px,0,0)';
-    }
-
-    function syncHeight() {
-        var active = slides[state.index];
-        if (active) deck.style.height = active.offsetHeight + 'px';
-    }
-
-    function update(options) {
-        options = options || {};
-        state.index = Math.max(0, Math.min(state.index, slides.length - 1));
-        positionTrack(0);
-        syncHeight();
-
-        slides.forEach(function (slide, index) {
-            var active = index === state.index;
-            slide.classList.toggle('is-active', active);
-            slide.setAttribute('aria-hidden', active ? 'false' : 'true');
-            if ('inert' in slide) slide.inert = !active;
-        });
-        posters.forEach(function (poster, index) {
-            var active = index === state.index;
-            poster.classList.toggle('is-active', active);
-            poster.setAttribute('aria-selected', active ? 'true' : 'false');
-            poster.setAttribute('tabindex', active ? '0' : '-1');
-        });
-
-        prev.disabled = state.index === 0;
-        next.disabled = state.index === slides.length - 1;
-        count.textContent = String(state.index + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
-        title.textContent = slides[state.index].getAttribute('data-project-title');
-        progress.style.width = (((state.index + 1) / slides.length) * 100) + '%';
-
-        if (options.revealPoster && posters[state.index]) {
-            var targetLeft = posters[state.index].offsetLeft - (posterRail.clientWidth - posters[state.index].offsetWidth) / 2;
-            posterRail.scrollTo({ left: Math.max(0, targetLeft), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-        }
-        if (options.focusSlide) deck.focus({ preventScroll: true });
-    }
-
-    function goTo(index, options) {
-        if (index === state.index || index < 0 || index >= slides.length) {
-            update(options);
-            return;
-        }
-        state.index = index;
-        update(options);
-    }
-
-    prev.addEventListener('click', function () { goTo(state.index - 1, { revealPoster: true }); });
-    next.addEventListener('click', function () { goTo(state.index + 1, { revealPoster: true }); });
-    posterRail.addEventListener('click', function (event) {
-        var poster = event.target.closest('[data-project-index]');
-        if (poster) goTo(Number(poster.getAttribute('data-project-index')), { revealPoster: true });
-    });
-    posterRail.addEventListener('keydown', function (event) {
-        var targetIndex = state.index;
-        if (event.key === 'ArrowLeft') targetIndex -= 1;
-        else if (event.key === 'ArrowRight') targetIndex += 1;
-        else if (event.key === 'Home') targetIndex = 0;
-        else if (event.key === 'End') targetIndex = posters.length - 1;
-        else return;
-        event.preventDefault();
-        targetIndex = Math.max(0, Math.min(targetIndex, posters.length - 1));
-        goTo(targetIndex, { revealPoster: true });
-        posters[targetIndex].focus({ preventScroll: true });
-    });
-
-    deck.addEventListener('keydown', function (event) {
-        if (event.target !== deck) return;
-        if (event.key === 'ArrowLeft') { event.preventDefault(); goTo(state.index - 1, { revealPoster: true }); }
-        if (event.key === 'ArrowRight') { event.preventDefault(); goTo(state.index + 1, { revealPoster: true }); }
-        if (event.key === 'Home') { event.preventDefault(); goTo(0, { revealPoster: true }); }
-        if (event.key === 'End') { event.preventDefault(); goTo(slides.length - 1, { revealPoster: true }); }
-    });
-
-    function isInteractiveTarget(target) {
-        return Boolean(target.closest('a,button,input,summary,details,table,.startup-table-card,.author-board'));
-    }
-
-    deck.addEventListener('pointerdown', function (event) {
-        if ((event.pointerType === 'mouse' && event.button !== 0) || isInteractiveTarget(event.target)) return;
-        state.startX = event.clientX;
-        state.startY = event.clientY;
-        state.deltaX = 0;
-        state.dragging = true;
-        deck.setPointerCapture(event.pointerId);
-        showcase.classList.add('is-dragging');
-    });
-    deck.addEventListener('pointermove', function (event) {
-        if (!state.dragging) return;
-        var deltaY = event.clientY - state.startY;
-        state.deltaX = event.clientX - state.startX;
-        if (Math.abs(deltaY) > Math.abs(state.deltaX)) return;
-        var resistance = (state.index === 0 && state.deltaX > 0) || (state.index === slides.length - 1 && state.deltaX < 0) ? 0.22 : 1;
-        positionTrack(state.deltaX * resistance);
-    });
-
-    function finishDrag(event) {
-        if (!state.dragging) return;
-        state.dragging = false;
-        showcase.classList.remove('is-dragging');
-        if (deck.hasPointerCapture(event.pointerId)) deck.releasePointerCapture(event.pointerId);
-        var threshold = Math.min(90, deck.clientWidth * 0.12);
-        if (state.deltaX < -threshold) goTo(state.index + 1, { revealPoster: true });
-        else if (state.deltaX > threshold) goTo(state.index - 1, { revealPoster: true });
-        else update();
-    }
-    deck.addEventListener('pointerup', finishDrag);
-    deck.addEventListener('pointercancel', finishDrag);
-
-    if ('ResizeObserver' in window) {
-        var observer = new ResizeObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.target === slides[state.index]) syncHeight();
-            });
-        });
-        slides.forEach(function (slide) { observer.observe(slide); });
-    }
-    window.addEventListener('resize', function () { positionTrack(0); syncHeight(); });
-
-    requestAnimationFrame(function () { update(); });
-})();
-</script>
-
-<style>
-.vibe-page { max-width:1120px; padding-bottom:4rem; }
-.vibe-head { background:#17233b; border-left:6px solid #ef8354; border-radius:16px; box-shadow:0 16px 34px rgba(23,35,59,.18); margin:.75rem 0 1.4rem; overflow:hidden; padding:2.1rem 2.25rem; position:relative; }
-.vibe-head::after { border:1px solid rgba(255,255,255,.16); border-radius:50%; content:""; height:150px; position:absolute; right:-34px; top:-72px; width:150px; }
-.vibe-kicker { color:#f3a683; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.16em; margin:0 0 .55rem; }
-.vibe-title { color:#fff; font-family:Lora,Georgia,serif; font-size:clamp(2rem,5vw,3.1rem); font-weight:700; letter-spacing:-.04em; line-height:1.15; margin:0; }
-.vibe-sub { color:#cbd3df; font-size:.95rem; margin:.75rem 0 0; }
-.vibe-project { background:#fff; border:1px solid #d8dee8; border-radius:14px; box-shadow:0 8px 20px rgba(23,35,59,.08); margin-top:1.2rem; overflow:hidden; padding:1.5rem; position:relative; }
-.vibe-project::before { background:var(--accent,#3563b8); content:""; height:5px; inset:0 0 auto; position:absolute; }
-.project-poster-stage,.project-deck-caption,.project-deck-footer { display:none; }
-.project-showcase.is-enhanced { margin-top:1.2rem; }
-.project-showcase.is-enhanced .project-poster-stage { align-items:stretch; display:grid; gap:.65rem; grid-template-columns:42px minmax(0,1fr) 42px; perspective:1600px; }
-.project-poster-rail { display:flex; gap:.5rem; height:270px; min-width:0; overflow:hidden; padding:5px 2px 10px; }
-.project-poster { appearance:none; background:radial-gradient(circle at 72% 24%,color-mix(in srgb,var(--poster-glow) 70%,transparent),transparent 36%),linear-gradient(155deg,var(--poster-deep),#0c1422 88%); border:1px solid color-mix(in srgb,var(--poster-accent) 34%,#2d3748); border-radius:11px; box-shadow:0 10px 22px rgba(15,23,38,.17); color:#fff; cursor:pointer; flex:.72 1 0; min-width:0; overflow:hidden; padding:1rem; position:relative; text-align:left; transform-origin:center bottom; transition:flex .62s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease,border-color .3s ease; }
-.project-poster::before { background:repeating-linear-gradient(90deg,rgba(255,255,255,.13) 0,rgba(255,255,255,.13) 1px,transparent 1px,transparent 13px); content:""; inset:0; opacity:.26; pointer-events:none; position:absolute; transform:scaleX(.84); transition:opacity .4s ease,transform .62s cubic-bezier(.22,1,.36,1); }.project-poster::after { border:1px solid rgba(255,255,255,.12); border-radius:8px; content:""; inset:7px; pointer-events:none; position:absolute; }
-.project-poster:hover { border-color:var(--poster-accent); transform:translateY(-3px); }.project-poster:focus-visible { outline:3px solid color-mix(in srgb,var(--poster-accent) 60%,#fff); outline-offset:3px; }.project-poster.is-active { border-color:var(--poster-accent); box-shadow:0 18px 34px color-mix(in srgb,var(--poster-deep) 38%,transparent); flex:3.5 1 0; transform:translateY(-5px); }.project-poster.is-active::before { opacity:.5; transform:scaleX(1); }
-.project-poster-number { color:var(--poster-accent); font-size:.67rem; font-weight:800; left:1rem; letter-spacing:.12em; position:absolute; top:1rem; z-index:2; }.project-poster-mark { color:rgba(255,255,255,.16); font-family:Lora,Georgia,serif; font-size:clamp(1.8rem,4vw,3.7rem); font-weight:700; left:50%; letter-spacing:-.07em; position:absolute; top:45%; transform:translate(-50%,-50%) rotate(-8deg); transition:color .4s ease,transform .55s cubic-bezier(.22,1,.36,1); white-space:nowrap; }.project-poster.is-active .project-poster-mark { color:color-mix(in srgb,var(--poster-accent) 32%,transparent); transform:translate(-50%,-50%) rotate(0) scale(1.12); }
-.project-poster-copy { bottom:1rem; left:1rem; position:absolute; right:1rem; z-index:2; }.project-poster-copy small { color:var(--poster-accent); display:block; font-size:.6rem; font-weight:800; letter-spacing:.08em; margin-bottom:.4rem; opacity:0; transform:translateY(6px); transition:opacity .28s ease,transform .36s ease; }.project-poster-copy strong { display:block; font-family:Lora,Georgia,serif; font-size:.78rem; line-height:1.25; max-height:165px; overflow:hidden; text-orientation:mixed; text-overflow:ellipsis; white-space:nowrap; writing-mode:vertical-rl; }.project-poster.is-active .project-poster-copy small { opacity:1; transform:translateY(0); }.project-poster.is-active .project-poster-copy strong { font-size:clamp(1.25rem,2.4vw,1.75rem); max-height:none; overflow:visible; white-space:normal; writing-mode:horizontal-tb; }
-.project-poster-arrow { align-items:center; align-self:center; background:#17233b; border:1px solid #3f4d66; border-radius:50%; color:#fff; cursor:pointer; display:flex; font-size:1rem; height:42px; justify-content:center; transition:background .2s ease,border-color .2s ease,transform .2s ease; width:42px; }.project-poster-arrow:hover:not(:disabled) { background:#ef8354; border-color:#ef8354; color:#17233b; transform:scale(1.06); }.project-poster-arrow:disabled { cursor:not-allowed; opacity:.25; }
-.project-showcase.is-enhanced .project-deck-caption { align-items:baseline; display:flex; justify-content:space-between; padding:.25rem .35rem 0; }.project-deck-caption > span { color:#7b8798; font-size:.6rem; }.project-deck-current { align-items:baseline; display:flex; gap:.7rem; min-width:0; }.project-deck-current span { color:#c6533f; font-size:.65rem; font-variant-numeric:tabular-nums; font-weight:800; letter-spacing:.09em; }.project-deck-current strong { color:#1c2940; font-family:Lora,Georgia,serif; font-size:.9rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.project-showcase.is-enhanced .project-deck { cursor:grab; margin:0 -10px; outline:none; overflow:hidden; padding:10px 10px 18px; touch-action:pan-y; transition:height .5s cubic-bezier(.22,1,.36,1); }.project-showcase.is-enhanced .project-deck:focus-visible { box-shadow:0 0 0 3px rgba(53,99,184,.22); }.project-showcase.is-enhanced .project-track { align-items:flex-start; display:flex; perspective:1500px; transition:transform .62s cubic-bezier(.22,1,.36,1); will-change:transform; }.project-showcase.is-enhanced.is-dragging .project-deck { cursor:grabbing; }.project-showcase.is-enhanced.is-dragging .project-track { transition:none; }.project-showcase.is-enhanced .project-slide { box-sizing:border-box; filter:saturate(.72); flex:0 0 100%; margin:0; opacity:.24; transform:perspective(1200px) rotateY(9deg) scale(.975); transform-origin:left center; transition:opacity .38s ease,transform .58s cubic-bezier(.22,1,.36,1),filter .38s ease; width:100%; }.project-showcase.is-enhanced .project-slide.is-active { filter:none; opacity:1; transform:perspective(1200px) rotateY(0) scale(1); }
-.project-showcase.is-enhanced .project-deck-footer { align-items:center; display:grid; gap:.75rem; grid-template-columns:minmax(100px,1fr) auto; margin-top:.1rem; padding:0 .3rem; }.project-deck-progress { background:#dce2eb; border-radius:999px; height:3px; overflow:hidden; }.project-deck-progress span { background:linear-gradient(90deg,#3563b8,#ef8354); border-radius:inherit; display:block; height:100%; transition:width .5s cubic-bezier(.22,1,.36,1); width:16.666%; }.project-deck-hint { color:#7b8798; font-size:.59rem; white-space:nowrap; }
-.project-heading { align-items:center; display:grid; gap:.75rem; grid-template-columns:auto 1fr auto; }
-.project-number { color:var(--accent,#3563b8); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:.75rem; font-weight:800; letter-spacing:.08em; padding-top:.3rem; }
-.project-heading h2 { color:#182238; font-family:Lora,Georgia,serif; font-size:1.55rem; margin:0; }
-.project-status { border:1px solid color-mix(in srgb,var(--accent,#3563b8) 45%,#d8dee8); border-radius:999px; color:var(--accent,#3563b8); font-size:.68rem; font-weight:700; padding:.32rem .62rem; white-space:nowrap; }
-.project-status--active { background:#087f5b; border-color:#087f5b; color:#fff; }
-
-.startup-project { --accent:#3563b8; }
-.startup-metrics { display:grid; gap:.75rem; grid-template-columns:repeat(4,1fr); margin:1.4rem 0 1rem; }
-.startup-metrics div { background:#f2f5fa; border:1px solid #dce2eb; border-radius:10px; padding:.85rem 1rem; }
-.startup-metrics strong { color:#17233b; display:block; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:1.25rem; }
-.startup-metrics span { color:#667387; display:block; font-size:.68rem; margin-top:.2rem; }
-.startup-table-card { border:1px solid #d6dde8; border-radius:12px; overflow:hidden; }
-.startup-toolbar { align-items:center; background:#17233b; display:flex; justify-content:space-between; padding:.75rem 1rem; }
-.startup-tabs { display:flex; gap:.35rem; }
-.startup-tab { background:transparent; border:0; border-radius:6px; color:#bfc9d7; cursor:pointer; font-size:.75rem; font-weight:700; padding:.42rem .65rem; }
-.startup-tab span { opacity:.68; }
-.startup-tab.is-active { background:#ef8354; color:#17233b; }
-.startup-sort { color:#aeb9c9; font-size:.68rem; }
-.startup-table-scroll { overflow-x:auto; }
-.startup-table { border-collapse:collapse; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; min-width:900px; table-layout:fixed; width:100%; }
-.startup-table th { background:#edf1f7; border-bottom:1px solid #cfd7e3; color:#394861; font-size:.65rem; letter-spacing:.08em; padding:.65rem .8rem; text-align:left; }
-.startup-table th:nth-child(1) { width:7%; }.startup-table th:nth-child(2) { width:25%; }.startup-table th:nth-child(3) { width:17%; }.startup-table th:nth-child(4) { width:16%; }.startup-table th:nth-child(5) { width:23%; }.startup-table th:nth-child(6) { width:12%; }
-.startup-table th small { display:block; font-size:.55rem; font-weight:400; letter-spacing:0; margin-top:.1rem; }
-.startup-table td { border-bottom:1px solid #e4e8ef; color:#344258; font-size:.72rem; padding:.65rem .8rem; vertical-align:middle; }
-.startup-table tr:last-child td { border-bottom:0; }.startup-table tbody tr:hover { background:#f9fafc; }
-.startup-rank { color:#8a96a8; font-variant-numeric:tabular-nums; font-weight:700; }
-.startup-name { color:#182238; display:block; font-size:.78rem; line-height:1.35; }
-.startup-location { color:#7a8596; display:block; font-size:.61rem; margin-top:.18rem; }.startup-location b { color:#3563b8; }
-.startup-sector { background:#edf1f7; border-radius:5px; display:inline-block; padding:.25rem .4rem; }
-.startup-funding { color:#182238; font-size:.75rem; font-variant-numeric:tabular-nums; }
-.funding-chart { background:#e1e6ee; border-radius:999px; height:7px; overflow:hidden; width:100%; }.funding-chart span { background:linear-gradient(90deg,#3563b8,#ef8354); border-radius:inherit; display:block; height:100%; }
-.startup-state { border:1px solid #c6ced9; border-radius:999px; color:#596579; display:inline-block; font-size:.59rem; padding:.22rem .4rem; white-space:nowrap; }.startup-state--public,.startup-state--acquired,.startup-state--merged { border-color:#d9a89d; color:#a54431; }
-.startup-pagination { align-items:center; background:#f7f9fc; border-top:1px solid #dce2eb; display:flex; justify-content:center; padding:.75rem; }
-.startup-pagination > button,.startup-pages button { align-items:center; background:#fff; border:1px solid #cfd7e3; border-radius:6px; color:#44536a; cursor:pointer; display:inline-flex; font-size:.7rem; height:30px; justify-content:center; margin:0 .15rem; min-width:30px; }
-.startup-pages button.is-active { background:#17233b; border-color:#17233b; color:#fff; }.startup-pagination button:disabled { cursor:not-allowed; opacity:.35; }
-.startup-swipe-hint { background:#f7f9fc; color:#7a8596; font-size:.62rem; margin:0; padding:0 0 .7rem; text-align:center; }
-.startup-method { background:#f7f9fc; border:1px solid #dce2eb; border-radius:10px; color:#526078; font-size:.72rem; margin-top:.8rem; padding:.75rem 1rem; }
-.startup-method summary { color:#263550; cursor:pointer; font-weight:700; }.startup-method p { line-height:1.65; margin:.7rem 0 0; }.startup-sources a { color:#3563b8; font-weight:700; }
-
-.project-card--signal { --accent:#8d3e5f; }.project-card--assistant { --accent:#087f5b; }.project-card--vision { --accent:#c6533f; }.project-card--datacenter { --accent:#b46a18; }.project-card--authors { --accent:#4968b0; }
-.signal-layout,.assistant-grid { margin-top:1.4rem; }
-.signal-pipeline { align-items:stretch; display:grid; gap:.55rem; grid-template-columns:1fr auto 1fr auto 1fr auto 1fr; }
-.signal-pipeline div { background:#f7f2f4; border:1px solid #ead6de; border-radius:10px; padding:.85rem; }.signal-pipeline > i { align-self:center; color:#8d3e5f; font-style:normal; }
-.signal-pipeline span { color:#8d3e5f; display:block; font-size:.6rem; font-weight:800; }.signal-pipeline strong { color:#263047; display:block; font-size:.78rem; margin-top:.3rem; }.signal-pipeline small { color:#697488; display:block; font-size:.62rem; line-height:1.45; margin-top:.25rem; }
-.project-guardrail { background:#fff8e8; border-left:4px solid #d69e2e; color:#5e5034; font-size:.72rem; margin:1rem 0 0; padding:.65rem .8rem; }
-.assistant-grid { align-items:center; display:grid; gap:2rem; grid-template-columns:210px 1fr; }
-.phone-shell { align-items:center; background:#17233b; border:6px solid #283955; border-radius:26px; box-shadow:0 12px 25px rgba(23,35,59,.2); color:#fff; display:flex; flex-direction:column; height:330px; justify-content:center; padding:1rem; position:relative; text-align:center; }
-.phone-time { font-size:.6rem; left:1rem; position:absolute; top:.7rem; }.voice-orb { align-items:center; background:rgba(8,127,91,.18); border:1px solid rgba(102,211,171,.5); border-radius:50%; display:flex; height:90px; justify-content:center; margin-bottom:1.2rem; width:90px; }.voice-orb i { animation:vibePulse 2s ease-in-out infinite; background:#5ed2a7; border-radius:50%; height:34px; width:34px; }.phone-shell strong { font-family:Lora,Georgia,serif; font-size:.95rem; }.phone-shell small { color:#aeb9c9; font-size:.6rem; margin-top:.45rem; }
-.capability-list { display:grid; gap:.75rem; }.capability-list div { border-bottom:1px solid #dce2eb; padding:.7rem 0; }.capability-list span { color:#087f5b; font-size:.6rem; font-weight:800; letter-spacing:.1em; }.capability-list strong { color:#263047; display:block; font-size:.9rem; margin-top:.22rem; }.capability-list p { color:#667387; font-size:.72rem; margin:.25rem 0 0; }
-.vision-map { align-items:center; display:grid; gap:.8rem; grid-template-columns:1fr 110px 1fr 110px 1fr; margin-top:1.5rem; }
-.vision-node { background:#fff8f5; border:1px solid #e8c9c0; border-radius:12px; padding:1rem; text-align:center; }.vision-node--core { background:#17233b; border-color:#17233b; }.vision-node span { color:#c6533f; display:block; font-size:.6rem; font-weight:800; letter-spacing:.12em; }.vision-node strong { color:#273249; display:block; font-family:Lora,Georgia,serif; font-size:1rem; margin:.35rem 0; }.vision-node small { color:#727c8e; font-size:.62rem; }.vision-node--core strong { color:#fff; }.vision-node--core small { color:#b9c3d2; }
-.vision-connector { color:#7c8798; font-size:.58rem; text-align:center; }.vision-connector i { background:#c6533f; display:block; height:2px; margin-bottom:.35rem; position:relative; }.vision-connector i::after { border-bottom:4px solid transparent; border-left:6px solid #c6533f; border-top:4px solid transparent; content:""; position:absolute; right:0; top:-3px; }
-.vision-manifesto { border:0; color:#17233b; font-family:Lora,Georgia,serif; font-size:1.25rem; font-style:italic; margin:1.3rem 0 0; padding:0; text-align:center; }
-
-.datacenter-dashboard { display:grid; gap:.8rem; grid-template-columns:1.5fr 1fr; margin-top:1.4rem; }
-.datacenter-thesis { background:#182238; border-radius:12px; color:#fff; padding:1.1rem 1.2rem; }.datacenter-thesis-label { color:#f2b66d; display:block; font-size:.62rem; font-weight:800; letter-spacing:.12em; margin-bottom:.4rem; }.datacenter-thesis > strong { font-family:Lora,Georgia,serif; font-size:1rem; }
-.datacenter-flow { align-items:center; display:grid; gap:.4rem; grid-template-columns:auto 1fr auto 1fr auto 1fr auto; margin-top:1.1rem; }.datacenter-flow span { background:#fff; border-radius:6px; color:#6d4418; font-size:.65rem; font-weight:800; padding:.34rem .5rem; text-align:center; }.datacenter-flow i { background:#b46a18; height:2px; position:relative; }.datacenter-flow i::after { border-bottom:3px solid transparent; border-left:5px solid #b46a18; border-top:3px solid transparent; content:""; position:absolute; right:0; top:-2px; }
-.datacenter-scoreboard { display:grid; gap:.55rem; grid-template-columns:repeat(2,1fr); }.datacenter-scoreboard div { background:#fff8ee; border:1px solid #ead5bc; border-radius:10px; padding:.8rem; }.datacenter-scoreboard div:last-child { grid-column:1 / -1; }.datacenter-scoreboard strong { color:#6d4418; display:block; font-size:1.05rem; }.datacenter-scoreboard span { color:#806b52; display:block; font-size:.62rem; margin-top:.15rem; }
-.supplier-grid { display:grid; gap:.8rem; grid-template-columns:repeat(2,1fr); margin-top:.8rem; }.supplier-card { background:#fffdf9; border:1px solid #e4d8c9; border-radius:11px; padding:1rem; }.supplier-title { align-items:baseline; display:flex; gap:.55rem; }.supplier-title span { color:#b46a18; font-size:.65rem; font-weight:800; }.supplier-title h3 { color:#253047; font-family:Lora,Georgia,serif; font-size:.92rem; margin:0; }.stock-list { display:grid; gap:.4rem; grid-template-columns:repeat(2,1fr); margin-top:.8rem; }.stock-list > span { align-items:center; background:#f5eee5; border-radius:7px; display:flex; justify-content:space-between; padding:.42rem .5rem; }.stock-list b { color:#3b4659; font-size:.68rem; }.stock-list small { color:#95734d; font-size:.55rem; font-variant-numeric:tabular-nums; }
-.datacenter-watchline { background:#f4f6f9; border:1px solid #dce2eb; border-radius:10px; display:grid; gap:.5rem; grid-template-columns:repeat(4,1fr); margin-top:.8rem; padding:.75rem; }.datacenter-watchline span { border-left:3px solid #b46a18; color:#596579; font-size:.62rem; padding-left:.5rem; }.datacenter-method { margin-top:.8rem; }
-
-.author-metrics { display:grid; gap:.7rem; grid-template-columns:repeat(3,1fr) 1.45fr; margin-top:1.4rem; }.author-metrics > div,.author-search { background:#edf1f8; border:1px solid #d4dceb; border-radius:10px; padding:.75rem .85rem; }.author-metrics strong { color:#243454; display:block; font-size:1rem; }.author-metrics span { color:#6a7890; display:block; font-size:.61rem; margin-top:.15rem; }.author-search { align-items:center; display:flex; gap:.7rem; }.author-search span { flex:0 0 auto; margin:0; }.author-search input { background:#fff; border:1px solid #cbd4e3; border-radius:6px; color:#253047; font-size:.7rem; min-width:0; outline:none; padding:.42rem .5rem; width:100%; }.author-search input:focus { border-color:#4968b0; box-shadow:0 0 0 3px rgba(73,104,176,.12); }
-.author-board { background:#111827; border-radius:12px; margin-top:.8rem; overflow:hidden; padding:1rem; }.author-board-head { align-items:center; color:#fff; display:flex; justify-content:space-between; margin-bottom:.8rem; }.author-board-head strong { font-size:.78rem; }.author-board-head span { color:#98a8c3; font-size:.62rem; }.author-grid { display:grid; gap:.55rem; grid-template-columns:repeat(6,minmax(0,1fr)); }.author-card { background:#fff; border-radius:7px; min-width:0; padding:.45rem; }.author-avatar { align-items:center; aspect-ratio:1.35 / 1; background:linear-gradient(145deg,var(--avatar),color-mix(in srgb,var(--avatar) 62%,#0d1422)); border-radius:5px; color:#fff; display:flex; justify-content:center; position:relative; }.author-avatar > span { background:rgba(9,17,31,.72); border-radius:0 0 4px 0; font-size:.5rem; font-weight:800; left:0; letter-spacing:.06em; padding:.18rem .28rem; position:absolute; top:0; }.author-avatar > strong { font-size:1.25rem; letter-spacing:.05em; }.author-card h3 { color:#202b40; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:.64rem; line-height:1.3; margin:.45rem 0 .3rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }.author-card > small { align-items:center; color:#7a879a; display:flex; font-size:.52rem; gap:.25rem; }.author-card > small i { background:#2aa876; border-radius:50%; height:5px; width:5px; }.author-empty { color:#c6d0df; grid-column:1 / -1; margin:2rem 0; text-align:center; }
-.author-pagination { align-items:center; display:flex; gap:.7rem; justify-content:center; margin-top:.85rem; }.author-pagination button { background:#243454; border:1px solid #4968b0; border-radius:6px; color:#fff; cursor:pointer; height:28px; width:32px; }.author-pagination button:disabled { cursor:not-allowed; opacity:.35; }.author-pagination span { color:#b6c2d5; font-size:.65rem; }
-.tracking-roadmap { align-items:stretch; display:grid; gap:.45rem; grid-template-columns:1fr auto 1fr auto 1fr auto 1fr; margin-top:.8rem; }.tracking-roadmap div { background:#f1f4fa; border:1px solid #d6deed; border-radius:9px; padding:.75rem; }.tracking-roadmap > i { align-self:center; color:#4968b0; font-style:normal; }.tracking-roadmap span { color:#4968b0; display:block; font-size:.58rem; font-weight:800; }.tracking-roadmap strong { color:#27334a; display:block; font-size:.7rem; margin-top:.2rem; }.tracking-roadmap small { color:#748198; display:block; font-size:.58rem; margin-top:.2rem; }.author-privacy { background:#fff8e8; border-left:4px solid #d69e2e; color:#5e5034; font-size:.68rem; line-height:1.6; margin:.8rem 0 0; padding:.65rem .8rem; }.author-privacy a { color:#4968b0; font-weight:700; }
-@keyframes vibePulse { 50% { box-shadow:0 0 0 16px rgba(94,210,167,0); transform:scale(1.08); } 0%,100% { box-shadow:0 0 0 0 rgba(94,210,167,.28); } }
-
-@media (max-width:991px) {
-    .startup-metrics { grid-template-columns:repeat(2,1fr); }
-    .signal-pipeline { grid-template-columns:1fr 1fr; }.signal-pipeline > i { display:none; }
-    .vision-map { grid-template-columns:1fr; }.vision-connector { padding:0 35%; transform:rotate(90deg); }.vision-connector span { display:none; }
-    .author-metrics { grid-template-columns:repeat(2,1fr); }.author-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
-    .tracking-roadmap { grid-template-columns:repeat(2,1fr); }.tracking-roadmap > i { display:none; }
-    .project-poster-rail { height:240px; }.project-poster.is-active { flex:3 1 0; }
-}
-@media (max-width:575px) {
-    .vibe-head { margin-top:.5rem; padding:1.7rem 1.4rem; }.vibe-project { padding:1.25rem; }
-    .project-heading { grid-template-columns:auto 1fr; }.project-status { grid-column:2; justify-self:start; }
-    .startup-metrics { gap:.5rem; }.startup-toolbar { align-items:flex-start; flex-direction:column; gap:.55rem; }.startup-tabs { width:100%; }.startup-tab { flex:1; }.startup-sort { padding-left:.25rem; }
-    .signal-pipeline { grid-template-columns:1fr; }
-    .assistant-grid { grid-template-columns:1fr; }.phone-shell { height:300px; justify-self:center; width:190px; }
-    .datacenter-dashboard,.supplier-grid { grid-template-columns:1fr; }.datacenter-watchline { grid-template-columns:repeat(2,1fr); }.stock-list { grid-template-columns:1fr; }
-    .author-metrics { grid-template-columns:1fr 1fr; }.author-search { grid-column:1 / -1; }.author-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.tracking-roadmap { grid-template-columns:1fr; }
-    .project-showcase.is-enhanced .project-poster-stage { gap:.35rem; grid-template-columns:34px minmax(0,1fr) 34px; }.project-poster-arrow { height:34px; width:34px; }.project-poster-rail { height:220px; overflow-x:auto; padding:5px 3px 10px; scroll-snap-type:x proximity; scrollbar-width:none; }.project-poster-rail::-webkit-scrollbar { display:none; }.project-poster { flex:0 0 72px; scroll-snap-align:center; }.project-poster.is-active { flex:0 0 205px; }.project-poster-copy { bottom:.8rem; left:.8rem; right:.8rem; }.project-poster-number { left:.8rem; top:.8rem; }.project-poster.is-active .project-poster-copy strong { font-size:1.22rem; }.project-showcase.is-enhanced .project-deck-caption { padding-top:.15rem; }.project-deck-caption > span { display:none; }.project-deck-current { gap:.5rem; }.project-deck-current strong { font-size:.78rem; max-width:235px; }.project-deck-hint { display:none; }.project-showcase.is-enhanced .project-deck-footer { grid-template-columns:1fr; }
-}
-@media (prefers-reduced-motion:reduce) { .voice-orb i { animation:none; }.project-poster,.project-poster::before,.project-poster-mark,.project-poster-copy small,.project-showcase.is-enhanced .project-deck,.project-showcase.is-enhanced .project-track,.project-showcase.is-enhanced .project-slide,.project-deck-progress span { transition:none; } }
-</style>
+<script src="{{site.baseurl}}/assets/js/projects.js" defer></script>
