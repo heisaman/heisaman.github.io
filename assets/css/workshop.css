@@ -77,7 +77,8 @@ body.workshop-site {
     color: var(--ws-muted) !important;
 }
 .workshop-site footer .row > div { display: flex; align-items: center; gap: .55rem; flex-wrap: wrap; }
-.workshop-site .site-logo--footer { height: 30px; width: 30px; }
+.workshop-site .site-logo { height: 48px; width: 48px; object-fit: contain; }
+.workshop-site .site-logo--footer { height: 38px; width: 38px; }
 
 /* Vertically stacked project notebook. The first two entries are open by default. */
 .workshop-site .vibe-page { max-width: 1160px; padding-bottom: 4rem; }
